@@ -1,0 +1,43 @@
+<div class="container-fluid">
+    <div class="row light-blue background-image-div main-header-div">
+        <div class="col main-header-div">
+
+            <nav class="navbar navbar-expand-sm navbar-dark">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <a class="navbar-brand" href="/"><img class="img-fluid header-arche-logo" src="{{ base_path ~ directory }}/images/logos/arche_transparent_header.png" alt="Arche Logo"  /></a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse arche-header-navbar" id="navbarNav">
+                        
+                        {{ page.main_navigation }}
+                       
+                        <div class="arche-header-user-menu">
+                        {% if logged_in %}
+                            <a href="{{ url('<front>') }}user/logout">
+                                <span class="btn-arche-blue">&nbsp;{{ "Logout"|trans }}</span>
+                            </a>
+                            <a href="{{ url('<front>') }}user">
+                                <span class="navbar-icons-text">&nbsp;{{ user.username }}</span>
+                            </a>
+                        {% else %}
+                            <a href="{{ url('<front>') }}user/login">
+                                <span class="btn-arche-green">&nbsp;{{ "Login"|trans }}</span>
+                            </a>
+                        {% endif %}
+                        </div>
+
+                    </div>
+                </div>
+            </nav>
+
+
+            {{ include( arche_theme_path ~ '/templates/layout/hero_home.html.twig' ) }}
+
+        </div>
+    </div>
+</div>
+

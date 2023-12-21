@@ -1,0 +1,18 @@
+name: 'Arche Bootstrap 5 Theme'
+type: theme
+description: 'Drupal 10 theme using Bootstrap 5'
+core_version_requirement: ^9 || ^10 || ^11
+package: ACDHCH
+base theme: false
+libraries:
+  - arche_theme/global-styling
+regions:
+  header: 'Header'
+  hero: 'Hero'
+  main_navigation: 'Main Navigation'
+  content: 'Content'
+  footer_one: 'Footer Section One'
+  footer_two: 'Footer Section Two'
+  footer_three: 'Footer Section Three'
+  footer_four: 'Footer Section Four'
+  start_page_content: 'Start Page Content'

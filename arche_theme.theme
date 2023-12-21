@@ -1,0 +1,8 @@
+<?php
+
+function arche_theme_preprocess(&$variables) {
+  $handler = \Drupal::service('theme_handler');
+  $variables['arche_theme_path'] = $handler->getTheme('arche_theme')->getPath();
+}
+
+?>
