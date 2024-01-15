@@ -1,0 +1,21 @@
+
+{% include directory ~ '/templates/layout/header.html.twig' %}
+
+<div class="container-fluid px-0">
+  <main role="main">
+    <a id="main-content" tabindex="-1"></a>
+
+    <div class="layout-content">
+      <div class="article-list">
+          {% include directory ~ '/templates/block/block--our-service-block.html.twig' %}
+          {% include directory ~ '/templates/block/block--resources-block.html.twig' %}
+          {% include '/modules/contrib/arche_core_gui/templates/arche-home-collections-list.html.twig' %}
+          {% include directory ~ '/templates/block/block--our-mission-block.html.twig' %}
+      	{{ page.start_page_content }}         
+        </div>
+    </div>{# /.layout-content #}
+
+  </main>
+</div>{# /.layout-container #}
+
+{% include directory ~ '/templates/layout/footer.html.twig' %}

@@ -1,0 +1,16 @@
+{
+    "name": "acdh-oeaw/arche-theme-bs",
+    "description": "ARCHE Bootstrap5 Theme",
+    "type": "drupal-theme",
+    "homepage": "https://github.com/acdh-oeaw/arche-theme",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Norbert Czirjak",
+            "email": "norbert.czirjak@oeaw.ac.at"
+        }
+    ],
+    "require": {
+        "scssphp/scssphp": "*"
+    }
+}

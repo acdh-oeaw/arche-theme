@@ -1,0 +1,42 @@
+<?php
+
+function arche_theme_preprocess_page(&$variables) {
+    
+    $handler = \Drupal::service('theme_handler');
+    $variables['arche_theme_path'] = $handler->getTheme('arche_theme')->getPath();
+    rebuildScss();
+  
+}
+
+function rebuildScss() {
+    $vendorUrl = str_replace('/web', '/vendor', DRUPAL_ROOT);
+    require_once $vendorUrl."/autoload.php";
+    require_once $vendorUrl."/scssphp/scssphp/scss.inc.php";
+   
+    $websiteUrl = \Drupal::request()->getSchemeAndHttpHost();
+    
+    if (strpos($websiteUrl, '//localhost') !== false || strpos($websiteUrl, 'https://arche-dev.acdh-dev.oeaw.ac.at/browser') !== false) {
+         
+        $compiler = new \ScssPhp\ScssPhp\Compiler();
+        // Get the theme manager service.
+        $theme_manager = \Drupal::service('theme.manager');
+
+        // Get the active theme.
+        $active_theme = $theme_manager->getActiveTheme();
+
+        // Get the active theme path.
+        $active_theme_path = $active_theme->getPath();
+        $theme_url = DRUPAL_ROOT.'/'.$active_theme_path;
+        $scss_file = $theme_url.'/scss/style.scss';
+        $css_file  = $theme_url.'/css/style.css';
+
+        $compiler->setSourceMap(\ScssPhp\ScssPhp\Compiler::SOURCE_MAP_FILE);
+        $compiler->setOutputStyle(\ScssPhp\ScssPhp\OutputStyle::EXPANDED);
+        $compiled = $compiler->compileString(file_get_contents($scss_file));
+        file_put_contents($css_file, $compiled->getCss());
+
+    }
+}
+
+
+?>
