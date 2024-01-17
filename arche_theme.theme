@@ -27,9 +27,10 @@ function rebuildScss() {
         // Get the active theme path.
         $active_theme_path = $active_theme->getPath();
         $theme_url = DRUPAL_ROOT.'/'.$active_theme_path;
+        $compiler->addImportPath("scss/");
+       
         $scss_file = $theme_url.'/scss/style.scss';
         $css_file  = $theme_url.'/css/style.css';
-
         $compiler->setSourceMap(\ScssPhp\ScssPhp\Compiler::SOURCE_MAP_FILE);
         $compiler->setOutputStyle(\ScssPhp\ScssPhp\OutputStyle::EXPANDED);
         $compiled = $compiler->compileString(file_get_contents($scss_file));
