@@ -1,6 +1,9 @@
 body {
   font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  color: #fff;
+  color: #666;
+}
+.page-wrapper {
+  background-color: #F8F9FA;
 }
 .acdh-grey-color {
   color: #444;
@@ -523,14 +526,14 @@ p, span {
 .arche-home-card {
   height: 370px;
 }
-.data-div {
+.basic-content-div {
   display: flex;
   padding: 24px;
   flex-direction: column;
   align-items: center;
   gap: 10px;
   border-radius: 12px;
-  border: #e1e1e1;
+  border: 1px solid #e1e1e1;
   background: #FFF;
 }
 @media (min-width: 768px) {

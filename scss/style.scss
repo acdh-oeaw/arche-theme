@@ -1,6 +1,6 @@
 
 $acdh-grey-color: #444;
-
+$basic-grey: #666;
 $acdh-blue-color: #88DBDF;
 $arche-btn-blue: #3B89AD;
 $arche-smokey-white: #F8F9FA;
@@ -12,7 +12,11 @@ $light-grey: #e1e1e1;
 
 body {
     font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    color: #fff;
+    color: $basic-grey;
+}
+
+.page-wrapper {
+    background-color: $arche-smokey-white;
 }
 .acdh-grey-color {
     color: $acdh-grey-color;
@@ -589,15 +593,15 @@ p, span {
     height: 370px;
 }
 
-.data-div {
+.basic-content-div {
     display: flex;
     padding: 24px;
     flex-direction: column;
     align-items: center;
     gap: 10px;
     border-radius: 12px;
-border: $light-grey;
-background: #FFF;
+    border: 1px solid $light-grey;
+    background: #FFF;
 }
 
 
