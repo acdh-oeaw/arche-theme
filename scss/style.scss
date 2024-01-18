@@ -79,7 +79,6 @@ h6 {
     /* Replace with your bottom logo */
     background-size: cover;
     z-index: 0;
-    top: 100px;
 }
 .background-image-front-div::after {
     bottom: 0;
@@ -88,7 +87,6 @@ h6 {
     /* Replace with your bottom logo */
     background-size: cover;
     z-index: 0;
-    top: 200px;
 }
 a {
     -webkit-transition: 0.3s all ease;
@@ -652,12 +650,21 @@ p, span {
 .card.metadata {
     width: 100%;
 }
-.card.metadata .header {
+.card.metadata .card-header {
     display: flex;
     padding: 16px 24px;
     align-items: center;
     gap: 24px;
     align-self: stretch;
+}
+
+.metadata-breadcrumb {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    flex: 1 0 0;
 }
 .metadata-right {
     display: flex;
