@@ -1,12 +1,25 @@
 <?php
 
-function arche_theme_preprocess_page(&$variables) {
-    
+
+function arche_theme_preprocess(&$variables) {
+    /*
+     * Create plugin path variables for twig
+     */
     $handler = \Drupal::service('theme_handler');
     $variables['arche_theme_path'] = $handler->getTheme('arche_theme')->getPath();
-    rebuildScss();
-  
+    $module_manager = \Drupal::service('module_handler');
+    $variables['arche_core_gui_path'] = $module_manager->getModule('arche_core_gui')->getPath();
+    $variables['arche_core_gui_api_path'] = $module_manager->getModule('arche_core_gui_api')->getPath();
+
 }
+
+/**
+ * Rebuild the sass file on a page load if the servers are dev servers
+ */
+function arche_theme_preprocess_page(&$variables) {
+    rebuildScss();
+}
+
 
 function rebuildScss() {
     $vendorUrl = str_replace('/web', '/vendor', DRUPAL_ROOT);

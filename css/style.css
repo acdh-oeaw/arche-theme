@@ -2,6 +2,14 @@ body {
   font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   color: #666;
 }
+h6 {
+  color: 212529;
+  font-family: Lato;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
 .page-wrapper {
   background-color: #F8F9FA;
 }
@@ -83,10 +91,14 @@ p, span {
 .btn-arche-green {
   color: white;
   padding: 10px 16px;
-  align-items: center;
   gap: 8px;
   border-radius: 6px;
   background: #58BCC1;
+  display: flex;
+  align-items: flex-start;
+}
+.btn-arche-green:hover {
+  background-color: rgba(88, 188, 193, 0.2);
 }
 .btn-arche-blue {
   color: white;
@@ -99,6 +111,17 @@ p, span {
 }
 .btn-arche-blue:hover {
   background-color: rgba(59, 137, 173, 0.8);
+}
+.btn-arche-grey {
+  display: flex;
+  padding: 4px 8px;
+  align-items: flex-start;
+  gap: 8px;
+  border-radius: 12px;
+  background: #5B595B;
+}
+.btn-arche-grey:hover {
+  background-color: rgba(91, 89, 91, 0.2);
 }
 .section-header-title-small {
   color: #069;
@@ -535,6 +558,40 @@ p, span {
   border-radius: 12px;
   border: 1px solid #e1e1e1;
   background: #FFF;
+}
+.light-blue-box {
+  display: flex;
+  padding: 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  align-self: stretch;
+  border-radius: 12px;
+  background: #EEF5F8;
+}
+.card.metadata {
+  width: 100%;
+}
+.card.metadata .header {
+  display: flex;
+  padding: 16px 24px;
+  align-items: center;
+  gap: 24px;
+  align-self: stretch;
+}
+.metadata-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  flex-shrink: 0;
+}
+.meta-titleimage {
+  flex-shrink: 0;
+  align-self: stretch;
+}
+.meta-titleimage img {
+  object-fit: cover;
 }
 @media (min-width: 768px) {
   .cards-wrapper .card img {

@@ -4,15 +4,27 @@ $basic-grey: #666;
 $acdh-blue-color: #88DBDF;
 $arche-btn-blue: #3B89AD;
 $arche-smokey-white: #F8F9FA;
+$arche-green: #58BCC1;
 $arche-light-blue: #e1edf3;
 $arche-medium-blue: #4796b5;
 $arche-dark-blue: #069;
 $light-grey: #e1e1e1;
+$light-blue: #EEF5F8;
+$grey: #5B595B;
+$gray900: 212529;
 
 
 body {
     font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     color: $basic-grey;
+}
+h6 {
+    color: $gray900;
+    font-family: Lato;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
 }
 
 .page-wrapper {
@@ -96,13 +108,18 @@ p, span {
     line-height: 20px;
     /* 125% */
 }
+
 .btn-arche-green {
     color: white;
     padding: 10px 16px;
-    align-items: center;
     gap: 8px;
     border-radius: 6px;
-    background: #58BCC1;
+    background: $arche-green;
+    display: flex;
+    align-items: flex-start;
+}
+.btn-arche-green:hover {
+    background-color: rgba(88, 188, 193, 0.2);
 }
 .btn-arche-blue {
     color: white;
@@ -115,6 +132,18 @@ p, span {
 }
 .btn-arche-blue:hover {
     background-color: rgba(59, 137, 173, 0.8);
+}
+
+.btn-arche-grey {
+    display: flex;
+    padding: 4px 8px;
+    align-items: flex-start;
+    gap: 8px;
+    border-radius: 12px;
+    background: $grey;
+}
+.btn-arche-grey:hover {
+    background-color: rgba(91, 89, 91, 0.2);
 }
 
 .section-header-title-small {
@@ -218,6 +247,7 @@ p, span {
 .hero-search-button:hover {
     background-color: $arche-medium-blue;
 }
+
 
 /*
 .mobile-tool-bar{
@@ -603,6 +633,48 @@ p, span {
     border: 1px solid $light-grey;
     background: #FFF;
 }
+
+.light-blue-box {
+    display: flex;
+    padding: 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    align-self: stretch;
+    border-radius: 12px;
+    background: $light-blue;
+}
+
+
+
+///// METADATA VIEW
+
+.card.metadata {
+    width: 100%;
+}
+.card.metadata .header {
+    display: flex;
+    padding: 16px 24px;
+    align-items: center;
+    gap: 24px;
+    align-self: stretch;
+}
+.metadata-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    flex-shrink: 0;
+}
+.meta-titleimage {
+    flex-shrink: 0;
+    align-self: stretch;
+
+}
+.meta-titleimage img {
+    object-fit: cover;
+}
+
 
 
 @media (min-width: 768px) {
