@@ -10,6 +10,14 @@ h4 {
   font-weight: 700;
   line-height: normal;
 }
+h5 {
+  color: #333;
+  font-family: Lato;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
 h6 {
   color: 212529;
   font-family: Lato;
@@ -23,6 +31,18 @@ h6 {
 }
 .page-wrapper {
   background-color: #F8F9FA;
+}
+#page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-height: 567px;
+  background-image: url("../images/common/mission_bottom_bubble.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
 }
 .acdh-grey-color {
   color: #444;
@@ -97,6 +117,9 @@ p, span {
   line-height: 20px;
   /* 125% */
 }
+#page {
+  padding-top: 24px;
+}
 .btn-arche-green {
   color: white;
   padding: 10px 16px;
@@ -115,8 +138,7 @@ p, span {
   gap: 8px;
   border-radius: 6px;
   background: #3B89AD;
-  display: flex;
-  align-items: flex-start;
+  width: fit-content;
 }
 .btn-arche-blue:hover {
   background-color: rgba(59, 137, 173, 0.8);
@@ -246,6 +268,9 @@ p, span {
 .arche-footer-content {
   margin-top: -130px;
 }
+.arche-footer-content ul {
+  padding-left: 0px !important;
+}
 .arche-footer p, .arche-footer a {
   color: #FFF;
   /* Paragraph Small */
@@ -256,9 +281,14 @@ p, span {
   line-height: 20px;
   /* 142.857% */
 }
+.arche-footer-sub-title {
+  font-family: Lato;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  line-height: 28px !important;
+}
 .arche-footer h4 {
   color: #FFF;
-  /* h5 Bold */
   font-family: Lato;
   font-size: 20px;
   font-style: normal;
@@ -490,7 +520,7 @@ p, span {
   padding-top: 12px;
 }
 .home-resources-title h5 {
-  text-align: center;
+  text-align: center !important;
 }
 .home-resources-text {
   text-align: center;
@@ -527,7 +557,7 @@ p, span {
   height: 140px;
   object-fit: cover;
 }
-.card .card-body h5.card-title {
+.card .card-body h5.card-title, .card .card-body h5.card-title a {
   color: #000;
   /* Paragraph Bold */
   font-family: Lato;
@@ -562,13 +592,17 @@ p, span {
 }
 .basic-content-div {
   display: flex;
-  padding: 24px;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
   border-radius: 12px;
   border: 1px solid #e1e1e1;
   background: #FFF;
+}
+.basic-content-div .container-fluid {
+  gap: 24px;
+  display: flex;
+  padding: 24px;
+  flex-direction: column;
 }
 .basic-inside-content-div {
   display: flex;

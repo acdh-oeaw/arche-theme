@@ -27,7 +27,7 @@
                 <a href="https://www.oeaw.ac.at/acdh/" class="text-decoration-none lh-1 align-top"><img src="{{ base_path ~ directory }}/images/logos/acdh-ch-logo-with-text-footer.png" class="image" alt="ACDH Logo" style="max-width: 100%; height: auto;" title="ACDH Logo"></a>
             </div>
             <div class="col-sm-2">
-
+                {{ page.footer_one }}
                 <p class="bodytext">
                     ACDH-CH
                     <br>
@@ -41,8 +41,10 @@
 
             </div>
 
-            <div class="col-sm-3">
+            <div class="col-sm-3 p-0">
                 <h4>{{ "User Information"|trans  }}</h4>
+                {{ page.footer_two }}
+                <!--
                 <ul class="list-unstyled links">
                     <li>
                         <a href="#!" class="text-reset">{{ "Deposition Process"|trans }}</a>
@@ -71,10 +73,12 @@
                     <li>
                         <a href="#!" class="text-reset">{{ "FAQ"|trans }}</a>
                     </li>
-                </ul>
+                </ul>-->
             </div>
             <div class="col-sm-3">
                 <h4>{{ "Policies"|trans  }}</h4>
+                {{ page.footer_three }}
+                <!--
                 <ul class="list-unstyled links">
                     <li>
                         <a href="#!" class="text-reset">{{ "Collection Policy"|trans }}</a>
@@ -94,12 +98,20 @@
                     <li>
                         <a href="#!" class="text-reset">{{ "Imprint "|trans }}</a>
                     </li>
-                </ul>
+                </ul>-->
             </div>
             <div class="col-sm-3">
                 <h4>{{ "Helpdesk"|trans  }}</h4>
+                {{ page.footer_four }}
                 <p>ACDH-CH runs a helpdesk offering advice for questions related to various digital humanities topics.</p>
-                <img class="img-fluid" src="{{ base_path ~ directory }}/images/partner-logos/clarin_b_centre_logo_white.png" alt="Clarin B centre"  />
+                <p class="arche-footer-sub-title">{{ "Browse on the site" }}</p>
+                 <form class="d-flex">
+                    <div class="input-group">
+                        <input type="search" class="form-control hero-search-field" placeholder="{{ "Find content"|trans }}..." aria-label="Search">
+                        <button class="btn hero-search-button" type="submit"><img class="img-fluid" src="{{ base_path ~ directory }}/images/common/search_icon.png" alt="Search"  /></button>
+                    </div>
+                </form>
+               
             </div>
         </div>
     </div>

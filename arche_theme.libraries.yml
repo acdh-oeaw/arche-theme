@@ -13,4 +13,17 @@ global-styling:
         https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js: { type: external, minified: true }       
     dependencies:
         - core/drupal
+        - core/drupal.form
+        - core/drupalSettings
+        - core/jquery
 
+home-page:
+    version: 1.0
+    header: true
+    js:
+        js/arche_home.js: {}
+    dependencies:
+        - core/drupal
+        - core/drupal.form
+        - core/drupalSettings
+        - core/jquery
