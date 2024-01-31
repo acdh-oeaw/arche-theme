@@ -166,6 +166,17 @@ p, span {
     background-color: rgba(59, 137, 173, 0.8);
 }
 
+.btn-arche-blue-sidebar {
+    color: white;
+    padding: 8px 12px;
+    gap: 8px;
+    border-radius: 6px;
+    background: $arche-btn-blue;
+    width: fit-content;
+}
+.btn-arche-blue-sidebar:hover {
+    background-color: rgba(59, 137, 173, 0.8);
+}
 .btn-arche-grey {
     display: flex;
     padding: 4px 8px;
@@ -795,6 +806,20 @@ p, span {
     display: none;
 }
 
+
+
+// metadata sidebar
+.card-body.meta-sidebar {
+    padding: 24px;
+    display: flex;
+    gap: 12px;
+}
+.card-body.meta-sidebar.downloadcard {
+    display: flex;
+    gap: 12px;
+    padding: 24px;
+    flex-direction: column;
+}
 
 @media (min-width: 768px) {
     .cards-wrapper .card img {

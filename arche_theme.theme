@@ -12,6 +12,7 @@ function arche_theme_preprocess(&$variables) {
     $variables['arche_core_gui_api_path'] = $module_manager->getModule('arche_core_gui_api')->getPath();
     $variables['arche_tooltip_ico'] = '/browser/' . $variables['arche_theme_path']. '/images/common/tooltip_icon.png';
     $variables['arche_theme_img_url'] = '/browser/' . $variables['arche_theme_path']. '/images/';
+    $variables['arche_dl_ico'] = '/browser/' . $variables['arche_theme_path']. '/images/icons/dl_icon.png';
     
 }
 
