@@ -713,6 +713,59 @@ p, span {
 .loader-overlay.metadata-main-loader {
   display: none;
 }
+#expertdt-container {
+  display: none;
+}
+#expertDT_wrapper {
+  display: flex;
+  padding: 12px;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  flex-shrink: 0;
+  align-self: stretch;
+  border-radius: 12px;
+  background: #FFF;
+}
+#expertDT_wrapper .top {
+  padding: 12px;
+}
+table.dataTable tbody th, table.dataTable tbody td {
+  padding: 10px 12px;
+  color: #000;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+  /* 15.6px */
+  border-top: 1px solid #E1E1E1;
+  border-left: 1px solid #E1E1E1;
+  background: rgba(255, 255, 255, 0);
+}
+table.dataTable tbody td .res-prop-value {
+  padding: 10px 12px;
+  color: #000;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+  /* 15.6px */
+  background: rgba(255, 255, 255, 0);
+}
+table.dataTable thead tr, table.dataTable thead th {
+  background-color: #F8F9FA;
+  color: #333;
+  font-family: Lato;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px;
+  padding: 10px 12px;
+  border-top: 1px solid #E1E1E1;
+  border-left: 1px solid #E1E1E1;
+}
 .card-body.meta-sidebar {
   padding: 24px;
   display: flex;
