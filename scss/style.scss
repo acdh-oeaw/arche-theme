@@ -3,6 +3,7 @@ $acdh-grey-color: #444;
 $basic-grey: #666;
 $acdh-blue-color: #88DBDF;
 $arche-btn-blue: #3B89AD;
+$arche-btn-blue-hover: rgba(59, 137, 173, 0.8);
 $arche-smokey-white: #F8F9FA;
 $arche-green: #58BCC1;
 $arche-light-blue: #e1edf3;
@@ -34,6 +35,18 @@ h5 {
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+}
+
+.h5-blue-title,
+.h5-blue-title a
+{
+    color: $arche-btn-blue-hover !important;
+}
+
+.h5-blue-title a:hover
+{
+    color: $arche-btn-blue !important;
+    font-size: 20px !important;
 }
 h6 {
     color: $gray900;
@@ -186,6 +199,7 @@ p, span {
     background: $grey;
     width: fit-content;
     color: white;
+    font-size: 12px;
 }
 .btn-arche-grey:hover {
     background-color: rgba(91, 89, 91, 0.2);
@@ -826,7 +840,7 @@ p, span {
 #expertDT_wrapper .top {
     padding: 12px;
 }
-table.dataTable tbody th, 
+table.dataTable tbody th,
 table.dataTable tbody td {
     padding: 10px 12px;
     color: #000;
@@ -864,6 +878,66 @@ table.dataTable thead tr, table.dataTable thead th {
     border-left: 1px solid #E1E1E1;
 }
 
+#childDT_wrapper {
+    width: 100%;
+    display: flex;
+    padding: 12px;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    flex-shrink: 0;
+    align-self: stretch;
+    border-radius: 12px;
+    background:#FFF;
+}
+
+table.child-table,
+table.child-table tbody th,
+table.child-table tbody td,
+table.child-table thead th  {
+    border: none !important;
+}
+
+table.child-table.dataTable tbody th,
+table.child-table.dataTable tbody td {
+    padding: 10px 12px;
+    color: #000;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%; /* 15.6px */
+    background: rgba(255, 255, 255, 0.00);
+}
+
+table.child-table.dataTable tbody td .res-prop-value {
+    padding: 10px 12px;
+    color: #000;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%; /* 15.6px */
+    background: rgba(255, 255, 255, 0.00);
+}
+
+table.child-table.dataTable thead tr, table.child-table.dataTable thead th {
+    background-color: $arche-smokey-white;
+    color: #333;
+    font-family: Lato;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 16px;
+    padding: 10px 12px;
+}
+
+.child-table-content-div {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
 
 // metadata sidebar
 .card-body.meta-sidebar {
