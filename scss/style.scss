@@ -952,6 +952,63 @@ table.child-table.dataTable thead tr, table.child-table.dataTable thead th {
     flex-direction: column;
 }
 
+.child-tree-div {
+    background: #fff;
+    width: 100%;
+    display: flex;
+    padding: 12px;
+    flex-direction: column;
+    gap: 9px;
+    border-radius: 12px;
+}
+
+.tree-view-container {
+
+}
+.jstree-default > .jstree-striped {
+    background-color: #fff !important;
+    background: none !important;
+}
+
+/// tree closed dir
+.jstree-node.jstree-closed,
+.jstree-node.jstree-open{
+    background: #F8F9FA;
+}
+
+.jstree-node.jstree-closed li[aria-level],
+.jstree-node.jstree-open li[aria-level] {
+    background-color: #E1E1E1; /* Apply the same background color for all levels */
+}
+.jstree-node.jstree-closed li[aria-level="1"],
+.jstree-node.jstree-open li[aria-level="1"] {
+    background-color: #E1E1E1; /* Apply the same background color for all levels */
+}
+
+
+.jstree-node a {
+    color: #333;
+    /* Text Small Bold */
+    font-family: Lato;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 16px; /* 133.333% */
+}
+
+#child-tree ul li {
+    border: 1px solid #E1E1E1;
+    padding: 10px 12px 10px 32px;
+    align-items: center;
+    gap: 8px;
+    align-self: stretch;
+}
+
+li[aria-level].jstree-node.jstree-leaf  {
+    background-color: #fff !important;
+}
+
+
 @media (min-width: 768px) {
     .cards-wrapper .card img {
         height: 11em;
