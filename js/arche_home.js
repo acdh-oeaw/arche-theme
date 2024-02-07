@@ -17,10 +17,10 @@ jQuery(function ($) {
                     $.each(data, function(index, value) {
                         var html = '<div class="col-md-3 arche-home-card">';
                         html += '<div class="card">';
-                        html += '<img src="https://arche-thumbnails.acdh.oeaw.ac.at/'+value.acdhid.replace('https://', '')+'?width=350" class="card-img-top" alt="'+value.title.value+'">';
+                        html += '<img src="https://arche-thumbnails.acdh.oeaw.ac.at/'+value.identifier.replace('https://', '')+'?width=350" class="card-img-top" alt="'+value.title.value+'">';
                         html += '<div class="card-body">';
-                        html += '<h5 class="card-title">'+value.title.value+'</h5>';
-                        html += '<p class="card-text">'+value.description.value.slice(0, 200)+'...</p>';
+                        html += '<h5 class="card-title">'+value.title+'</h5>';
+                        html += '<p class="card-text">'+value.description.slice(0, 200)+'...</p>';
                           html += '<a class="btn basic-arche-btn home-collections-btn" href="/browser/metadata/'+index+'">'+Drupal.t("More")+'</a>';
                         html += '</div>';
                         html += '</div>';
@@ -34,10 +34,13 @@ jQuery(function ($) {
                         i++;
                     });
                 }
+                
+                $('#home-slider-loader').fadeOut('slow');
                 $('#home-collections-slider-loader').fadeOut('slow');
                 $('#detail-overview-api-div').html(data);
             },
             error: function (xhr, status, error) {
+                $('#home-slider-loader').fadeOut('slow');
                 $('#home-collections-slider-loader').fadeOut('slow');
                 $('#detail-overview-api-div').html(error);
             }
