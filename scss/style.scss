@@ -478,6 +478,43 @@ p, span {
     z-index: 0;
 }
 
+.btn-toolbar-text {
+    color: #FFF;
+    text-align: center;
+
+    /* Text Small Bold */
+    font-family: Lato;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 16px; /* 133.333% */
+}
+.btn-toolbar-grey,
+.btn-toolbar-grey.no-btn:hover {
+    padding: 4px 8px;
+    gap: 8px;
+    border-radius: 12px;
+    background: $grey;
+    color: #fff;
+}
+
+.btn-toolbar-blue, 
+.btn-toolbar-blue.no-btn:hover {
+    padding: 4px 8px;
+    gap: 8px;
+    border-radius: 12px;
+    background: $arche-btn-blue;
+    color: #fff;
+}
+
+.btn-toolbar-green,
+.btn-toolbar-green.no-btn:hover {
+    padding: 4px 8px;
+    gap: 8px;
+    border-radius: 12px;
+    background: $arche-green;
+    color: #fff;
+}
 
 .absolute-bottom-btn {
     margin: 10px;
@@ -492,7 +529,17 @@ p, span {
     border-radius: 12px;
     background: #fff;
     max-width: 980px;
-    gap: 48px;
+    gap: 24px;
+    flex-direction: column;
+}
+
+.mission-container .row {
+    width: 100%;
+    flex-grow: 1;
+}
+
+.mission-main-img {
+    border-radius: 16px;
 }
 
 .mission-container .section-header-title-small,
@@ -1016,6 +1063,65 @@ li[aria-level].jstree-node.jstree-leaf  {
     display: none;
 }
 
+
+
+//// root discover
+
+.root-table tbody th,
+.root-table tbody td {
+    border: none !important;
+}
+
+.btn-root-topbar-grey {
+    display: flex;
+    height: 38px;
+    padding: 8px;
+    align-items: center;
+    gap: 8px;
+    border-radius: 4px;
+    background: #E9ECEF;
+}
+
+.btn-root-topbar-grey-text {
+    color: #343A40;
+    text-align: center;
+
+    /* Paragraph Small Bold */
+    font-family: Lato;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 16px; /* 114.286% */
+}
+
+#rootDT_paginate {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    align-items: center;
+    float: none !important;
+}
+
+#rootDT_paginate .paginate_button {
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid  #E9ECEF;
+    background: #FFF;
+    color: #6C757D;
+}
+
+#rootDT_paginate .paginate_button.disabled {
+    background: #E9ECEF;
+    color: #fff;
+
+}
+
+#rootDT_paginate .paginate_button.current {
+    border: 1px solid #3B89AD;
+    background: #3B89AD;
+    color: #fff !important;
+}
 
 @media (min-width: 768px) {
     .cards-wrapper .card img {
