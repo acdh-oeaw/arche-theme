@@ -664,6 +664,9 @@ p, span {
   padding: 24px;
   flex-direction: column;
 }
+.discover-content-main {
+  padding: 24px;
+}
 .basic-inside-content-div {
   display: flex;
   padding: 24px;
@@ -948,7 +951,7 @@ li[aria-level].jstree-node.jstree-leaf {
   line-height: 16px;
   /* 114.286% */
 }
-#rootDT_paginate {
+#rootDT_paginate, .dataTables_paginate.paging_simple_numbers {
   text-align: center;
   display: flex;
   justify-content: center;
@@ -956,21 +959,127 @@ li[aria-level].jstree-node.jstree-leaf {
   align-items: center;
   float: none !important;
 }
-#rootDT_paginate .paginate_button {
+#rootDT_paginate .paginate_button, .dataTables_paginate.paging_simple_numbers .paginate_button {
   padding: 8px 12px;
   border-radius: 4px;
   border: 1px solid #E9ECEF;
   background: #FFF;
   color: #6C757D;
 }
-#rootDT_paginate .paginate_button.disabled {
+#rootDT_paginate .paginate_button.disabled, .dataTables_paginate.paging_simple_numbers .paginate_button.disabled {
   background: #E9ECEF;
   color: #fff;
 }
-#rootDT_paginate .paginate_button.current {
+#rootDT_paginate .paginate_button.current, .dataTables_paginate.paging_simple_numbers .paginate_button.current {
   border: 1px solid #3B89AD;
   background: #3B89AD;
   color: #fff !important;
+}
+.dropdown-menu.discover-dropdown, .discover-dropdown-btn {
+  background-color: #fff;
+  color: #666666;
+  border: 1px solid #CED4DA !important;
+}
+.discover-dropdown-btn::hover {
+  color: #fff;
+  background-color: #666666;
+}
+.discover-sort {
+  display: flex;
+  justify-content: end;
+}
+.discover-line-bottom {
+  border-bottom: 1px solid #E1EDF3;
+  padding-bottom: 10px;
+  maring-bottom: 10px;
+}
+.discover-line-top {
+  border-top: 1px solid #E1EDF3;
+  padding-top: 10px;
+  margin-top: 10px;
+}
+table.dataTable.no-footer {
+  border-bottom: none;
+}
+.discover-content-toolbar {
+  display: flex;
+  gap: 12px;
+}
+.discover-table-content-div, .discover-table-image-div {
+  padding: 24px 0px;
+}
+.discover-top {
+  padding-bottom: 24px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.discover-top-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex: 1 0 0;
+  align-self: stretch;
+}
+.leaflet-popup-content {
+  text-align: center;
+}
+#smMapSearchResults {
+  color: white;
+  width: 100%;
+  height: auto;
+}
+#smMapSearchResults p {
+  padding: 10px;
+}
+#smMapSearchResults p:hover {
+  background-color: white;
+  color: black;
+}
+.smMapSearchResultsContainer {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  left: 10px;
+  width: 90%;
+  height: auto;
+  z-index: 1000;
+}
+#searchInput {
+  padding: 5px;
+  width: 100%;
+}
+#closeSMSMapButton {
+  padding: 5px;
+}
+.map-loader {
+  background-image: url("../images/arche_logo_flip_47px.gif");
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -30px;
+  margin-top: -30px;
+  /*image width/2 */
+  display: none;
+  /*image height/2 */
+  z-index: 2000;
+}
+.sms-map {
+  width: 100%;
+  height: 100%;
+}
+.arche-sms-popup {
+  display: none;
+  position: fixed;
+  top: 5%;
+  left: 5%;
+  width: 90%;
+  height: 80%;
+  background-color: white;
+  border: 1px solid #ccc;
+  z-index: 1000;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
 }
 @media (min-width: 768px) {
   .cards-wrapper .card img {
