@@ -780,8 +780,6 @@ p, span {
     background: $light-blue;
 }
 
-
-
 ///// METADATA VIEW
 
 .card.metadata {
@@ -800,10 +798,9 @@ p, span {
 
 .metadata-breadcrumb {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
     align-items: flex-start;
-    gap: 10px;
+    gap: 6px;
     flex: 1 0 0;
 }
 .metadata-right,
