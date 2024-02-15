@@ -925,6 +925,9 @@ table.child-table.dataTable thead tr, table.child-table.dataTable thead th {
 li[aria-level].jstree-node.jstree-leaf {
   background-color: #fff !important;
 }
+#versionsBody .card-body.meta-sidebar {
+  overflow: auto;
+}
 #copy-cite-btn-confirmation {
   display: none;
 }
