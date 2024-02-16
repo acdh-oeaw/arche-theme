@@ -31,7 +31,8 @@ function rebuildScss() {
    
     $websiteUrl = \Drupal::request()->getSchemeAndHttpHost();
     
-    if (strpos($websiteUrl, '//localhost') !== false || strpos($websiteUrl, 'https://arche-dev.acdh-dev.oeaw.ac.at/browser') !== false) {
+    if (strpos($websiteUrl, '//localhost') !== false || strpos($websiteUrl, '//127.0.0.1') !== false || 
+            strpos($websiteUrl, 'https://arche-dev.acdh-dev.oeaw.ac.at/browser') !== false) {
          
         $compiler = new \ScssPhp\ScssPhp\Compiler();
         // Get the theme manager service.

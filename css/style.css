@@ -702,10 +702,9 @@ p, span {
 }
 .metadata-breadcrumb {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row !important;
   align-items: flex-start;
-  gap: 10px;
+  gap: 6px !important;
   flex: 1 0 0;
 }
 .metadata-right, #metadata-right-container {
