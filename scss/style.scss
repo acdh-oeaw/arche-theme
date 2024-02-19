@@ -260,7 +260,6 @@ p, span {
     height: 306px;
 }
 
-
 /** HOME HERO **/
 .home-hero-section {
 
@@ -572,7 +571,6 @@ p, span {
     padding-left: 0px;
 }
 
-
 .navbar {
     background-color: transparent;
 }
@@ -597,8 +595,6 @@ p, span {
 .sign__container {
     width: 60%;
 }
-
-
 
 .cards-wrapper {
     display: flex;
@@ -627,8 +623,6 @@ p, span {
     transform: translateY(-50%);
 }
 
-
-
 .resources-container-home {
     background-image: url("../images/common/resource_bottom_bubble.png");
     background-repeat: no-repeat;
@@ -638,7 +632,6 @@ p, span {
     padding-left: 0px !important;
     padding-right: 0px !important;
 }
-
 
 .mission-container-home {
     background-image: url("../images/common/mission_bottom_bubble.png");
@@ -889,6 +882,10 @@ p, span {
 #expertDT_wrapper .top {
     padding: 12px;
 }
+
+div.dataTables_processing > div:last-child {
+    display: none;
+}
 table.dataTable tbody th,
 table.dataTable tbody td {
     padding: 10px 12px;
@@ -1001,7 +998,9 @@ table.child-table.dataTable thead tr, table.child-table.dataTable thead th {
     flex-direction: column;
 }
 
-.child-tree-div {
+.child-tree-div,
+.rcr-table-div,
+.publications-table-div {
     background: #fff;
     width: 100%;
     display: flex;
