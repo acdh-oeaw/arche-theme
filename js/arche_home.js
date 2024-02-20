@@ -14,23 +14,23 @@ jQuery(function ($) {
             success: function (data, status) {
                 if (data) {
                     console.log(data);
-                    
+
                     var carouselItems = '';
                     var keys = Object.keys(data);
-                    
+
                     for (var i = 0; i < keys.length; i += 4) {
                         carouselItems += '<div class="carousel-item">' +
                                 '<div class="row">';
                         for (var j = 0; j < 4 && (i + j) < keys.length; j++) {
-                            var id = keys[i+j];
-                    var item = data[id];
+                            var id = keys[i + j];
+                            var item = data[id];
                             carouselItems += '<div class="col-md-3">' +
                                     '<div class="card">' +
-                                    '<img src="https://arche-thumbnails.acdh.oeaw.ac.at/'+item.identifier.replace('https://', '')+'?width=350" class="card-img-top" alt="'+item.title+'">' +
+                                    '<img src="https://arche-thumbnails.acdh.oeaw.ac.at/' + item.identifier.replace('https://', '') + '?width=350" class="card-img-top" alt="' + item.title + '">' +
                                     '<div class="card-body">' +
                                     '<h5 class="card-title">' + item.title + '</h5>' +
-                                    '<p class=card-text>'+ item.description.slice(0, 200)+'...</p>' +
-                                    '<a class="btn basic-arche-btn home-collections-btn" href="/browser/metadata/'+id+'">'+Drupal.t("More")+'</a>' +
+                                    '<p class=card-text>' + item.description.slice(0, 200) + '...</p>' +
+                                    '<a class="btn basic-arche-btn home-collections-btn" href="/browser/metadata/' + id + '">' + Drupal.t("More") + '</a>' +
                                     '</div>' +
                                     '</div>' +
                                     '</div>';
@@ -85,4 +85,9 @@ jQuery(function ($) {
             }
         });
     }
+
+
+
+    
+
 });

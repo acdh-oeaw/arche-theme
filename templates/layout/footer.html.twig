@@ -38,80 +38,41 @@
                 <p class="bodytext">Bäckerstraße 13<br>1010 {{ "Vienna"|trans  }}
                 </p>
                 <p class="bodytext">T: +43 1 51581-2200</p>
-
+                <a href="https://www.oeaw.ac.at/" class="text-decoration-none lh-1 align-top"><img src="{{ base_path ~ directory }}/images/logos/oaw_white_transparent.png" class="image" alt="ÖAW Logo" style="max-width: 100%; height: auto;" title="ÖAW Logo"></a>
             </div>
 
             <div class="col-sm-3 p-0">
                 <h4>{{ "User Information"|trans  }}</h4>
                 {{ page.footer_two }}
-                <!--
-                <ul class="list-unstyled links">
-                    <li>
-                        <a href="#!" class="text-reset">{{ "Deposition Process"|trans }}</a>
-                    </li>
-                    <li>
-                        <a href="#!" class="text-reset">{{ "Before Submission"|trans }}</a>
-                    </li>
-                    <li>
-                        <a href="#!" class="text-reset">{{ "Submission"|trans }}</a>
-                    </li>
-                    <li>
-                        <a href="#!" class="text-reset">{{ "Curation Step"|trans }}</a>
-                    </li>
-                    <li>
-                        <a href="#!" class="text-reset">{{ "Archiving & Publication"|trans }}</a>
-                    </li>
-                    <li>
-                        <a href="#!" class="text-reset">{{ "Filenames, Formats & Metadata"|trans }}</a>
-                    </li>
-                    <li>
-                        <a href="#!" class="text-reset">{{ "Technical Setup"|trans }}</a>
-                    </li>
-                    <li>
-                        <a href="#!" class="text-reset">{{ "API Access"|trans }}</a>
-                    </li>
-                    <li>
-                        <a href="#!" class="text-reset">{{ "FAQ"|trans }}</a>
-                    </li>
-                </ul>-->
+               
             </div>
             <div class="col-sm-3">
                 <h4>{{ "Policies"|trans  }}</h4>
                 {{ page.footer_three }}
-                <!--
-                <ul class="list-unstyled links">
-                    <li>
-                        <a href="#!" class="text-reset">{{ "Collection Policy"|trans }}</a>
-                    </li>
-                    <li>
-                        <a href="#!" class="text-reset">{{ "Deposition Agreement"|trans }}</a>
-                    </li>
-                    <li>
-                        <a href="#!" class="text-reset">{{ "Preservation Policy"|trans }}</a>
-                    </li>
-                    <li>
-                        <a href="#!" class="text-reset">{{ "Privacy Policy"|trans }}</a>
-                    </li>
-                    <li>
-                        <a href="#!" class="text-reset">{{ "Terms of Use"|trans }}</a>
-                    </li>
-                    <li>
-                        <a href="#!" class="text-reset">{{ "Imprint "|trans }}</a>
-                    </li>
-                </ul>-->
+              
             </div>
             <div class="col-sm-3">
                 <h4>{{ "Helpdesk"|trans  }}</h4>
                 {{ page.footer_four }}
                 <p>ACDH-CH runs a helpdesk offering advice for questions related to various digital humanities topics.</p>
                 <p class="arche-footer-sub-title">{{ "Browse on the site" }}</p>
-                 <form class="d-flex">
+                <form class="d-flex">
                     <div class="input-group">
                         <input type="search" class="form-control hero-search-field" placeholder="{{ "Find content"|trans }}..." aria-label="Search">
                         <button class="btn hero-search-button" type="submit"><img class="img-fluid" src="{{ base_path ~ directory }}/images/common/search_icon.png" alt="Search"  /></button>
                     </div>
                 </form>
-               
+
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-lg-12 arche-footer-bottom">
+                &copy;  Copyright OEAW | <a href="/browser/impressum">Impressum</a> | <a href="/browser/imprint">Imprint</a> | <a href="#" id="footer-versions-btn">Software Versions </a> <br>
+                
+            </div>
+            <div class="col-lg-12 arche-footer-bottom-versions hidden">
+                {{ get_acdh_composer_versions('name')|raw }}
             </div>
         </div>
     </div>
