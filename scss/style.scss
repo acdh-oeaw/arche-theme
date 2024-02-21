@@ -63,18 +63,7 @@ h6 {
 .page-wrapper {
     background-color: $arche-smokey-white;
 }
-#page::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    max-height: 567px;
-    background-image: url("../images/common/mission_bottom_bubble.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: -1;
-}
+
 .acdh-grey-color {
     color: $acdh-grey-color;
 }
@@ -153,6 +142,12 @@ p, span {
 }
 #page {
     padding-top: 24px;
+    padding-bottom: 100px;
+}
+#page {
+    background-image: url("../images/common/mission_bottom_bubble.png");
+    background-position: bottom;
+    background-repeat: no-repeat;
 }
 
 .btn-arche-green {
