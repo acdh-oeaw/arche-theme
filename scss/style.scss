@@ -845,7 +845,10 @@ p, span {
     width: 24px;
     height: 24px;
 }
-
+.tooltop-icon-div {
+    padding: 0px;
+    margin: 0px;
+}
 
 .loader-overlay {
     position: absolute;
@@ -1113,6 +1116,9 @@ li[aria-level].jstree-node.jstree-leaf  {
     line-height: 16px; /* 114.286% */
 }
 
+#rootDT thead {
+    display: none;
+}
 #rootDT_paginate,
 .dataTables_paginate.paging_simple_numbers {
     text-align: center;
@@ -1183,6 +1189,10 @@ table.dataTable.no-footer {
 .discover-table-content-div,
 .discover-table-image-div {
     padding: 24px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
 }
 
 .discover-top {
@@ -1196,6 +1206,17 @@ table.dataTable.no-footer {
     gap: 24px;
     flex: 1 0 0;
     align-self: stretch;
+}
+
+.discover-left {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    
+}
+
+.main-content-row {
+    width: 100%;
 }
 
 
@@ -1268,6 +1289,20 @@ table.dataTable.no-footer {
     z-index: 1000;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     overflow: hidden;
+}
+
+// smart search
+
+.smartsearch-pager {
+    width: 100%;
+}
+
+.smart-result-row {
+    padding: 24px;
+}
+
+.extendedSearchCard {
+    display: none;
 }
 
 @media (min-width: 768px) {
