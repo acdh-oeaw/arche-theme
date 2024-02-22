@@ -120,6 +120,7 @@ p, span {
   background-image: url("../images/common/mission_bottom_bubble.png");
   background-position: bottom;
   background-repeat: no-repeat;
+  background-size: 100% 400px;
 }
 .btn-arche-green {
   color: white;
@@ -1053,6 +1054,10 @@ table.dataTable.no-footer {
   flex-direction: column;
   gap: 24px;
 }
+.discover-count {
+  display: flex;
+  align-items: center;
+}
 .main-content-row {
   width: 100%;
 }
@@ -1119,6 +1124,14 @@ table.dataTable.no-footer {
 }
 .smartsearch-pager {
   width: 100%;
+}
+.arche-smartsearch-page-div .row {
+  display: flex;
+  align-items: center;
+}
+.arche-smartsearch-page-div .form-outline {
+  display: flex;
+  align-items: center;
 }
 .smart-result-row {
   padding: 24px;
