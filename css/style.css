@@ -118,7 +118,8 @@ p, span {
 }
 #page {
   background-image: url("../images/common/mission_bottom_bubble.png");
-  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
 }
 .btn-arche-green {
   color: white;
@@ -426,6 +427,14 @@ p, span {
 .arche-footer-bottom-versions {
   justify-content: center;
   padding-top: 20px;
+}
+.arche-footer-two-div h2, .arche-footer-three-div h2 {
+  color: #fff;
+  font-family: Lato;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }
 .btn-toolbar-text {
   color: #FFF;
