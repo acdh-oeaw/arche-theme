@@ -1192,10 +1192,11 @@ table.dataTable.no-footer {
 .discover-content-toolbar {
     display: flex;
     gap: 12px;
+    padding-top: 24px;
 }
 .discover-table-content-div,
 .discover-table-image-div {
-    padding: 24px 0px;
+    padding: 0px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -1320,6 +1321,7 @@ table.dataTable.no-footer {
 }
 .smart-result-row {
     padding: 24px;
+    border-bottom: 1px solid #E1EDF3;
 }
 
 .extendedSearchCard {
