@@ -115,6 +115,7 @@ p, span {
 #page {
   padding-top: 24px;
   padding-bottom: 100px;
+  min-height: 500px;
 }
 #page {
   background-image: url("../images/common/mission_bottom_bubble.png");
@@ -212,9 +213,39 @@ p, span {
   /* 175% */
   gap: 8px;
 }
+#block-arche-theme-main-menu.contextual-region {
+  margin: auto;
+}
+#block-arche-theme-account-menu {
+  display: flex;
+}
+#block-arche-theme-account-menu > ul {
+  display: contents !important;
+}
+#block-arche-theme-account-menu li a {
+  color: white;
+  padding: 10px 16px;
+  gap: 8px;
+  border-radius: 6px;
+  background: #58BCC1;
+  display: flex;
+  align-items: flex-start;
+}
+#block-arche-theme-account-menu li a:hover {
+  background-color: rgba(88, 188, 193, 0.2);
+}
+ul.links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
 .arche-header-navbar {
   justify-content: flex-end !important;
   flex-grow: unset !important;
+}
+.arche-header-navbar div {
+  display: flex;
+  gap: 24px;
 }
 .front-header-div {
   height: 420px;
@@ -223,6 +254,13 @@ p, span {
   height: 306px;
 }
 /** HOME HERO **/
+.hero-home-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  padding-top: 12px;
+}
 .hero-small-text {
   color: #666;
   text-align: center;

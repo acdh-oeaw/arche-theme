@@ -15,21 +15,6 @@
                         
                         {{ page.main_navigation }}
                        
-                        <div class="arche-header-user-menu">
-                        {% if logged_in %}
-                            <a href="{{ url('<front>') }}user/logout">
-                                <span class="btn-arche-blue">&nbsp;{{ "Logout"|trans }}</span>
-                            </a>
-                            <a href="{{ url('<front>') }}user">
-                                <span class="navbar-icons-text">&nbsp;{{ user.username }}</span>
-                            </a>
-                        {% else %}
-                            <a href="{{ url('<front>') }}user/login">
-                                <span class="btn-arche-green">&nbsp;{{ "Login"|trans }}</span>
-                            </a>
-                        {% endif %}
-                        </div>
-
                     </div>
                 </div>
             </nav>

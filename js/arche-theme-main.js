@@ -1,7 +1,16 @@
 jQuery(function ($) {
     "use strict";
-    
-    
+
+
+    $(document).ready(function () {
+        $('a[data-drupal-link-system-path="user"]').each(function () {
+            $(this).parent('li').remove();
+        });
+
+
+
+
+    });
     $(document).delegate("a#footer-versions-btn", "click", function (e) {
         console.log('itt');
         e.preventDefault();
@@ -13,8 +22,8 @@ jQuery(function ($) {
             console.log('nem hidden');
             $('.arche-footer-bottom-versions').removeClass('d-flex');
             $('.arche-footer-bottom-versions').addClass('hidden');
-        } 
-        
+        }
+
     });
 
 });
