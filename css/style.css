@@ -1143,6 +1143,17 @@ table.dataTable.no-footer {
 .extendedSearchCard {
   display: none;
 }
+.res-property.sm-description {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+}
+.sm-img-list {
+  min-height: 100px;
+  object-fit: contain;
+  width: auto;
+}
 @media (min-width: 768px) {
   .cards-wrapper .card img {
     height: 11em;

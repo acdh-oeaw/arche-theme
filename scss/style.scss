@@ -1159,6 +1159,10 @@ li[aria-level].jstree-node.jstree-leaf  {
     background: #3B89AD;
     color: #fff !important;
 }
+#rootDT_paginate .paginate_button.next,
+#rootDT_paginate .paginate_button.previous {
+    
+}
 
 .dropdown-menu.discover-dropdown,
 .discover-dropdown-btn {
@@ -1309,11 +1313,11 @@ table.dataTable.no-footer {
     width: 100%;
     border-bottom: 1px solid #E1EDF3;
     padding-bottom: 20px;
+    
 }
 .arche-smartsearch-page-div .row {
     display: flex;
-    align-items: center;
-    
+    align-items: center;   
 }
 .arche-smartsearch-page-div .form-outline {
     display: flex;
@@ -1326,6 +1330,18 @@ table.dataTable.no-footer {
 
 .extendedSearchCard {
     display: none;
+}
+
+.res-property.sm-description {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+}
+.sm-img-list {
+    min-height: 100px;
+    object-fit: contain;
+    width: auto;
 }
 
 @media (min-width: 768px) {
