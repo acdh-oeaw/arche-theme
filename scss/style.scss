@@ -126,9 +126,11 @@ a {
     -webkit-transition: 0.3s all ease;
     -o-transition: 0.3s all ease;
     transition: 0.3s all ease;
+    color: $arche-btn-blue;
 }
 a, a:hover {
     text-decoration: none !important;
+    color: $arche-btn-blue-hover;
 }
 p, span {
     color: #666;
@@ -281,6 +283,14 @@ ul.links {
 .arche-header-navbar div {
     display: flex;
     gap: 24px;
+}
+.language-switcher-language-session-oeaw {
+    border: none;
+    background: transparent;
+    text-transform: uppercase;
+}
+#block-arche-theme-archelanguageswitcher {
+    margin: auto;
 }
 
 .front-header-div {
@@ -1197,8 +1207,8 @@ li[aria-level].jstree-node.jstree-leaf  {
 #rootDT_paginate .paginate_button.current,
 .dataTables_paginate.paging_simple_numbers .paginate_button.current
 {
-    border: 1px solid #3B89AD;
-    background: #3B89AD;
+    border: 1px solid $arche-btn-blue;
+    background: $arche-btn-blue;
     color: #fff !important;
 }
 #rootDT_paginate .paginate_button.next,

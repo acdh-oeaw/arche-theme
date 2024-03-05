@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * Theme override for the language switcher block.
+ *
+ * Available variables:
+ * - links: An array of language links keyed by language code.
+ *   - attributes: HTML attributes for the list element.
+ *   - language: The language object.
+ *   - link: The language link.
+ *   - direction: The language direction.
+ *   - name: The language name.
+ *   - directionality: The language directionality.
+ *   - url: The language URL.
+ * - content: A list of language links.
+ *
+ * @see template_preprocess_language_switcher()
+ */
+#}
+
+{% set currentLanguage = getActualLanguage() %}
+
+<select id="arche-language-switcher" class="language-switcher-language-session-oeaw">
+    {% for key, item in links %}
+        {% if currentLanguage == key %}
+            <option value="{{ key }}" selected><a href="{{ item.url }}" class="language-switcher-{{ key }}">{{ key }}</a></option>
+        {% else %}
+            <option value="{{ key }}"><a href="{{ item.url }}" class="language-switcher-{{ key }}">{{ key }}</a></option>
+        {% endif %}
+
+    {% endfor %}
+</select>

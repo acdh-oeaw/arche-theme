@@ -98,9 +98,11 @@ a {
   -webkit-transition: 0.3s all ease;
   -o-transition: 0.3s all ease;
   transition: 0.3s all ease;
+  color: #3B89AD;
 }
 a, a:hover {
   text-decoration: none !important;
+  color: rgba(59, 137, 173, 0.8);
 }
 p, span {
   color: #666;
@@ -246,6 +248,14 @@ ul.links {
 .arche-header-navbar div {
   display: flex;
   gap: 24px;
+}
+.language-switcher-language-session-oeaw {
+  border: none;
+  background: transparent;
+  text-transform: uppercase;
+}
+#block-arche-theme-archelanguageswitcher {
+  margin: auto;
 }
 .front-header-div {
   height: 420px;
