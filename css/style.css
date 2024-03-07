@@ -667,15 +667,15 @@ ul.links {
 .arche-home-collections-slider {
   background-color: #F8F9FA;
 }
-.arche-home-card .card img.card-img-top {
+#multi-item-carousel img.card-img-top {
   width: 100%;
   height: 140px;
-  object-fit: cover;
+  object-fit: contain;
 }
 .arche-home-card .card img.card-img-top {
   width: 100%;
   height: 140px;
-  object-fit: cover;
+  object-fit: contain;
 }
 .card .card-body h5.card-title, .card .card-body h5.card-title a {
   color: #000;
