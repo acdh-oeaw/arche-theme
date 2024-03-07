@@ -757,6 +757,28 @@ ul.links {
     background-color: $arche-smokey-white;
 }
 
+.carousel-control-prev-icon {
+    background-image: url('../images/carousel/left-arrow-blue.svg') !important;
+    background-size: cover;
+}
+
+.carousel-control-next-icon {
+    background-image: url('../images/carousel/right-arrow-blue.svg') !important;
+    background-size: cover;
+}
+
+.carousel-control-prev {
+    left: -50px;
+}
+.carousel-control-next {
+     right: -50px;
+}
+.carousel-control-prev, 
+.carousel-control-next {
+    background-color: transparent !important;
+    position: absolute;
+}
+
 #multi-item-carousel img.card-img-top {
     width: 100%;
     height: 140px;
