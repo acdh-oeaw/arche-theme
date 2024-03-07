@@ -12,39 +12,51 @@ jQuery(function ($) {
 
         //if the user press the browser back button, then we need to reload the page
         // because of the ajax page refresh
-        $(window).on('popstate', function() {
+        $(window).on('popstate', function () {
             $(".loader-div").show();
             location.reload(true);
         });
+
+
+        $('#hero-smart-search-form').submit(function (event) {
+            // Prevent the default form submission behavior.
+            event.preventDefault();
+            // Get the value of the input field.
+            var inputValue = $('#sm-hero-str').val();
+            // Redirect to the target page with the input value as a parameter.
+            window.location.href = '/browser/discover/' + inputValue;
+        });
+
+
 
         /**
          * Check that the user changed the language on the gui, if yes then we do 
          * a small api call, to change the drupal session language variable
          */
-        $('.language-switcher-language-session-oeaw').on('change', function(event) {
-            
+        $('.language-switcher-language-session-oeaw').on('change', function (event) {
+
             event.preventDefault();
             let lng = $(this).val();
             console.log(lng);
             $.ajax({
-                url: '/browser/api/change_lng/'+lng,
+                url: '/browser/api/change_lng/' + lng,
                 type: "POST",
-                success: function(data, status) {
+                success: function (data, status) {
                     console.log('success');
                     location.reload();
                 },
-                error: function(message) {
+                error: function (message) {
                     return message;
                 }
             });
-            
-            
+
+
         });
 
 
 
     });
-    
+
     $(document).delegate("a#footer-versions-btn", "click", function (e) {
         console.log('itt');
         e.preventDefault();
@@ -59,8 +71,8 @@ jQuery(function ($) {
         }
 
     });
-    
-    
-     
+
+
+
 
 });

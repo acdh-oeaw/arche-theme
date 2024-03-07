@@ -15,14 +15,12 @@
 
             </div>
             <div class="pb-1 pt-2">
-                <form class="d-flex" action="/browser/discover" method="post">
+                <form class="d-flex" id="hero-smart-search-form">
                     <div class="input-group">
-                        <input type="search" class="form-control hero-search-field" placeholder="{{ "Find resources"|trans }}..." aria-label="Search">
+                        <input type="search" id="sm-hero-str" class="form-control hero-search-field" placeholder="{{ "Find resources"|trans }}..." aria-label="Search">
                         <button class="btn hero-search-button" type="submit"><img class="img-fluid" src="{{ base_path ~ directory }}/images/common/search_icon.png" alt="Search"  /></button>
                     </div>
                 </form>
-
-
             </div>
             <div class="hero-home-logos">
                 <a href="https://www.coretrustseal.org/wp-content/uploads/2021/07/20210709-ARCHE-CTS_Certification_2020-2022.pdf" target="_blank"><img src="{{ base_path ~ directory }}/images/partner-logos/CoreTrustSeal_32.png" /></a>
