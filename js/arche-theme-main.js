@@ -3,6 +3,7 @@ jQuery(function ($) {
 
 
     $(document).ready(function () {
+
         /**
          * Remove the user menu menupoint and just leave the logout button
          */
@@ -27,35 +28,36 @@ jQuery(function ($) {
             window.location.href = '/browser/discover/' + inputValue;
         });
 
+    });
+
+   
 
 
-        /**
-         * Check that the user changed the language on the gui, if yes then we do 
-         * a small api call, to change the drupal session language variable
-         */
-        $('.language-switcher-language-session-oeaw').on('change', function (event) {
 
-            event.preventDefault();
-            let lng = $(this).val();
-            console.log(lng);
-            $.ajax({
-                url: '/browser/api/change_lng/' + lng,
-                type: "POST",
-                success: function (data, status) {
-                    console.log('success');
-                    location.reload();
-                },
-                error: function (message) {
-                    return message;
-                }
-            });
+    /**
+     * Check that the user changed the language on the gui, if yes then we do 
+     * a small api call, to change the drupal session language variable
+     */
+    $('.language-switcher-language-session-oeaw').on('change', function (event) {
 
-
+        event.preventDefault();
+        let lng = $(this).val();
+        console.log(lng);
+        $.ajax({
+            url: '/browser/api/change_lng/' + lng,
+            type: "POST",
+            success: function (data, status) {
+                console.log('success');
+                location.reload();
+            },
+            error: function (message) {
+                return message;
+            }
         });
 
 
-
     });
+
 
     $(document).delegate("a#footer-versions-btn", "click", function (e) {
         console.log('itt');
