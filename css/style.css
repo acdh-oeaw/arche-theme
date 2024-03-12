@@ -145,7 +145,7 @@ p, span {
   background: #3B89AD;
   width: fit-content;
 }
-.btn-arche-blue:hover {
+.btn-arche-blue:hover, .btn-sm-add:hover {
   background-color: rgba(59, 137, 173, 0.8);
 }
 .btn-arche-blue-sidebar {
@@ -172,6 +172,20 @@ p, span {
 }
 .btn-arche-grey:hover {
   background-color: rgba(91, 89, 91, 0.2);
+}
+.btn-sm-add {
+  color: white;
+  padding: 5px;
+  border-radius: 6px;
+  background: #3B89AD;
+  width: 26px;
+  height: 26px;
+  margin-right: 10px;
+  text-align: center;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px;
 }
 .section-header-title-small {
   color: #069;
@@ -1202,6 +1216,9 @@ table.dataTable.no-footer {
   z-index: 1000;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   overflow: hidden;
+}
+#searchIn {
+  display: none;
 }
 .smartsearch-pager {
   width: 100%;
