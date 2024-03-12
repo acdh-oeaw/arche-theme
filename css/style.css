@@ -1,5 +1,5 @@
 body {
-  font-family: Lato, Roboto, Helvetica Neue, Arial;
+  font-family: Lato, Roboto, Helvetica Neue, Arial !important;
   color: #666;
 }
 h4 {
@@ -262,6 +262,20 @@ ul.links {
 }
 .main-header-div {
   height: 306px;
+}
+/*** HEader menu ***/
+ul.nav.nav-pills {
+  display: flex;
+  gap: 8px;
+}
+ul.nav.nav-pills > li > a {
+  color: white;
+  padding: 10px 16px;
+  gap: 8px;
+  border-radius: 6px;
+  background: #58BCC1;
+  display: flex;
+  align-items: flex-start;
 }
 /** HOME HERO **/
 .hero-home-logos {
