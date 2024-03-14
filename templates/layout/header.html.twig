@@ -12,14 +12,18 @@
                     </button>
 
                     <div class="collapse navbar-collapse arche-header-navbar" id="navbarNav">
-                        
+
                         {{ page.main_navigation }}
-                       
+
                     </div>
                 </div>
             </nav>
-            {{ include( arche_theme_path ~ '/templates/layout/hero.html.twig' ) }}
-
+            {% set currentUrl = path('<current>') %}
+            {% if currentUrl is not empty and '/browser/discover' in currentUrl %}
+                 {{ include( arche_theme_path ~ '/templates/layout/hero-no-search.html.twig' ) }}
+            {% else %}
+                 {{ include( arche_theme_path ~ '/templates/layout/hero.html.twig' ) }}
+            {% endif %}
         </div>
     </div>
 </div>

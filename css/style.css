@@ -159,6 +159,13 @@ p, span {
 .btn-arche-blue-sidebar:hover {
   background-color: rgba(59, 137, 173, 0.8);
 }
+.btn-arche-blue.cite {
+  height: 36px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
 .btn-arche-grey {
   display: flex;
   padding: 4px 8px;
@@ -207,6 +214,9 @@ p, span {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+}
+table.dataTable {
+  font-family: Lato !important;
 }
 /** HEADER **/
 .header-arche-logo {
@@ -897,7 +907,7 @@ div.dataTables_processing > div:last-child {
 table.dataTable tbody th, table.dataTable tbody td {
   padding: 10px 12px;
   color: #000;
-  font-family: Inter;
+  font-family: Lato;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -910,7 +920,7 @@ table.dataTable tbody th, table.dataTable tbody td {
 table.dataTable tbody td .res-prop-value {
   padding: 10px 12px;
   color: #000;
-  font-family: Inter;
+  font-family: Lato;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -1043,6 +1053,9 @@ li[aria-level].jstree-node.jstree-leaf {
 }
 #copy-cite-btn-confirmation {
   display: none;
+}
+#cite-loader {
+  width: 100%;
 }
 .root-table tbody th, .root-table tbody td {
   border: none !important;
@@ -1198,6 +1211,13 @@ table.dataTable.no-footer {
   /*image width/2 */
   display: none;
   /*image height/2 */
+  z-index: 2000;
+}
+.loader-cite {
+  background-image: url("../images/arche_logo_flip_47px.gif");
+  width: 45px;
+  height: 45px;
+  position: inherit;
   z-index: 2000;
 }
 .sms-map {
