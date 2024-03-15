@@ -1146,7 +1146,7 @@ table.dataTable.no-footer {
   gap: 12px;
 }
 .discover-top {
-  padding-bottom: 24px;
+  padding-bottom: 0px;
   padding-left: 0px;
   padding-right: 0px;
 }
