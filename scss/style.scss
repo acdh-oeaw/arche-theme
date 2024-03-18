@@ -1379,12 +1379,14 @@ table.dataTable.no-footer {
 
 #smMapSearchResults p {
     padding: 10px;
+    color: white;
 }
 
 #smMapSearchResults p:hover {
     background-color: white;
-    color: black;
+    color: #666;
 }
+
 .smMapSearchResultsContainer {
     background-color: rgba(0,0,0,0.7);
     position: absolute;
@@ -1397,9 +1399,9 @@ table.dataTable.no-footer {
 #searchInput {
     padding: 5px;
     width: 100%;
+    height: 50px;
 }
 #closeSMSMapButton {
-    padding: 5px;
     
 }
 
