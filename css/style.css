@@ -1237,6 +1237,11 @@ table.dataTable.no-footer {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   overflow: hidden;
 }
+#facets {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
 #searchIn {
   display: none;
 }

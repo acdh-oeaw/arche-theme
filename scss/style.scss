@@ -1443,7 +1443,13 @@ table.dataTable.no-footer {
     overflow: hidden;
 }
 
-// smart search
+//// smart search ///////////
+
+#facets {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
 
 #searchIn {
     display: none;
