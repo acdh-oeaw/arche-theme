@@ -1,6 +1,5 @@
 <?php
 
-
 function arche_theme_preprocess(&$variables) {
     /*
      * Create plugin path variables for twig
@@ -53,9 +52,9 @@ function rebuildScss() {
         $compiler->setOutputStyle(\ScssPhp\ScssPhp\OutputStyle::EXPANDED);
         $compiled = $compiler->compileString(file_get_contents($scss_file));
         file_put_contents($css_file, $compiled->getCss());
-
     }
 }
+
 
 
 ?>

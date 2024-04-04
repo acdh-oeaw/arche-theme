@@ -1,6 +1,6 @@
 
-$acdh-grey-color: #444;
-$basic-grey: #666;
+$acdh-gray-color: #444;
+$basic-gray: #666;
 $acdh-blue-color: #88DBDF;
 $arche-btn-blue: #3B89AD;
 $arche-btn-blue-hover: rgba(59, 137, 173, 0.8);
@@ -9,15 +9,15 @@ $arche-green: #58BCC1;
 $arche-light-blue: #e1edf3;
 $arche-medium-blue: #4796b5;
 $arche-dark-blue: #069;
-$light-grey: #e1e1e1;
+$light-gray: #e1e1e1;
 $light-blue: #EEF5F8;
-$grey: #5B595B;
+$gray: #5B595B;
 $gray900: 212529;
 
 
 body {
     font-family: Lato, Roboto, Helvetica Neue, Arial !important;
-    color: $basic-grey;
+    color: $basic-gray;
 }
 
 h4 {
@@ -64,8 +64,8 @@ h6 {
     background-color: $arche-smokey-white;
 }
 
-.acdh-grey-color {
-    color: $acdh-grey-color;
+.acdh-gray-color {
+    color: $acdh-gray-color;
 }
 .acdh-blue-color {
     color: $acdh-blue-color;
@@ -198,18 +198,18 @@ p, span {
     padding-left: 16px;
     padding-right: 16px;
 }
-.btn-arche-grey {
+.btn-arche-gray {
     display: flex;
     padding: 4px 8px;
     align-items: flex-start;
     gap: 8px;
     border-radius: 12px;
-    background: $grey;
+    background: $gray;
     width: fit-content;
     color: white;
     font-size: 12px;
 }
-.btn-arche-grey:hover {
+.btn-arche-gray:hover {
     background-color: rgba(91, 89, 91, 0.2);
 }
 
@@ -326,9 +326,19 @@ ul.links {
 }
 .main-header-div {
     height: 306px;
+    z-index: 3;
 }
 
 /*** HEader menu ***/
+
+ul.header-menu li.nav-item a.nav-link {
+    color: $gray;
+    font-weight: 700;
+}
+
+ul.header-menu li.nav-item a.nav-link:hover {
+    color: rgba(91, 89, 91, 0.2);
+}
 
 ul.nav.nav-pills {
     display: flex;
@@ -604,12 +614,12 @@ ul.nav.nav-pills > li > a {
     font-weight: 700;
     line-height: 16px; /* 133.333% */
 }
-.btn-toolbar-grey,
-.btn-toolbar-grey.no-btn:hover {
+.btn-toolbar-gray,
+.btn-toolbar-gray.no-btn:hover {
     padding: 4px 8px;
     gap: 8px;
     border-radius: 12px;
-    background: $grey;
+    background: $gray;
     color: #fff;
 }
 
@@ -636,11 +646,29 @@ ul.nav.nav-pills > li > a {
     bottom: 0px;
 }
 
+.maxw-980 {
+    max-width: 980px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.white-bg-container {
+    display: flex;
+    padding: 24px;
+    align-items: flex-start;
+    border: 1px solid $light-gray;
+    border-radius: 12px;
+    background: #fff;
+    max-width: 980px;
+    gap: 24px;
+    flex-direction: column;
+}
+
 .mission-container {
     display: flex;
     padding: 24px;
     align-items: flex-start;
-    border: 1px solid $light-grey;
+    border: 1px solid $light-gray;
     border-radius: 12px;
     background: #fff;
     max-width: 980px;
@@ -698,6 +726,7 @@ ul.nav.nav-pills > li > a {
     //background-size: cover;
     //background-position: center center;
     */
+    
 }
 
 .bg-orange {
@@ -731,7 +760,7 @@ ul.nav.nav-pills > li > a {
     padding: 1em;
 }
 .carousel-control-prev, .carousel-control-next {
-    background-color: $light-grey;
+    background-color: $light-gray;
     width: 5vh;
     height: 5vh;
     border-radius: 50%;
@@ -874,7 +903,7 @@ ul.nav.nav-pills > li > a {
     flex-direction: column;
     align-items: center;
     border-radius: 12px;
-    border: 1px solid $light-grey;
+    border: 1px solid $light-gray;
     background: #FFF;
     position: relative;
 }
@@ -910,6 +939,41 @@ ul.nav.nav-pills > li > a {
     border-radius: 12px;
     background: $light-blue;
 }
+
+
+/// COMPONENTS ////
+
+.accordion-item {
+    border: 1px solid $light-gray;
+}
+.accordion-header .accordion-button.collapsed {
+    background-color:  $arche-light-blue !important; 
+    color: $basic-gray !important;
+    font-weight: 700;
+}
+
+.accordion-header .accordion-button.collapsed::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23666'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    font-weight: 700;
+}
+
+.accordion-header .accordion-button::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    font-weight: 700;
+}
+
+.accordion-header .accordion-button {
+    background-color: $arche-medium-blue !important;
+    color: white !important;
+    font-weight: 700;
+}
+
+.accordion-body {
+    color: $basic-gray;
+}
+
+
+
 
 ///// METADATA VIEW
 
@@ -1229,7 +1293,7 @@ li[aria-level].jstree-node.jstree-leaf  {
     border: none !important;
 }
 
-.btn-root-topbar-grey {
+.btn-root-topbar-gray {
     display: flex;
     height: 38px;
     padding: 8px;
@@ -1239,7 +1303,7 @@ li[aria-level].jstree-node.jstree-leaf  {
     background: #E9ECEF;
 }
 
-.btn-root-topbar-grey-text {
+.btn-root-topbar-gray-text {
     color: #343A40;
     text-align: center;
 

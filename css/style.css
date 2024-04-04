@@ -39,7 +39,7 @@ h6 {
 .page-wrapper {
   background-color: #F8F9FA;
 }
-.acdh-grey-color {
+.acdh-gray-color {
   color: #444;
 }
 .acdh-blue-color {
@@ -166,7 +166,7 @@ p, span {
   padding-left: 16px;
   padding-right: 16px;
 }
-.btn-arche-grey {
+.btn-arche-gray {
   display: flex;
   padding: 4px 8px;
   align-items: flex-start;
@@ -177,7 +177,7 @@ p, span {
   color: white;
   font-size: 12px;
 }
-.btn-arche-grey:hover {
+.btn-arche-gray:hover {
   background-color: rgba(91, 89, 91, 0.2);
 }
 .btn-sm-add {
@@ -286,8 +286,16 @@ ul.links {
 }
 .main-header-div {
   height: 306px;
+  z-index: 3;
 }
 /*** HEader menu ***/
+ul.header-menu li.nav-item a.nav-link {
+  color: #5B595B;
+  font-weight: 700;
+}
+ul.header-menu li.nav-item a.nav-link:hover {
+  color: rgba(91, 89, 91, 0.2);
+}
 ul.nav.nav-pills {
   display: flex;
   gap: 8px;
@@ -534,7 +542,7 @@ ul.nav.nav-pills > li > a {
   line-height: 16px;
   /* 133.333% */
 }
-.btn-toolbar-grey, .btn-toolbar-grey.no-btn:hover {
+.btn-toolbar-gray, .btn-toolbar-gray.no-btn:hover {
   padding: 4px 8px;
   gap: 8px;
   border-radius: 12px;
@@ -558,6 +566,22 @@ ul.nav.nav-pills > li > a {
 .absolute-bottom-btn {
   margin: 10px;
   bottom: 0px;
+}
+.maxw-980 {
+  max-width: 980px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.white-bg-container {
+  display: flex;
+  padding: 24px;
+  align-items: flex-start;
+  border: 1px solid #e1e1e1;
+  border-radius: 12px;
+  background: #fff;
+  max-width: 980px;
+  gap: 24px;
+  flex-direction: column;
 }
 .mission-container {
   display: flex;
@@ -803,6 +827,30 @@ ul.nav.nav-pills > li > a {
   align-self: stretch;
   border-radius: 12px;
   background: #EEF5F8;
+}
+.accordion-item {
+  border: 1px solid #e1e1e1;
+}
+.accordion-header .accordion-button.collapsed {
+  background-color: #e1edf3 !important;
+  color: #666 !important;
+  font-weight: 700;
+}
+.accordion-header .accordion-button.collapsed::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23666'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  font-weight: 700;
+}
+.accordion-header .accordion-button::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  font-weight: 700;
+}
+.accordion-header .accordion-button {
+  background-color: #4796b5 !important;
+  color: white !important;
+  font-weight: 700;
+}
+.accordion-body {
+  color: #666;
 }
 .card.metadata {
   width: 100%;
@@ -1060,7 +1108,7 @@ li[aria-level].jstree-node.jstree-leaf {
 .root-table tbody th, .root-table tbody td {
   border: none !important;
 }
-.btn-root-topbar-grey {
+.btn-root-topbar-gray {
   display: flex;
   height: 38px;
   padding: 8px;
@@ -1069,7 +1117,7 @@ li[aria-level].jstree-node.jstree-leaf {
   border-radius: 4px;
   background: #E9ECEF;
 }
-.btn-root-topbar-grey-text {
+.btn-root-topbar-gray-text {
   color: #343A40;
   text-align: center;
   /* Paragraph Small Bold */
