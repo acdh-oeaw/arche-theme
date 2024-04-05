@@ -726,7 +726,7 @@ ul.nav.nav-pills > li > a {
     //background-size: cover;
     //background-position: center center;
     */
-    
+
 }
 
 .bg-orange {
@@ -791,6 +791,11 @@ ul.nav.nav-pills > li > a {
     background-color: $arche-smokey-white;
 }
 
+.cards-static-images {
+    width: 100%;
+    padding: 0px;
+}
+
 .home-resources-body {
     display: flex;
     flex-direction: column;
@@ -800,6 +805,8 @@ ul.nav.nav-pills > li > a {
     max-width: 165px;
     padding-top: 12px;
 }
+
+
 .home-resources-title h5 {
     text-align: center !important;
 }
@@ -845,9 +852,9 @@ ul.nav.nav-pills > li > a {
     left: -50px;
 }
 .carousel-control-next {
-     right: -50px;
+    right: -50px;
 }
-.carousel-control-prev, 
+.carousel-control-prev,
 .carousel-control-next {
     background-color: transparent !important;
     position: absolute;
@@ -947,7 +954,7 @@ ul.nav.nav-pills > li > a {
     border: 1px solid $light-gray;
 }
 .accordion-header .accordion-button.collapsed {
-    background-color:  $arche-light-blue !important; 
+    background-color:  $arche-light-blue !important;
     color: $basic-gray !important;
     font-weight: 700;
 }
@@ -972,7 +979,25 @@ ul.nav.nav-pills > li > a {
     color: $basic-gray;
 }
 
+.bubble-line-container {
+    position: absolute;
+    overflow: hidden;
+    background-color: #fff;
+    margin: 0px;
+    padding: 0px;
+    padding-top: 20px;
+    height: 36px;
+}
 
+.bubble-line-container .image-wrapper {
+    width: 100%;
+    background-color: #fff;
+}
+
+.bubble-line-container .image-wrapper img {
+    position: absolute;
+    bottom: -3px;
+}
 
 
 ///// METADATA VIEW
@@ -1353,7 +1378,7 @@ li[aria-level].jstree-node.jstree-leaf  {
 }
 #rootDT_paginate .paginate_button.next,
 #rootDT_paginate .paginate_button.previous {
-    
+
 }
 
 .dropdown-menu.discover-dropdown,
@@ -1419,7 +1444,7 @@ table.dataTable.no-footer {
 .discover-left {
     display: flex;
     flex-direction: column;
-    gap: 24px;   
+    gap: 24px;
 }
 
 .discover-count {
@@ -1469,7 +1494,7 @@ table.dataTable.no-footer {
     height: 50px;
 }
 #closeSMSMapButton {
-    
+
 }
 
 .map-loader {
@@ -1526,11 +1551,11 @@ table.dataTable.no-footer {
     width: 100%;
     border-bottom: 1px solid #E1EDF3;
     padding-bottom: 20px;
-    
+
 }
 .arche-smartsearch-page-div .row {
     display: flex;
-    align-items: center;   
+    align-items: center;
 }
 .arche-smartsearch-page-div .form-outline {
     display: flex;
@@ -1542,7 +1567,7 @@ table.dataTable.no-footer {
 }
 
 .extendedSearchCard {
-    
+
 }
 
 .res-property.sm-description {

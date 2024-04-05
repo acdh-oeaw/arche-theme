@@ -692,6 +692,10 @@ ul.nav.nav-pills > li > a {
   padding-bottom: 150px;
   background-color: #F8F9FA;
 }
+.cards-static-images {
+  width: 100%;
+  padding: 0px;
+}
 .home-resources-body {
   display: flex;
   flex-direction: column;
@@ -851,6 +855,23 @@ ul.nav.nav-pills > li > a {
 }
 .accordion-body {
   color: #666;
+}
+.bubble-line-container {
+  position: absolute;
+  overflow: hidden;
+  background-color: #fff;
+  margin: 0px;
+  padding: 0px;
+  padding-top: 20px;
+  height: 36px;
+}
+.bubble-line-container .image-wrapper {
+  width: 100%;
+  background-color: #fff;
+}
+.bubble-line-container .image-wrapper img {
+  position: absolute;
+  bottom: -3px;
 }
 .card.metadata {
   width: 100%;
