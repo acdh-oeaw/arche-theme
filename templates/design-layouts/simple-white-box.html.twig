@@ -1,0 +1,206 @@
+<div class="container-fluid static-content-container-home">
+    <!-- Fluid container with background -->
+    <div class="container mission-container">
+        <div class="row">
+            <div class="col">
+                <p>ARCHE provides several interfaces to search and retrieve its data in programmatic ways.</p>
+                <p>ARCHE APIs are built using microservices. It means the ARCHE core service provides only a 
+                    basic functionality for creating, reading, updating, and 
+                    deleting (<a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD</a>) 
+                    while all other features (e.g. <a href="https://arche.acdh.oeaw.ac.at/browser//api-access#oai-pmh">OAI-PMH</a>)
+                    are handled by separate small services (called dissemination services) built on top of the core API.</p>
+                <h3 class="static-page-title">ARCHE Core API</h3>
+
+                <p>The main ARCHE API provides the core functionality for searching, reading, creating, updating, and deleting. It allows you 
+                    to access a resource’s binary content as well as its metadata in various RDF serialisations (turtle, RDF/XML, JSON-LD, n-triples),
+                    e.g. to get RDF metadata of all resources belonging to a collection with a given identifier 
+                    like https://hdl.handle.net/21.11115/0000-000C-D89B-2  in turtle format you can use:
+                    <br>
+                    https://arche.acdh.oeaw.ac.at/api/search?property[]=https%3A%2F%2Fvocabs.acdh.oeaw.ac.at%2Fschema%23hasIdentifier&value[]=https%3A%2F%2Fhdl.handle.net%2F21.11115%2F0000-000C-D89B-2&readMode=relativesOnly&format=text%2Fturtle </p>
+                <p>A detailed documentation of the core API (following the OpenAPI 3 standard) can be found on the <a href="https://app.swaggerhub.com/apis/zozlak/arche">SwaggerHub</a>.
+                </p>
+                <p>Practical tips:</p>
+                <ul>
+                    <li>If you process the output programmatically, it is strongly advised to use the n-triples format to ensure best 
+                        performance, as detailed in the <a href="https://acdh-oeaw.github.io/arche-docs/aux/metadata_api_performance.html">Metadata API performance documentation</a>. </li>
+                    <li>The best way of dealing with RDF output provided by our metadata and search endpoints is to use a 
+                        dedicated RDF parsing library (which do exist for all major programming languages). Parsing RDF with
+                        regular expressions or assuming a particular structure of an XML or JSON serialisation tree is error-prone 
+                        because the same RDF data can be serialised into turtle, XML or JSON in various ways.
+                    </li>
+                    <li>If you are using PHP, there is a ready to use library on GitHub providing bindings to this API: The <a href="https://github.com/acdh-oeaw/arche-lib">arche-lib</a>.</li>
+
+                </ul>
+
+                <h3 class="static-page-title text-center">Automatic Format Negotiation</h3>    
+
+                <p>All ARCHE resource URIs beginning either with https://hdl.handle.net/ or https://id.acdh.oeaw.ac.at/ (so called PIDs) allow you to specify a desired serialisation of the requested resource.</p>
+                <p>If there is a dissemination service capable of providing a requested serialisation, you will be automatically redirected to it. If not, you will be redirected to the “raw” resource content, i.e. a binary file or metadata for resources without binary content (e.g. information about a person).
+                </p>
+                <p>The requested format can be specified either by providing a media type (MIME type) or the name of the desired  dissemination service in the format request query parameter, e.g.:
+                </p>
+
+
+                <ul>
+                    <li>To get a thumbnail image of a given resource, you can request it in the image/png media type or explicitly use 
+                        the thumbnail dissemination service, e.g.: 
+                        <a href="https://id.acdh.oeaw.ac.at/schnitzler/schnitzler-briefe?format=image%2Fpng">https://id.acdh.oeaw.ac.at/schnitzler/schnitzler-briefe?format=image%2Fpng</a>,
+                        <a href="https://id.acdh.oeaw.ac.at/schnitzler/schnitzler-briefe?format=thumbnail">https://id.acdh.oeaw.ac.at/schnitzler/schnitzler-briefe?format=thumbnail</a>,
+                        <a href="https://hdl.handle.net/21.11115/0000-000E-7538-0@format=image%2Fpng">https://hdl.handle.net/21.11115/0000-000E-7538-0@format=image%2Fpng</a>,
+                        <a href="https://hdl.handle.net/21.11115/0000-000E-7538-0@format=thumbnail">https://hdl.handle.net/21.11115/0000-000E-7538-0@format=thumbnail</a>.
+                    </li>
+                    <li>To get a resource’s metadata in the turtle format, you can request it in the text/turtle media type or use the metadata dissemination service, e.g.:
+                        <a href="https://id.acdh.oeaw.ac.at/schnitzler/schnitzler-briefe?format=test%2Fturtle">https://id.acdh.oeaw.ac.at/schnitzler/schnitzler-briefe?format=test%2Fturtle</a>,
+                        <a href="https://id.acdh.oeaw.ac.at/schnitzler/schnitzler-briefe?format=metadata">https://id.acdh.oeaw.ac.at/schnitzler/schnitzler-briefe?format=metadata</a>,
+                        <a href="https://hdl.handle.net/21.11115/0000-000E-7538-0@format=text%2Fturtle">https://hdl.handle.net/21.11115/0000-000E-7538-0@format=text%2Fturtle</a>,
+                        <a href="https://hdl.handle.net/21.11115/0000-000E-7538-0@format=metadata">https://hdl.handle.net/21.11115/0000-000E-7538-0@format=metadata</a>.
+                    </li>
+                    <li>
+                        To get a bibliographic entry of a resource in BibLaTeX format, you can request it with the application/x-bibtex media type or use the biblatex dissemination service, e.g.:
+                        <a href="https://id.acdh.oeaw.ac.at/schnitzler/schnitzler-briefe?format=application%2Fx-bibtex">https://id.acdh.oeaw.ac.at/schnitzler/schnitzler-briefe?format=application%2Fx-bibtex</a>,
+                        <a href="https://id.acdh.oeaw.ac.at/schnitzler/schnitzler-briefe?format=biblatex">https://id.acdh.oeaw.ac.at/schnitzler/schnitzler-briefe?format=biblatex</a>,
+                        <a href="https://hdl.handle.net/21.11115/0000-000E-7538-0@format=application%2Fx-bibtex">https://hdl.handle.net/21.11115/0000-000E-7538-0@format=application%2Fx-bibtex</a>,
+                        <a href="https://hdl.handle.net/21.11115/0000-000E-7538-0@format=biblatex">https://hdl.handle.net/21.11115/0000-000E-7538-0@format=biblatex</a>.
+
+                    </li>
+                </ul>
+
+                <p>Practical tips:</p>
+                <ul>
+                    <li>To get a list of all dissemination services available for a given resource you can use the special value of the format parameter __list__:
+                        <a href="https://id.acdh.oeaw.ac.at/schnitzler/schnitzler-briefe?format=__list__">https://id.acdh.oeaw.ac.at/schnitzler/schnitzler-briefe?format=__list__</a>,
+                        <a href="https://hdl.handle.net/21.11115/0000-000E-7538-0@format=__list__">https://hdl.handle.net/21.11115/0000-000E-7538-0@format=__list__</a>.
+                    </li>
+                    <li>Some dissemination services can only process selected ARCHE resources, e.g. the dissemination service Custom TEI to HTML transformation can only be used for ARCHE resources storing TEI/XML.</li>
+                    <li>A more in detail description of the resolution process is provided in the <a href="https://acdh-oeaw.github.io/arche-docs/aux/dissemination_services.html">ARCHE Suite Dissemination Services documentation</a>.</li>
+                </ul>
+
+                <h3 class="static-page-title text-center">RDF</h3>
+                <p>An RDF serialisation of any ARCHE resource metadata can be obtained using the {resource id starting with https://id.acdh.oeaw.ac.at/}?format=metadata and/or {resource PID starting with https://hdl.handle.net/}@format=metadata (the @ instead of the ? is not a typo), e.g. <a href="https://id.acdh.oeaw.ac.at/schnitzler/schnitzler-briefe?format=metadata">https://id.acdh.oeaw.ac.at/schnitzler/schnitzler-briefe?format=metadata</a>
+                    or <a href="https://hdl.handle.net/21.11115/0000-000E-7538-0@format=metadata">https://hdl.handle.net/21.11115/0000-000E-7538-0@format=metadata</a> .
+                </p>
+                <p>
+                    You can specify the desired RDF serialisation format by providing its media type (MIME type) in the HTTP Accept header (text/turtle, application/n-triples, application/rdf+xml, application/ld+json and text/html are supported), e.g.
+                </p>
+                <p>
+                    curl -L -H ‘Accept: application/rdf+xml’ ‘https://id.acdh.oeaw.ac.at/schnitzler/schnitzler-briefe/indices/listplace.xml?format=metadata’
+                </p>
+                <p>
+                    Practical tips:
+                </p>
+
+                <ul>
+                    <li>If you try it out in a browser please be aware that each browser always adds a text/html HTTP Accept header to the request it makes so you will always get an HTML serialisation of the metadata. Use a dedicated tool like curl or Postman if you want better control over HTTP requests you are sending by hand.
+                    </li>
+                    <li>The best way of dealing with RDF output provided by our metadata and search endpoints is to use a dedicated RDF parsing library (which do exist for all major programming languages). Parsing RDF with regular expressions or assuming a particular structure of an XML or JSON serialisation tree is error-prone because the same RDF data can be serialised into turtle, XML or JSON in various ways.
+                    </li>
+                    <li>If you are processing the metadata programmatically, use the application/n-triples format. It's the fastest both on server and client side and reduces the load on the server side as documented in the <a href="https://acdh-oeaw.github.io/arche-docs/aux/metadata_api_performance.html">Metadata API performance documentation</a>.
+                    </li>
+                </ul>
+
+                <h3 class="static-page-title text-center">BibLaTeX</h3>
+
+                <p>A bibliographic entry in the BibLaTeX format can be obtained for any ARCHE resource by requesting its dissemination either in biblatex or application/x-bibtex format (see the <a href="https://arche.acdh.oeaw.ac.at/browser//api-access#automatic-format-negotiation">Automatic Format Negotiation</a> section above for details), e.g.<a href="https://id.acdh.oeaw.ac.at/schnitzler/schnitzler-briefe?format=biblatex">https://id.acdh.oeaw.ac.at/schnitzler/schnitzler-briefe?format=biblatex</a> .
+                </p>
+                <p>The service takes two optional request query parameters:</p>
+
+                <ul>
+                    <li>lang - preferred language (e.g. en or de). While there is no guarantee of values (like title) being available in a requested language, they will be used if present, e.g. compare https://id.acdh.oeaw.ac.at/dial?format=biblatex&lang=en and https://id.acdh.oeaw.ac.at/dial?format=biblatex&lang=de.
+                    </li>
+                    <li>override - a bibliographic entry in BibLaTeX format that overrides and/or extends field values mapped from 
+                        the repository metadata. The returned entry will be a merge of the data coming from the repository and data 
+                        provided using this parameter. The data provided along this parameter will take precedence over data coming 
+                        from the repository. More information is included in the <a href="https://github.com/acdh-oeaw/arche-biblatex#override-rules">README of arche-bibtex on GitHub</a>.
+                        A basic example providing an alternative title for the resource:
+                        https://id.acdh.oeaw.ac.at/dial?format=biblatex&override=title%20%3D%20%7BThe%20Digital%20%7BIlse%20Aichinger%7D%20List%20of%20Literature%7D.
+                    </li>
+                </ul>
+
+                <h3 class="static-page-title text-center">Thumbnails</h3>
+
+                <p>Thumbnails for all ARCHE resources can be obtained by requesting its dissemination in the thumbnail format (see the Automatic format negotiation section above for details), e.g.<a href="https://id.acdh.oeaw.ac.at/schnitzler/schnitzler-briefe?format=thumbnail">https://id.acdh.oeaw.ac.at/schnitzler/schnitzler-briefe?format=thumbnail</a> or <a href="https://hdl.handle.net/21.11115/0000-000E-7538-0@format=thumbnail">https://hdl.handle.net/21.11115/0000-000E-7538-0@format=thumbnail</a>.</p>
+
+                <p>The service takes two optional request query parameters width and height (with default values of 100) allowing to specify the thumbnail image size in pixels, e.g. <a href="https://id.acdh.oeaw.ac.at/schnitzler/schnitzler-briefe?format=thumbnail&width=500&height=400">https://id.acdh.oeaw.ac.at/schnitzler/schnitzler-briefe?format=thumbnail&width=500&height=400</a>.</p>
+
+                <h3 class="static-page-title text-center">Reconciliation Service API (OpenRefine)</h3>
+                <p>ARCHE provides the <a href="https://reconciliation-api.github.io/specs/latest/">Reconciliation Service API</a> 
+                    endpoint which can be used e.g. in <a href="https://openrefine.org/">OpenRefine</a>.</p>
+
+                <p>The endpoint URL that can be used to connect ARCHE to OpenRefine is <a href="https://arche.acdh.oeaw.ac.at/openrefine/reconcile">https://arche.acdh.oeaw.ac.at/openrefine/reconcile</a>.
+                </p>
+
+                <h3 class="static-page-title text-center">(GND) BEACON</h3>
+                <p><a href="https://meta.wikimedia.org/wiki/Dynamic_links_to_external_resources">BEACON</a> is a file format to map local identifiers to external norm data records like VIAF or GND. A GND BEACON file for 
+                    ARCHE can be found at <a href="https://arche.acdh.oeaw.ac.at/browser/sites/default/files/beacon.txt">https://arche.acdh.oeaw.ac.at/browser/sites/default/files/beacon.txt</a>. The links included in the 
+                    BEACON file point directly to the respective entity representation in the ARCHE GUI.<br>
+                    Please note that this file is updated once a day but you can create an up-to-date version yourself by 
+                    going to <a href="https://arche.acdh.oeaw.ac.at//browser/api/gnd?_format=json">https://arche.acdh.oeaw.ac.at//browser/api/gnd?_format=json</a>. 
+                </p>
+
+                <h3 class="static-page-title text-center">IIIF</h3>
+
+                <p>Images (TIF, PNG) stored in ARCHE can be accessed through the <a href="http://iiif.io/">IIIF protocol</a>. The IIIF endpoint is 
+                    implemented with the <a href="https://github.com/loris-imageserver/loris">Loris IIIF Image Server</a>. To access an image’s 
+                    IIIF endpoint you should request its dissemination in the iiif format (see the Automatic format negotiation s
+                    ection above for details), e.g.:
+                    <a href="https://id.acdh.oeaw.ac.at/ODeeg/Collections/AT-Vienna-KHM/KHM-ANSA-IV1/Photos/KHM-ANSA-IV1_im01.tif?format=iiif.">https://id.acdh.oeaw.ac.at/ODeeg/Collections/AT-Vienna-KHM/KHM-ANSA-IV1/Photos/KHM-ANSA-IV1_im01.tif?format=iiif</a>.
+                </p>
+
+                <p>You can use the param query parameter to pass additional <a href="http://iiif.io/api/image/2.0/">IIIF Image API parameters</a>, e.g.
+                    https://id.acdh.oeaw.ac.at/ODeeg/Collections/AT-Vienna-KHM/KHM-ANSA-IV1/Photos/KHM-ANSA-IV1_im01.tif?format=iiif&param=full/full/90/default.png 
+                    to get the image rotated by 90 degrees and converted to PNG. 
+                    Please consult the <a href="http://iiif.io/api/image/2.0/">IIIF Image API documentation</a> for the 
+                    list of available IIIF Image API parameters.</p>
+
+                <h3 class="static-page-title text-center">OAI-PMH</h3>
+                <p>ARCHE implements the Open Archives Initiative Protocol for Metadata Harvesting (OAI-PMH). 
+                    The corresponding endpoint can be found at <a href="https://arche.acdh.oeaw.ac.at/oaipmh/">https://arche.acdh.oeaw.ac.at/oaipmh/</a>. Please consult 
+                    the <a href="http://www.openarchives.org/OAI/openarchivesprotocol.html">OAI-PMH specification</a> for further information on how to interact with this endpoint.
+                </p>
+                <p>If you want to get a list of all records in ARCHE you can try this (takes some time!): <a href="https://arche.acdh.oeaw.ac.at/oai?verb=ListIdentifiers&metadataPrefix=oai_dc ">https://arche.acdh.oeaw.ac.at/oai?verb=ListIdentifiers&metadataPrefix=oai_dc</a> 
+                </p>
+                <p>If you want to see information for a specific record you can use this:
+                    <a href="https://arche.acdh.oeaw.ac.at/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=https://hdl.handle.net/21.11115/0000-000B-C715-D">https://arche.acdh.oeaw.ac.at/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=https://hdl.handle.net/21.11115/0000-000B-C715-D</a>. 
+                </p>
+                <p>ARCHE provides metadata in the following representations via OAI-PMH:
+                </p>
+                <ul>
+                    <li><a href="http://dublincore.org/">Dublin Core</a> (<a href="https://arche.acdh.oeaw.ac.at/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=https://hdl.handle.net/21.11115/0000-000C-2995-E">example in ARCHE</a>; available for all ARCHE resources)
+                    </li>
+                    <li>RDF/XML serialisation of the ARCHE metadata (<a href="https://arche.acdh.oeaw.ac.at/oai?verb=GetRecord&metadataPrefix=rdfxml&identifier=https://hdl.handle.net/21.11115/0000-000C-2995-E">example record in ARCHE</a>; available for all ARCHE resources; schema description)
+                    </li>
+                    <li><a href="https://www.clarin.eu/content/component-metadata">CMDI</a> (only for resources in the <a href="https://arche.acdh.oeaw.ac.at/oai?verb=ListRecords&metadataPrefix=cmdi&set=clarin-vlo">clarin-vlo OAI-PMH set</a>)
+                    </li>
+                    <li><a href="http://www.kulturpool.at">Kulturpool</a> (only for resources in the <a href="https://arche.acdh.oeaw.ac.at/oai?verb=ListRecords&metadataPrefix=kulturpool&set=kulturpool">kulturpool OAI-PMH set</a>)
+                    </li>
+                </ul>
+
+                <p>You can get a list of all supported metadata formats with this:
+                    <a href="https://arche.acdh.oeaw.ac.at/oai?verb=ListMetadataFormats">https://arche.acdh.oeaw.ac.at/oai?verb=ListMetadataFormats</a>. 
+
+</p>
+                <p>Since resources in ARCHE cover a wide range of humanities data, OAI-PMH Sets were introduced to allow for selective harvesting. You can get a list of all sets with this:
+                    <a href="https://arche.acdh.oeaw.ac.at/oai?verb=ListSets.">https://arche.acdh.oeaw.ac.at/oai?verb=ListSets</a>.</p>
+
+
+                <h3 class="static-page-title text-center">External Aggregators</h3>
+                <p>The metadata for the resources stored in ARCHE is already being harvested via OAI-PMH by external aggregators.</p>
+                
+                <ul>
+                    <li>CLARIN Virtual Language Observatory (VLO): collects language related resources. 
+                        Click <a href="https://vlo.clarin.eu/search;jsessionid=5D90F83BB328E8C74B0B0F76D784F357?0&fq=dataProvider:Austrian+Centre+for+Digital+Humanities+and+Cultural+Heritage+-+A+Resource+Centre+for+the+HumanitiEs&fqType=dataProvider:or">here to get an overview of ARCHE’s resources in VLO</a> and click 
+                        <a href="https://vlo.clarin.eu/data/ARCHE.html">here to get to a more technical overview</a> of the 
+                        harvested records. ARCHE’s OAI-PMH set harvested by the VLO can be found <a href="https://arche.acdh.oeaw.ac.at/oai?verb=ListRecords&metadataPrefix=cmdi&set=clarin-vlo">here</a>.</li>
+                    <li><a href="http://www.kulturpool.at">Kulturpool</a>: collects digital Austrian cultural heritage assets. 
+                        It also acts as a central data provider for <a href="https://www.europeana.eu">Europeana</a>. 
+                        The harvested records are <a href="http://www.kulturpool.at/plugins/kulturpool/kuposearch.action?searchText=dataSource%3A%2264%22+OR+dataSource%3A%2278%22">displayed here</a> and 
+                        can be found on <a href="https://www.europeana.eu/portal/en/search?f%5BDATA_PROVIDER%5D%5B%5D=%C3%96sterreichische%20Akademie%20der%20Wissenschaften">Europeana as well</a>. 
+                        The set provided by ARCHE can be found <a href="https://arche.acdh.oeaw.ac.at/oai?verb=ListRecords&metadataPrefix=kulturpool&set=kulturpool">here</a>.</li>
+                </ul>
+                
+               
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of fluid container -->

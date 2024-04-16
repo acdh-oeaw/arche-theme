@@ -19,9 +19,13 @@
                 </div>
             </nav>
             {% set currentUrl = path('<current>') %}
+            {% set staticPagesArr = ['/browser/deposition-process', '/browser/deposition-agreement',
+                    '/browser/filenames-formats-metadata', '/browser/faq', '/browser/further-guidance',
+                    '/browser/technical-setup', '/browser/api-access' ] %}
+ 
             {% if currentUrl is not empty and '/browser/discover' in currentUrl %}
                  {{ include( arche_theme_path ~ '/templates/layout/hero-no-search.html.twig' ) }}
-            {% elseif  '/browser/deposition-process' in currentUrl   %}
+            {% elseif  currentUrl in staticPagesArr  %}
                 {{ include( arche_theme_path ~ '/templates/layout/hero-info-page.html.twig' ) }}
             {% else %}
                  {{ include( arche_theme_path ~ '/templates/layout/hero.html.twig' ) }}

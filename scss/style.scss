@@ -139,19 +139,17 @@ p, span {
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 20px;
-    /* 125% */
+    line-height: 25px;
+    word-wrap: break-word;
 }
-#page {
-    padding-top: 24px;
-    padding-bottom: 100px;
-    min-height: 500px;
-}
+
 #page {
     background-image: url("../images/common/mission_bottom_bubble.png");
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: 100% 400px;
+    padding-bottom: 100px;
+    min-height: 500px;
 }
 
 .btn-arche-green {
@@ -791,6 +789,27 @@ ul.nav.nav-pills > li > a {
     background-color: $arche-smokey-white;
 }
 
+.static-content-container-home-gray {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    padding-top: 60px;
+    padding-bottom: 150px;
+    background-color: $arche-smokey-white;
+}
+
+.static-content-container-home {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    padding-top: 60px;
+    padding-bottom: 150px;
+    background-color: #fff;
+}
+
+
 .cards-static-images {
     width: 100%;
     padding: 0px;
@@ -997,6 +1016,7 @@ ul.nav.nav-pills > li > a {
 .bubble-line-container .image-wrapper img {
     position: absolute;
     bottom: -3px;
+    width: 100%;
 }
 
 
@@ -1580,6 +1600,14 @@ table.dataTable.no-footer {
     min-height: 100px;
     object-fit: contain;
     width: auto;
+}
+
+.padding-top24 {
+    padding-top: 24px;
+}
+
+.padding-bottom24 {
+    padding-bottom: 24px;
 }
 
 @media (min-width: 768px) {

@@ -41,15 +41,21 @@
                     {% set dropDownToggle = 'dropdown-toggle' %}
                 {% endif %}  
                 <li class="nav-item {{ dropDown }}">
-                    <a class="nav-link {{ dropDownToggle }}" href="{{ item.url }}" id="{{ item.id }}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        {{ item.title }}
-                    </a>
+
+
                     {% if item.below %}
+                        <a class="nav-link {{ dropDownToggle }}" href="{{ item.url }}" id="{{ item.id }}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            {{ item.title }}
+                        </a>
                         <ul class="dropdown-menu" aria-labelledby="{{ item.id }}">
                             {% for subItem in item.below %}
                                 <li><a class="dropdown-item" href="{{ subItem.url }}">{{ subItem.title }}</a></li>
                                 {% endfor %}
                         </ul>
+                    {% else %}
+                        <a class="nav-link {{ dropDownToggle }}" href="{{ item.url }}" id="{{ item.id }}" role="button" >
+                            {{ item.title }}
+                        </a>
                     {% endif %}
                 </li>
             {% endfor %}
