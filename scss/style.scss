@@ -604,7 +604,6 @@ ul.nav.nav-pills > li > a {
 .btn-toolbar-text {
     color: #FFF;
     text-align: center;
-
     /* Text Small Bold */
     font-family: Lato;
     font-size: 12px;
@@ -627,6 +626,49 @@ ul.nav.nav-pills > li > a {
     gap: 8px;
     border-radius: 12px;
     background: $arche-btn-blue;
+    color: #fff;
+}
+
+.btn-toolbar {
+    padding: 4px 8px;
+    gap: 8px;
+    border-radius: 12px;
+    text-align: center;
+    /* Text Small Bold */
+    font-family: Lato;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 16px;
+}
+.btn-toolbar-public {
+    background-color: #1dd1a1;
+    color: #fff;
+}
+
+.btn-toolbar-academic {
+    background-color: #ff9f43;
+    color: #fff;
+}
+
+.btn-toolbar-restricted {
+    background-color: #ee5253;
+    color: #fff;
+}
+
+.btn-toolbar-public-academic {
+    background: rgb(29,209,161);
+    background: linear-gradient(90deg, rgba(29,209,161,1) 0%, rgba(255,159,67,1) 100%);
+    color: #fff;
+}
+.btn-toolbar-public-restricted {
+    background: rgb(29,209,161);
+    background: linear-gradient(90deg, rgba(29,209,161,1) 0%, rgba(238,82,83,1) 100%);
+    color: #fff;
+}
+.btn-toolbar-academic-restricted {
+    background: rgb(255,159,67);
+    background: linear-gradient(90deg, rgba(255,159,67,1) 0%, rgba(238,82,83,1) 100%);
     color: #fff;
 }
 
