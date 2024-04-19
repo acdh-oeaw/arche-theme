@@ -33,6 +33,11 @@ h6 {
   font-weight: 700;
   line-height: normal;
 }
+input {
+  border: 1px solid #e1e1e1;
+  border-radius: 5px;
+  padding: 5px;
+}
 .fas, .fa {
   color: #333;
 }
@@ -848,7 +853,7 @@ ul.nav.nav-pills > li > a {
 .arche-home-card {
   height: 370px;
 }
-.basic-content-div {
+.basic-content-div, .search-form, .arche-site-search-result {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -862,6 +867,12 @@ ul.nav.nav-pills > li > a {
   display: flex;
   padding: 24px;
   flex-direction: column;
+}
+.search-form, .arche-site-search-result {
+  gap: 24px;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 24px;
 }
 .discover-content-main {
   padding: 24px;
@@ -1392,7 +1403,7 @@ table.dataTable.no-footer {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
 }
 .sm-img-list {
   min-height: 100px;
@@ -1404,6 +1415,10 @@ table.dataTable.no-footer {
 }
 .padding-bottom24 {
   padding-bottom: 24px;
+}
+.select2-container--default .select2-selection--multiple {
+  border: 1px solid #e1e1e1;
+  border-radius: 5px;
 }
 @media (min-width: 768px) {
   .cards-wrapper .card img {
