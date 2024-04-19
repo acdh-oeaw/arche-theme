@@ -1,6 +1,7 @@
 jQuery(function ($) {
     "use strict";
 
+    /*** MAIN JS FOR THE THEME ***/
 
     $(document).ready(function () {
 
@@ -28,9 +29,10 @@ jQuery(function ($) {
             window.location.href = '/browser/discover/' + inputValue;
         });
 
-    });
 
-   
+
+
+    });
 
 
 
@@ -38,25 +40,22 @@ jQuery(function ($) {
      * Check that the user changed the language on the gui, if yes then we do 
      * a small api call, to change the drupal session language variable
      */
-    $('.language-switcher-language-session-oeaw').on('change', function (event) {
-
-        event.preventDefault();
-        let lng = $(this).val();
-        console.log(lng);
+    $('.language-switcher-language-session-arche').on('click', function (event) {
+        let lng = $(this).data('lang');
         $.ajax({
             url: '/browser/api/change_lng/' + lng,
             type: "POST",
             success: function (data, status) {
-                console.log('success');
                 location.reload();
             },
             error: function (message) {
                 return message;
             }
         });
-
+        event.preventDefault();
 
     });
+
 
 
     $(document).delegate("a#footer-versions-btn", "click", function (e) {
