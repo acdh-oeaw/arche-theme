@@ -203,9 +203,7 @@ p, span {
     padding-right: 16px;
 }
 .btn-arche-gray {
-    display: flex;
     padding: 4px 8px;
-    align-items: flex-start;
     gap: 8px;
     border-radius: 12px;
     background: $gray;
@@ -620,10 +618,10 @@ ul.nav.nav-pills > li > a {
 .btn-toolbar-gray,
 .btn-toolbar-gray.no-btn:hover {
     padding: 4px 8px;
-    gap: 8px;
     border-radius: 12px;
     background: $gray;
     color: #fff;
+    height: auto;
 }
 
 .btn-toolbar-blue,
@@ -1144,6 +1142,14 @@ ul.nav.nav-pills > li > a {
     margin: 0px;
 }
 
+.hasdescription-container {
+    overflow: hidden;
+    max-height: 10em;
+}
+.hasdescription-container.expanded {
+    max-height: none;
+}
+
 .loader-overlay {
     position: absolute;
     top: 0;
@@ -1266,7 +1272,7 @@ table.child-table.dataTable tbody td {
 }
 
 table.child-table.dataTable tbody td .res-prop-value {
-    padding: 10px 12px;
+    //padding: 10px 12px;
     color: #000;
     font-family: Inter;
     font-size: 12px;
@@ -1353,8 +1359,12 @@ table.child-table.dataTable thead tr, table.child-table.dataTable thead th {
     line-height: 16px; /* 133.333% */
 }
 
-.jstree-default .jstree-leaf > .jstree-ocl {display: none;}
-.jstree-default .jstree-node {background-image: none}
+.jstree-default .jstree-leaf > .jstree-ocl {
+    display: none;
+}
+.jstree-default .jstree-node {
+    background-image: none
+}
 
 #child-tree ul li {
     border: 1px solid #E1E1E1;

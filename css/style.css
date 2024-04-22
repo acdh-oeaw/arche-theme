@@ -169,9 +169,7 @@ p, span {
   padding-right: 16px;
 }
 .btn-arche-gray {
-  display: flex;
   padding: 4px 8px;
-  align-items: flex-start;
   gap: 8px;
   border-radius: 12px;
   background: #5B595B;
@@ -546,10 +544,10 @@ ul.nav.nav-pills > li > a {
 }
 .btn-toolbar-gray, .btn-toolbar-gray.no-btn:hover {
   padding: 4px 8px;
-  gap: 8px;
   border-radius: 12px;
   background: #5B595B;
   color: #fff;
+  height: auto;
 }
 .btn-toolbar-blue, .btn-toolbar-blue.no-btn:hover {
   padding: 4px 8px;
@@ -991,6 +989,13 @@ ul.nav.nav-pills > li > a {
   padding: 0px;
   margin: 0px;
 }
+.hasdescription-container {
+  overflow: hidden;
+  max-height: 10em;
+}
+.hasdescription-container.expanded {
+  max-height: none;
+}
 .loader-overlay {
   position: absolute;
   top: 0;
@@ -1102,7 +1107,6 @@ table.child-table.dataTable tbody th, table.child-table.dataTable tbody td {
   background: rgba(255, 255, 255, 0);
 }
 table.child-table.dataTable tbody td .res-prop-value {
-  padding: 10px 12px;
   color: #000;
   font-family: Inter;
   font-size: 12px;
