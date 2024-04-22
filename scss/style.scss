@@ -1353,9 +1353,12 @@ table.child-table.dataTable thead tr, table.child-table.dataTable thead th {
     line-height: 16px; /* 133.333% */
 }
 
+.jstree-default .jstree-leaf > .jstree-ocl {display: none;}
+.jstree-default .jstree-node {background-image: none}
+
 #child-tree ul li {
     border: 1px solid #E1E1E1;
-    padding: 10px 12px 10px 32px;
+    padding: 10px 12px 10px 0px;
     align-items: center;
     gap: 8px;
     align-self: stretch;
