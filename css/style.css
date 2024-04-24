@@ -310,6 +310,12 @@ ul.nav.nav-pills > li > a {
   align-items: flex-start;
 }
 /** HOME HERO **/
+.hero-title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .hero-home-logos {
   display: flex;
   justify-content: center;
@@ -970,6 +976,8 @@ ul.nav.nav-pills > li > a {
 .meta-titleimage {
   flex-shrink: 0;
   align-self: stretch;
+  height: 200px;
+  object-fit: contain;
 }
 .meta-titleimage img {
   object-fit: cover;

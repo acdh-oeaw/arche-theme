@@ -362,6 +362,13 @@ ul.nav.nav-pills > li > a {
 
 }
 
+.hero-title-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .hero-home-logos {
     display: flex;
     justify-content: center;
@@ -1118,6 +1125,8 @@ ul.nav.nav-pills > li > a {
 .meta-titleimage {
     flex-shrink: 0;
     align-self: stretch;
+    height: 200px;
+    object-fit: contain;
 
 }
 .meta-titleimage img {
@@ -1215,8 +1224,9 @@ table.dataTable tbody td {
     background: rgba(255, 255, 255, 0.00);
 }
 
+
 table.dataTable tbody td .res-prop-value {
-    padding: 10px 12px;
+    padding: 10px 0px;
     color: #000;
     font-family: Lato;
     font-size: 12px;
