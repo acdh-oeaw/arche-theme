@@ -1066,7 +1066,7 @@ table.dataTable tbody th, table.dataTable tbody td {
   background: rgba(255, 255, 255, 0);
 }
 table.dataTable tbody td .res-prop-value {
-  padding: 10px 12px;
+  padding: 10px 0px;
   color: #000;
   font-family: Lato;
   font-size: 12px;

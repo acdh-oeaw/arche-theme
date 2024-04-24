@@ -19,19 +19,14 @@ jQuery(function ($) {
             location.reload(true);
         });
 
-
         $('#hero-smart-search-form').submit(function (event) {
             // Prevent the default form submission behavior.
             event.preventDefault();
             // Get the value of the input field.
             var inputValue = $('#sm-hero-str').val();
             // Redirect to the target page with the input value as a parameter.
-            window.location.href = '/browser/discover/' + inputValue;
+            window.location.href = '/browser/discover/q=' + inputValue;
         });
-
-
-
-
     });
 
 
