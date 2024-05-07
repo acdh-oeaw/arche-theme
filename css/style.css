@@ -1438,6 +1438,37 @@ table.dataTable.no-footer {
   border: 1px solid #e1e1e1;
   border-radius: 5px;
 }
+/* Customize the appearance of the autocomplete dropdown */
+.ui-autocomplete {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 5px;
+  list-style-type: none;
+  margin: 0;
+  width: inherit !important;
+  overflow: inherit;
+  word-break: break-word;
+  z-index: 1000;
+  /* Ensure the dropdown appears above other elements */
+}
+/* Style the list items */
+.ui-autocomplete li {
+  padding: 5px;
+  cursor: pointer;
+}
+/* Style the selected item */
+.ui-autocomplete .ui-state-focus {
+  background-color: #f0f0f0;
+}
+/* Style the scrollbar (if needed) */
+.ui-autocomplete::-webkit-scrollbar {
+  width: 8px;
+}
+.ui-autocomplete::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
+}
 @media (min-width: 768px) {
   .cards-wrapper .card img {
     height: 11em;
