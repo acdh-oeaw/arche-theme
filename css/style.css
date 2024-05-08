@@ -1469,6 +1469,9 @@ table.dataTable.no-footer {
   background-color: #ccc;
   border-radius: 4px;
 }
+.ui-menu-item:hover, .ui-menu-item-wrapper:hover {
+  background-color: rgba(59, 137, 173, 0.8) !important;
+}
 @media (min-width: 768px) {
   .cards-wrapper .card img {
     height: 11em;

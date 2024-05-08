@@ -23,7 +23,13 @@ global-styling:
 home-page:
     version: 1.0
     header: true
-    js:
+    css:
+        base:
+            https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.3/themes/base/jquery-ui.min.css: { type: external, minified: true }
+            https://cdnjs.cloudflare.com/ajax/libs/jquery-autocomplete/1.0.7/jquery.auto-complete.min.css: { type: external, minified: true }
+    js: 
+        https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.3/jquery-ui.min.js: { type: external, minified: true }
+        https://cdnjs.cloudflare.com/ajax/libs/jquery-autocomplete/1.0.7/jquery.auto-complete.min.js: { type: external, minified: true }
         js/arche_home.js: {}
     dependencies:
         - core/drupal

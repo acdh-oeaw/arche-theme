@@ -1734,6 +1734,11 @@ table.dataTable.no-footer {
     border-radius: 4px;
 }
 
+.ui-menu-item:hover,
+.ui-menu-item-wrapper:hover {
+    background-color: $arche-btn-blue-hover !important;
+}
+
 
 @media (min-width: 768px) {
     .cards-wrapper .card img {
