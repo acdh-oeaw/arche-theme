@@ -75,9 +75,23 @@ jQuery(function ($) {
                         } else {
                             active = "";
                         }
-                        carouselItems += '<div class="carousel-item '+active+'">' +
-                                '<div class="row row-cols-1 row-cols-md-4 g-4">';
-                        for (var j = 0; j < 4 && (i + j) < keys.length; j++) {
+                        var browserWidth = $(window).width();
+                        console.log("browserWidth");
+                        console.log(browserWidth);
+                        var displayItem = 4;
+                        if(browserWidth < 1024) {
+                            console.log("1024");
+                            carouselItems += '<div class="carousel-item '+active+'">' +
+                                '<div class="row row-cols-md-12 g-4">';
+                            displayItem = 1;
+                        
+                        } else {
+                            console.log("kisebb mint 768");
+                             carouselItems += '<div class="carousel-item '+active+'">' +
+                                '<div class="row row-cols-md-4 g-4">';
+                        }
+                       
+                        for (var j = 0; j < displayItem && (i + j) < keys.length; j++) {
                             var id = keys[i + j];
                             var item = data[id];
                             carouselItems += '<div class="col">' +
