@@ -691,9 +691,19 @@ ul.nav.nav-pills > li > a {
     background: linear-gradient(90deg, rgba(29,209,161,1) 0%, rgba(255,159,67,1) 100%);
     color: #fff;
 }
+.btn-toolbar-academic-public {
+    background: rgba(255,159,67);
+    background: linear-gradient(90deg, rgba(255,159,67,1) 0%, rgba(29,209,161,1) 100%);
+    color: #fff;
+}
 .btn-toolbar-public-restricted {
     background: rgb(29,209,161);
     background: linear-gradient(90deg, rgba(29,209,161,1) 0%, rgba(238,82,83,1) 100%);
+    color: #fff;
+}
+.btn-toolbar-restricted-public {
+    background: rgba(238,82,83);
+    background: linear-gradient(90deg, rgba(238,82,83,1) 0%, rgba(29,209,161,1) 100%);
     color: #fff;
 }
 .btn-toolbar-academic-restricted {
@@ -701,7 +711,11 @@ ul.nav.nav-pills > li > a {
     background: linear-gradient(90deg, rgba(255,159,67,1) 0%, rgba(238,82,83,1) 100%);
     color: #fff;
 }
-
+.btn-toolbar-restricted-academic {
+    background: rgba(238,82,83);
+    background: linear-gradient(90deg, rgba(238,82,83,1) 0%, rgba(255,159,67,1) 100%);
+    color: #fff;
+}
 .btn-toolbar-green,
 .btn-toolbar-green.no-btn:hover {
     padding: 4px 8px;
