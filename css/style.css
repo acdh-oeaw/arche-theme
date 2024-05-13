@@ -574,6 +574,24 @@ ul.nav.nav-pills > li > a {
   color: #fff;
   height: auto;
 }
+.btn-detail-type-gray {
+  border-radius: 12px;
+  background: #5B595B;
+  color: #fff;
+  text-align: center;
+  /* Text Small Bold */
+  font-family: Lato;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px;
+  /* 133.333% */
+  display: flex;
+  padding: 4px 8px;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 0px;
+}
 .btn-toolbar-blue, .btn-toolbar-blue.no-btn:hover {
   padding: 4px 8px;
   gap: 8px;
@@ -1030,13 +1048,6 @@ ul.nav.nav-pills > li > a {
 .tooltop-icon-div {
   padding: 0px;
   margin: 0px;
-}
-.hasdescription-container {
-  overflow: hidden;
-  max-height: 10em;
-}
-.hasdescription-container.expanded {
-  max-height: none;
 }
 .loader-overlay {
   position: absolute;
@@ -1505,6 +1516,16 @@ table.dataTable.no-footer {
 }
 .ui-menu-item:hover, .ui-menu-item-wrapper:hover {
   background-color: rgba(59, 137, 173, 0.8) !important;
+}
+#cite-dropdown {
+  background: #fff;
+  color: #666;
+  font-family: Lato;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  /* 142.857% */
 }
 @media (min-width: 768px) {
   .cards-wrapper .card img {
