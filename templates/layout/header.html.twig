@@ -19,9 +19,30 @@
                 </div>
             </nav>
             {% set currentUrl = path('<current>') %}
-            {% set staticPagesArr = ['/browser/deposition-process', '/browser/deposition-agreement',
-                    '/browser/filenames-formats-metadata', '/browser/faq', '/browser/further-guidance',
-                    '/browser/technical-setup', '/browser/api-access' ] %}
+            {% set staticPagesArr = ['/browser/ressourcen-einreichen',
+    '/browser/deposit-resources',
+    '/browser/datenubergabevertrag',
+    '/browser/deposition-agreement',
+    '/browser/dateinamen-formate-metadaten',
+    '/browser/filenames-formats-metadata',
+    '/browser/de/faq',
+    '/browser/faq',
+    '/browser/weiterfuhrende-informationen',
+    '/browser/further-guidance',
+    '/browser/sammlungsstrategie',
+    '/browser/collection-policy',
+    '/browser/konservierungsrichtlinien',
+    '/browser/preservation-policy',
+    '/browser/datenschutzbestimmungen',
+    '/browser/privacy-policy',
+    '/browser/nutzungsbedingungen',
+    '/browser/terms-of-use',
+    '/browser/uber-arche',
+    '/browser/about-arche',
+    '/browser/technical-setup',
+    '/browser/technischer-aufbau',
+    '/browser/api-access',
+    '/browser/api-zugriff',] %}
  
             {% if currentUrl is not empty and '/browser/discover' in currentUrl %}
                  {{ include( arche_theme_path ~ '/templates/layout/hero-no-search.html.twig' ) }}

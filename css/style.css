@@ -41,9 +41,6 @@ input {
 .fas, .fa {
   color: #333;
 }
-.page-wrapper {
-  background-color: #F8F9FA;
-}
 .acdh-gray-color {
   color: #444;
 }
@@ -807,6 +804,11 @@ ul.nav.nav-pills > li > a {
   padding-bottom: 150px;
   background-color: #fff;
 }
+.static-page-title {
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
 .cards-static-images {
   width: 100%;
   padding: 0px;
@@ -957,7 +959,7 @@ ul.nav.nav-pills > li > a {
   border: 1px solid #e1e1e1;
 }
 .accordion-header .accordion-button.collapsed {
-  background-color: #e1edf3 !important;
+  background-color: white !important;
   color: #666 !important;
   font-weight: 700;
 }
@@ -993,7 +995,7 @@ ul.nav.nav-pills > li > a {
 .bubble-line-container .image-wrapper img {
   position: absolute;
   bottom: -3px;
-  width: 100%;
+  width: auto;
 }
 .card.metadata {
   width: 100%;
@@ -1547,6 +1549,12 @@ table.dataTable.no-footer {
 @media (max-width: 1024px) {
   .collections-container {
     width: 90%;
+  }
+}
+@media (max-width: 992px) {
+  .maxw-980 {
+    padding-right: 20px;
+    padding-left: 20px;
   }
 }
 @media (max-width: 768px) {

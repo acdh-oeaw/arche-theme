@@ -67,7 +67,7 @@ input {
     color: #333;
 }
 .page-wrapper {
-    background-color: $arche-smokey-white;
+    //background-color: $arche-smokey-white;
 }
 
 .acdh-gray-color {
@@ -912,6 +912,11 @@ ul.nav.nav-pills > li > a {
     background-color: #fff;
 }
 
+.static-page-title {
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
 
 .cards-static-images {
     width: 100%;
@@ -1087,7 +1092,7 @@ ul.nav.nav-pills > li > a {
     border: 1px solid $light-gray;
 }
 .accordion-header .accordion-button.collapsed {
-    background-color:  $arche-light-blue !important;
+    background-color: white !important;
     color: $basic-gray !important;
     font-weight: 700;
 }
@@ -1130,7 +1135,7 @@ ul.nav.nav-pills > li > a {
 .bubble-line-container .image-wrapper img {
     position: absolute;
     bottom: -3px;
-    width: 100%;
+    width: auto;
 }
 
 
@@ -1817,12 +1822,26 @@ table.dataTable.no-footer {
 
 
 
+// XL
+@media (max-width: 1200px) {
+
+}
+
 @media (max-width: 1024px) {
     .collections-container {
         width: 90%;
     }
 }
 
+// LG
+@media (max-width: 992px) {
+    .maxw-980 {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+}
+
+// MD
 
 @media (max-width: 768px) {
     .section-header-title {
@@ -1858,10 +1877,15 @@ table.dataTable.no-footer {
     }
 }
 
-@media (max-width: 480px) {
+
+// SM
+@media (max-width: 576px) {
 
 }
 
+//XS
+@media (max-width: 340) {
 
+}
 
 

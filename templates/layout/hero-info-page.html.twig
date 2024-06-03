@@ -1,18 +1,54 @@
+
+{% set url_texts = {
+    '/browser/ressourcen-einreichen': 'Erfahren Sie mehr über die Dateneinreichung',
+    '/browser/deposit-resources': 'Learn more about data submission',
+    '/browser/datenubergabevertrag': 'Rechtliche Vereinbarung zwischen ARCHE und Datengebenden',
+    '/browser/deposition-agreement': 'Legal agreement between ARCHE and depositors',
+    '/browser/dateinamen-formate-metadaten': 'Daten richtig vorbereiten',
+    '/browser/filenames-formats-metadata': 'Prepare data correctly',
+    '/browser/de/faq': 'Antworten auf häufig gestellte Fragen und Praxishinweise für Datengebende',
+    '/browser/faq': 'Answers to frequently asked questions and practical tips for depositors',
+    '/browser/weiterfuhrende-informationen': 'Zur Vertiefung',
+    '/browser/further-guidance': 'For consolidation',
+    '/browser/sammlungsstrategie': 'Sammlungsbereich, Evaluation und Speicherdauer',
+    '/browser/collection-policy': 'Scope of collections, evaluation, and storage duration',
+    '/browser/konservierungsrichtlinien': 'Archivierung, Wartung und Risikomanagement',
+    '/browser/preservation-policy': 'Archiving, maintenance and risk management',
+    '/browser/datenschutzbestimmungen': 'Schutzmaßnahmen für personenbezogene Daten',
+    '/browser/privacy-policy': 'Protective measures for personal data',
+    '/browser/nutzungsbedingungen': 'Bedingungen für die Hinterlegung, den Zugang und die Verwendung von Daten',
+    '/browser/terms-of-use': 'Conditions for the deposit, access, and use of data',
+    '/browser/uber-arche': 'Erfahren Sie mehr über ARCHE',
+    '/browser/about-arche': 'Learn more about ARCHE',
+    '/browser/technical-setup': 'Software components, client libraries, dissemination services and storage procedures',
+    '/browser/technischer-aufbau': 'Softwarekomponenten, Client-Bibliotheken, Verbreitungsservices und Speicherverfahren',
+    '/browser/api-access': 'Interfaces for programmatic search and query of ARCHE data',
+    '/browser/api-zugriff': 'Schnittstellen für die programmgesteuerte Suche und Abfrage der ARCHE-Daten',
+} %}
+
+
+{% set currentUrl = path('<current>') %}
+
+{% set display_text = url_texts[currentUrl] | default('') %}
+
+
+
+
 <main class="container-fluid cover pages-hero-section">
 
     <div class="row h-60">
         <div class="col-4 header-characters character-man align-self-end">
-             <img class="img-fluid" src="{{ base_path ~ directory }}/images/common/Dante_sit_pc.png" alt=""  />
+            <img class="img-fluid" src="{{ base_path ~ directory }}/images/common/Dante_sit_pc.png" alt=""  />
         </div>
 
         <div class="col-4 hero-title-container">
             <div class="text-center">
                 <p class="section-header-title">{{ node.title.value }}</p>
-                <span class="hero-small-text"></span>
+                <span class="hero-small-text">{{ display_text }}</span>
 
             </div>
             <div class="pb-1 pt-2">
-                
+
 
             </div>
             <div class="hero-home-logos">
