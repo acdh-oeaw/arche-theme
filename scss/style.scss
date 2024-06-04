@@ -1363,6 +1363,12 @@ table.child-table.dataTable thead tr, table.child-table.dataTable thead th {
     width: 100%;
 }
 
+#descriptionTextShortBtn,
+#descriptionTextLongBtn {
+    cursor: pointer;
+}
+
+
 // metadata sidebar
 .card-body.meta-sidebar {
     padding: 24px;

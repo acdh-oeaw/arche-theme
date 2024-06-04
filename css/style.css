@@ -1191,6 +1191,9 @@ table.child-table.dataTable thead tr, table.child-table.dataTable thead th {
   gap: 12px;
   width: 100%;
 }
+#descriptionTextShortBtn, #descriptionTextLongBtn {
+  cursor: pointer;
+}
 .card-body.meta-sidebar {
   padding: 24px;
   display: flex;
