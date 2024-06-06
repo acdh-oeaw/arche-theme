@@ -1590,4 +1590,28 @@ table.dataTable.no-footer {
     align-items: flex-start;
     gap: 16px;
   }
+  .background-image-div::before, .background-image-front-div::before {
+    width: 201px;
+    height: 332px;
+    transform: scaleX(-1) rotate(90deg);
+    top: -90px;
+    left: -80px;
+  }
+  .background-image-div::after, .background-image-front-div::after {
+    width: 150px;
+    height: 150px;
+  }
+}
+@media (max-width: 576px) {
+  .background-image-div::before, .background-image-front-div::before {
+    width: 201px;
+    height: 332px;
+    transform: scaleX(-1) rotate(90deg);
+    top: -90px;
+    left: -80px;
+  }
+  .background-image-div::after, .background-image-front-div::after {
+    width: 100px;
+    height: 100px;
+  }
 }
