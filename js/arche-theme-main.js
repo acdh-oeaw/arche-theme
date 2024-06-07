@@ -28,7 +28,17 @@ jQuery(function ($) {
             // Redirect to the target page with the input value as a parameter.
             window.location.href = '/browser/discover/q=' + inputValue;
         });
+
+        
+
     });
+
+    $('.mobile-menu-close').on('click', function (event) {
+        console.log('CLOSE CLICK');
+        event.preventDefault();
+        $('.mobile-menu').removeClass('show');
+    });
+
 
 
 

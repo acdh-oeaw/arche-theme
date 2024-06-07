@@ -315,6 +315,11 @@ ul.links {
     gap: 24px;
 }
 
+.mobile-menu-container {
+    position: fixed;
+    top: 50px;
+    display: flex;
+}
 /* Custom styles for the full screen menu */
 .mobile-menu {
     position: fixed;
@@ -326,6 +331,18 @@ ul.links {
     z-index: 1050; /* Higher than the default navbar */
     transform: translateY(-100%); /* Initially hide the menu offscreen */
     transition: transform 0.3s ease-in-out;
+}
+
+.mobile-menu-close {
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    position: fixed;
+    right: 40px;
 }
 
 .mobile-menu.show {
@@ -348,6 +365,11 @@ ul.links {
     color: #fff;
     font-size: 1.5rem;
     margin: 10px 0;
+}
+
+.sub-mobile-element a {
+    padding-right: 10px;
+    color: #333 !important;
 }
 .navbar-toggler {
     border: none !important;

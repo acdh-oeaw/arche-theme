@@ -38,11 +38,10 @@
       <ul style=" list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));margin-right: 10px; ">
     {% endif %}
     {% for item in items %}
-      <!-- <li class="sub-mobile-element"> -->
-      <li >
+      <li{{ item.attributes }} style="margin-right: 10px; ">
         {{ link(item.title, item.url) }} 
         {% if item.below %}
-          {{ menus.menu_links(item.below, attributes, menu_level + 1) }}    
+          {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
         {% endif %}
       </li>
     {% endfor %}

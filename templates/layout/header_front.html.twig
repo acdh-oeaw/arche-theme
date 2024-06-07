@@ -10,11 +10,23 @@
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    
-                    <div class="collapse navbar-collapse arche-header-navbar" id="navbarNav">
-                        
+
+                    <div class="collapse navbar-collapse arche-header-navbar website-menu" id="navbarNav">
                         {{ page.main_navigation }}
-                       
+                    </div>
+
+                    <div class="collapse navbar-collapse mobile-menu" id="navbarNav">
+                        <div class="container mobile-menu-container">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <button class="mobile-menu-close" aria-label="Close Menu">&times;</button>
+                                </div>
+                                <div class="col-lg-12">
+                                    {{ page.mobile_navigation }}
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </nav>
