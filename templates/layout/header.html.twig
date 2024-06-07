@@ -11,10 +11,12 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
-                    <div class="collapse navbar-collapse arche-header-navbar" id="navbarNav">
-
+                    <div class="collapse navbar-collapse arche-header-navbar website-menu" id="navbarNav">
                         {{ page.main_navigation }}
+                    </div>
 
+                    <div class="collapse navbar-collapse mobile-menu" id="navbarNav">
+                        {{ page.mobile_navigation }}
                     </div>
                 </div>
             </nav>
@@ -43,13 +45,13 @@
     '/browser/technischer-aufbau',
     '/browser/api-access',
     '/browser/api-zugriff',] %}
- 
+
             {% if currentUrl is not empty and '/browser/discover' in currentUrl %}
-                 {{ include( arche_theme_path ~ '/templates/layout/hero-no-search.html.twig' ) }}
+                {{ include( arche_theme_path ~ '/templates/layout/hero-no-search.html.twig' ) }}
             {% elseif  currentUrl in staticPagesArr  %}
                 {{ include( arche_theme_path ~ '/templates/layout/hero-info-page.html.twig' ) }}
             {% else %}
-                 {{ include( arche_theme_path ~ '/templates/layout/hero.html.twig' ) }}
+                {{ include( arche_theme_path ~ '/templates/layout/hero.html.twig' ) }}
             {% endif %}
         </div>
     </div>

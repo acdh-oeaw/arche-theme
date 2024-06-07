@@ -25,10 +25,7 @@
 {#
   We call a macro which calls itself to render the full tree.
   https://twig.symfony.com/doc/3.x/tags/macro.html
-
-TEMPLATE For the BASIC MENU!
 #}
-
 
 {{ menus.menu_links(items, attributes, 0) }}
 
@@ -42,7 +39,7 @@ TEMPLATE For the BASIC MENU!
     {% endif %}
     {% for item in items %}
       <li{{ item.attributes }} style="margin-right: 10px; ">
-        {{ link(item.title, item.url) }}
+        {{ link(item.title, item.url) }} 
         {% if item.below %}
           {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
         {% endif %}
@@ -51,3 +48,4 @@ TEMPLATE For the BASIC MENU!
     </ul>
   {% endif %}
 {% endmacro %}
+

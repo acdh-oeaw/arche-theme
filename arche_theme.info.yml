@@ -10,6 +10,7 @@ regions:
   header: 'Header'
   hero: 'Hero'
   main_navigation: 'Main Navigation'
+  mobile_navigation: 'Mobile Navigation'
   content: 'Content'
   footer_one: 'Footer Section One'
   footer_two: 'Footer Section Two'

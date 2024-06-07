@@ -314,6 +314,52 @@ ul.links {
     display: flex;
     gap: 24px;
 }
+
+/* Custom styles for the full screen menu */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff; /* Semi-transparent black background */
+    z-index: 1050; /* Higher than the default navbar */
+    transform: translateY(-100%); /* Initially hide the menu offscreen */
+    transition: transform 0.3s ease-in-out;
+}
+
+.mobile-menu.show {
+    transform: translateY(0); /* Show the menu by moving it to its original position */
+}
+
+.mobile-menu {
+    z-index: 1100; /* Higher than the overlay */
+}
+
+.mobile-menu {
+    height: 100%;
+    display: flex !important;
+    //flex-direction: column !important;
+    //justify-content: center;
+    //align-items: center;
+}
+
+.mobile-menu .nav-link {
+    color: #fff;
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+.navbar-toggler {
+    border: none !important;
+}
+/* Change the background color and border of the hamburger button */
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.navbar-toggler:focus, .navbar-toggler:hover {
+    background-color: rgba(51, 51, 51, 0.5);
+}
 .language-switcher-language-session-oeaw {
     border: none;
     background: transparent;
@@ -1816,6 +1862,9 @@ table.dataTable.no-footer {
     .cards-wrapper .card img {
         height: 11em;
     }
+    .mobile-menu {
+        display: none;
+    }
 }
 @media (min-width: 1200px) {
     .sign__container {
@@ -1848,7 +1897,11 @@ table.dataTable.no-footer {
 }
 
 // MD
-
+@media (max-width: 767.98px) {
+    .website-menu {
+        display: none;
+    }
+}
 @media (max-width: 768px) {
     .section-header-title {
         text-align: center;
