@@ -888,6 +888,13 @@ ul.nav.nav-pills > li > a {
     background-color: transparent;
 }
 
+#arche-detail-tabs .nav-link {
+    color: #333 !important;
+}
+#arche-detail-tabs .nav-link.active {
+    font-weight: bold;
+}
+
 .cover {
     /*
     //background: url('https://images.unsplash.com/photo-1562636714-d4683c37e832?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
