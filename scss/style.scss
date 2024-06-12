@@ -1221,9 +1221,9 @@ ul.nav.nav-pills > li > a {
 }
 .card.metadata .card-header {
     display: flex;
-    padding: 16px 24px;
+    padding: 10px 24px;
     align-items: center;
-    gap: 24px;
+    gap: 10px;
     align-self: stretch;
 }
 
@@ -1245,7 +1245,7 @@ ul.nav.nav-pills > li > a {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 24px;
+    gap: 12px;
     flex-shrink: 0;
 }
 
@@ -1286,7 +1286,13 @@ ul.nav.nav-pills > li > a {
     margin: 0px;
 }
 
+.meatdata-view-top-hr {
+    color: #333;
+}
 
+.hidden-alert {
+    display: none !important;
+}
 
 .loader-overlay {
     position: absolute;
@@ -1446,14 +1452,14 @@ table.child-table.dataTable thead tr, table.child-table.dataTable thead th {
 
 // metadata sidebar
 .card-body.meta-sidebar {
-    padding: 24px;
+    padding: 12px;
     display: flex;
     gap: 12px;
 }
 .card-body.meta-sidebar.downloadcard {
     display: flex;
     gap: 12px;
-    padding: 24px;
+    padding: 12px;
     flex-direction: column;
 }
 
