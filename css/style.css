@@ -1098,8 +1098,10 @@ ul.nav.nav-pills > li > a {
 .meta-titleimage {
   flex-shrink: 0;
   align-self: stretch;
-  height: 200px;
+  height: auto;
+  max-height: 200px;
   object-fit: contain;
+  padding: 2px;
 }
 .meta-titleimage img {
   object-fit: cover;

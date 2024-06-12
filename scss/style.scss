@@ -196,8 +196,8 @@ p, span {
 }
 
 .btn-arche-blue.cite {
-    height: 36px;
-    padding-top: 5px;
+    height: 30px;
+    padding-top: 0px;
     padding-bottom: 5px;
     padding-left: 16px;
     padding-right: 16px;
@@ -1255,9 +1255,10 @@ ul.nav.nav-pills > li > a {
 .meta-titleimage {
     flex-shrink: 0;
     align-self: stretch;
-    height: 200px;
+    height: auto;
+    max-height: 200px;
     object-fit: contain;
-
+    padding: 2px;
 }
 .meta-titleimage img {
     object-fit: cover;
