@@ -159,8 +159,8 @@ p, span {
   background-color: rgba(59, 137, 173, 0.8);
 }
 .btn-arche-blue.cite {
-  height: 36px;
-  padding-top: 5px;
+  height: 30px;
+  padding-top: 0px;
   padding-bottom: 5px;
   padding-left: 16px;
   padding-right: 16px;
