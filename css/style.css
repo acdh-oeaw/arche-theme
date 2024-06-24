@@ -236,6 +236,9 @@ table.dataTable {
   /* 175% */
   gap: 8px;
 }
+.arche-sub-mobile-menu li a {
+  color: #666;
+}
 #block-arche-theme-main-menu.contextual-region {
   margin: auto;
 }
@@ -321,6 +324,18 @@ ul.links {
 .sub-mobile-element a {
   padding-right: 10px;
   color: #333 !important;
+}
+.mobile-menu {
+  line-height: 30px;
+}
+.mobile-lng-switcher-title {
+  display: none;
+}
+.mobile-menu .nav.navbar-nav.nav-lang {
+  padding-left: 4rem;
+}
+.active-lng-btn {
+  color: #3B89AD;
 }
 .navbar-toggler {
   border: none !important;
@@ -614,6 +629,9 @@ ul.nav.nav-pills > li > a {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+}
+a.footer-helpdesk-link:hover {
+  text-decoration: underline !important;
 }
 .btn-toolbar-text {
   color: #FFF;
@@ -1643,8 +1661,25 @@ table.dataTable.no-footer {
   .website-menu {
     display: none;
   }
+  .mobile-lng-switcher-title {
+    display: block;
+    padding-left: 2rem;
+    color: #3B89AD;
+  }
 }
 @media (max-width: 768px) {
+  .contact-us-container {
+    flex-direction: column;
+  }
+  .row.cta .text-dark {
+    text-align: center;
+  }
+  .cta-item.button {
+    align-self: center;
+  }
+  .cover.home-hero-section, .cover.pages-hero-section {
+    padding-top: 50px;
+  }
   .section-header-title {
     text-align: center;
     /* h3 Bold */

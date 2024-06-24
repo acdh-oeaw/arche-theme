@@ -2,6 +2,7 @@
 {% set url_texts = {
     '/browser/ressourcen-einreichen': 'Erfahren Sie mehr über die Dateneinreichung',
     '/browser/deposit-resources': 'Learn more about data submission',
+    '/browser/deposition-process': 'Learn more about data submission',
     '/browser/datenubergabevertrag': 'Rechtliche Vereinbarung zwischen ARCHE und Datengebenden',
     '/browser/deposition-agreement': 'Legal agreement between ARCHE and depositors',
     '/browser/dateinamen-formate-metadaten': 'Daten richtig vorbereiten',
@@ -40,17 +41,22 @@
 
         <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12 hero-title-container">
             <div class="text-center">
-                <p class="section-header-title">{{ node.title.value }}</p>
+                {% if currentUrl == '/browser/deposition-process' %}
+                    <p class="section-header-title">{{ "Deposit Resources"|trans }}</p>
+                {% else %}
+                    <p class="section-header-title">{{ node.title.value }}</p>
+                {% endif %}
+                
                 <span class="hero-small-text">{{ display_text }}</span>
-
             </div>
-            <div class="pb-1 pt-2">
-
-
-            </div>
+            <div class="pb-1 pt-2"></div>
             <div class="hero-home-logos">
-                <a href="https://www.coretrustseal.org/wp-content/uploads/2021/07/20210709-ARCHE-CTS_Certification_2020-2022.pdf" target="_blank"><img src="{{ base_path ~ directory }}/images/partner-logos/CoreTrustSeal_32.png" /></a>
-                <a href="http://hdl.handle.net/11372/DOC-105" target="_blank"><img src="{{ base_path ~ directory }}/images/partner-logos/clarin-b-centre-transparent_32.png" /></a>
+                {% if currentUrl == '/browser/deposition-agreement' %}
+                    <a href="#" target="_blank" class="btn btn-arche-blue">{{ "Download PDF"|trans }}</a>                    
+                {% else %}   
+                    <a href="https://www.coretrustseal.org/wp-content/uploads/2021/07/20210709-ARCHE-CTS_Certification_2020-2022.pdf" target="_blank"><img src="{{ base_path ~ directory }}/images/partner-logos/CoreTrustSeal_32.png" /></a>
+                    <a href="http://hdl.handle.net/11372/DOC-105" target="_blank"><img src="{{ base_path ~ directory }}/images/partner-logos/clarin-b-centre-transparent_32.png" /></a>
+                {% endif %}
             </div>
         </div>
 

@@ -35,7 +35,7 @@
     {% if menu_level == 0 %}
       <ul{{ attributes }} style=" list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));margin-right: 10px; ">
     {% else %}
-      <ul style=" list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));margin-right: 10px; ">
+      <ul style=" list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));margin-right: 10px; " class="arche-sub-mobile-menu">
     {% endif %}
     {% for item in items %}
       <!-- <li class="sub-mobile-element"> -->

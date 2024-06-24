@@ -5,41 +5,38 @@ jQuery(function ($) {
     fetchTopcollections();
     var smartSearchInputField = $('#sm-hero-str');
     var preferredLang = drupalSettings.arche_core_gui.gui_lang;
-    
+
     $(document).ready(function () {
-        
+
     });
 
     smartSearchInputField.autocomplete({
         minLength: 2, // Minimum number of characters to trigger autocomplete
         autoFocus: false,
-        open: function() {
-            $("ul.ui-menu").width( $(this).innerWidth() );        
+        open: function () {
+            $("ul.ui-menu").width($(this).innerWidth());
         }
-        
+
     });
 
     // Attach keyup event listener to the input field
     smartSearchInputField.on('keyup', function () {
         if (event.keyCode !== 37 && // Left arrow
-            event.keyCode !== 38 && // Up arrow
-            event.keyCode !== 39 && // Right arrow
-            event.keyCode !== 40    // Down arrow
-        ) {
+                event.keyCode !== 38 && // Up arrow
+                event.keyCode !== 39 && // Right arrow
+                event.keyCode !== 40    // Down arrow
+                ) {
             // Get the current value of the input field
             var inputValue = $(this).val();
 
             // Check if the input value is at least 2 characters long
             if (inputValue.length >= 2) {
-                console.log("inputvalue: " + inputValue);
                 // Make an AJAX request to your API
                 $.ajax({
-                    url: '/browser/api/smsearch/autocomplete/'+inputValue,
+                    url: '/browser/api/smsearch/autocomplete/' + inputValue,
                     method: 'GET',
                     success: function (data) {
-                        console.log("success...");
                         var responseObject = $.parseJSON(data);
-                        console.log(responseObject);
                         // Initialize autocomplete with the retrieved results
                         smartSearchInputField.autocomplete({source: []});
                         smartSearchInputField.autocomplete({
@@ -47,7 +44,6 @@ jQuery(function ($) {
                         });
                         // Open the autocomplete dropdown
                         smartSearchInputField.autocomplete('search');
-                        console.log("success end");
                     },
                     error: function (xhr, status, error) {
                         console.error('Error fetching autocomplete data:', error);
@@ -64,33 +60,32 @@ jQuery(function ($) {
             type: "GET",
             success: function (data, status) {
                 if (data) {
-                    console.log(data);
-
                     var carouselItems = '';
                     var keys = Object.keys(data);
                     var active = "";
                     for (var i = 0; i < keys.length; i += 4) {
-                        if(i === 0) {
+                        if (i === 0) {
                             active = 'active';
                         } else {
                             active = "";
                         }
                         var browserWidth = $(window).width();
-                        console.log("browserWidth");
-                        console.log(browserWidth);
                         var displayItem = 4;
-                        if(browserWidth < 1024) {
-                            console.log("1024");
-                            carouselItems += '<div class="carousel-item '+active+'">' +
-                                '<div class="row row-cols-md-12 g-4">';
+
+                        if (browserWidth < 768) {
+                            carouselItems += '<div class="carousel-item ' + active + '">' +
+                                    '<div class="row row-cols-md-4 g-4">';
                             displayItem = 1;
-                        
+                        } else if (browserWidth < 1024) {
+                            carouselItems += '<div class="carousel-item ' + active + '">' +
+                                    '<div class="row row-cols-md-12 g-4">';
+                            displayItem = 2;
                         } else {
-                            console.log("kisebb mint 768");
-                             carouselItems += '<div class="carousel-item '+active+'">' +
-                                '<div class="row row-cols-md-4 g-4">';
+                            carouselItems += '<div class="carousel-item ' + active + '">' +
+                                    '<div class="row row-cols-md-12 g-4">';
+                            displayItem = 4;
                         }
-                       
+
                         for (var j = 0; j < displayItem && (i + j) < keys.length; j++) {
                             var id = keys[i + j];
                             var item = data[id];
@@ -108,13 +103,13 @@ jQuery(function ($) {
                         carouselItems += '</div></div>';
                     }
 
-                    
+
                     $('#multi-item-carousel .carousel-inner').html(carouselItems);
 
                     // Initialize the Bootstrap carousel
                     //$('#multi-item-carousel').carousel({
-                      //  interval: false,
-                      //  wrap: false
+                    //  interval: false,
+                    //  wrap: false
                     //});
 
                     // Set the number of visible elements (in this case, 4)
@@ -137,6 +132,6 @@ jQuery(function ($) {
 
 
 
-    
+
 
 });
