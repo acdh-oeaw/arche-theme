@@ -56,7 +56,7 @@ jQuery(function ($) {
 
     function fetchTopcollections() {
         $.ajax({
-            url: '/browser/api/topcollections/12/en',
+            url: '/browser/api/topcollections/12/'+drupalSettings.arche_core_gui.gui_lang,
             type: "GET",
             success: function (data, status) {
                 if (data) {
