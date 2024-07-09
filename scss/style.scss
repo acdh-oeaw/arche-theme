@@ -62,6 +62,28 @@ input {
     border-radius: 5px;
     padding: 5px;
 }
+/* WebKit browsers (Chrome, Safari, Opera) */
+input::placeholder {
+    opacity: 0.3; /* Ensures full opacity */
+}
+
+/* Mozilla Firefox */
+input::-moz-placeholder {
+    opacity: 0.3; /* Ensures full opacity */
+}
+
+/* Internet Explorer 10-11 */
+input:-ms-input-placeholder {
+    opacity: 0.3; /* Ensures full opacity */
+}
+
+/* Microsoft Edge */
+input::-ms-input-placeholder {
+    opacity: 0.3; /* Ensures full opacity */
+}
+.form-control::placeholder {
+    opacity: 0.3;
+}
 
 .fas, .fa {
     color: #333;
@@ -278,7 +300,7 @@ table.dataTable {
 }
 .arche-sub-mobile-menu li a {
     color: #666;
-    
+
 }
 
 #block-arche-theme-main-menu.contextual-region {
@@ -1973,7 +1995,7 @@ table.dataTable.no-footer {
         padding-left: 2rem;
         color: $arche-btn-blue;
     }
-    
+
 }
 @media (max-width: 768px) {
     .contact-us-container {
@@ -2051,7 +2073,7 @@ table.dataTable.no-footer {
         width: 100px;
         height: 100px;
     }
-    
+
 }
 
 //XS
