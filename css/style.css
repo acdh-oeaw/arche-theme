@@ -1305,6 +1305,10 @@ table.child-table.dataTable thead tr, table.child-table.dataTable thead th {
   padding: 12px;
   flex-direction: column;
 }
+.warning-message-div {
+  padding: 15px;
+  margin: 10px;
+}
 .child-tree-div, .rcr-table-div, .publications-table-div {
   background: #fff;
   width: 100%;
