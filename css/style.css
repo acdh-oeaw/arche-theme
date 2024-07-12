@@ -1663,6 +1663,9 @@ table.dataTable.no-footer {
   line-height: 20px;
   /* 142.857% */
 }
+#block-arche-theme-useraccountmenu {
+  display: none;
+}
 @media (min-width: 768px) {
   .cards-wrapper .card img {
     height: 11em;
