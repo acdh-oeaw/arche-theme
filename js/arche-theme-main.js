@@ -26,7 +26,7 @@ jQuery(function ($) {
             var inputValue = $('#sm-hero-str').val();
             console.log("HERO INPUT: " + inputValue);
             // Redirect to the target page with the input value as a parameter.
-            window.location.href = '/browser/discover/q=' + inputValue;
+            window.location.href = '/browser/discover/?q=' + inputValue;
         });
 
         
