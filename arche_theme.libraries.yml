@@ -3,17 +3,18 @@ global-styling:
     version: 5.x
     css:
         theme:
-            https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css: { type: external, minified: true }
+            css/bootstrap.min-5.3.0.css: { minified: true }
             css/style.css: {}
-            https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css: { type: external, minified: true }
+            css/font-awesome-5.15.4.all.min.css: { minified: true }
             css/lightbox.css: {}
             
     js:
-        https://code.jquery.com/jquery-3.6.0.min.js: { type: external, minified: true }
-        https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js: { type: external, minified: true }
-        https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js: { type: external, minified: true }      
+        js/jquery-3.6.0.min.js: { minified: true }
+        js/popper-2.9.2.min.js: { minified: true }
+        js/bootstrap-5.3.0.min.js: { minified: true }      
         js/arche-theme-main.js: {}
         js/lightbox.js: {}
+        js/cookie_consent.js: {header: true}
     dependencies:
         - core/drupal
         - core/drupal.form
@@ -25,11 +26,11 @@ home-page:
     header: true
     css:
         base:
-            https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.3/themes/base/jquery-ui.min.css: { type: external, minified: true }
-            https://cdnjs.cloudflare.com/ajax/libs/jquery-autocomplete/1.0.7/jquery.auto-complete.min.css: { type: external, minified: true }
+            css/jquery-ui-1.13.3.min.css: { minified: true }
+            css/jquery-autocomplete-1.0.7.min.css: { minified: true }
     js: 
-        https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.3/jquery-ui.min.js: { type: external, minified: true }
-        https://cdnjs.cloudflare.com/ajax/libs/jquery-autocomplete/1.0.7/jquery.auto-complete.min.js: { type: external, minified: true }
+        js/jquery-ui-1.13.3.min.js: { minified: true }
+        js/jquery.auto-complete-1.0.7.min.js: { minified: true }
         js/arche_home.js: {}
     dependencies:
         - core/drupal
