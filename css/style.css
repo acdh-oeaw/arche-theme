@@ -1556,6 +1556,19 @@ table.dataTable.no-footer {
 .main-content-row {
   width: 100%;
 }
+.mapLabelDiv {
+  background: #e4e4e4;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  cursor: default;
+  float: left;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  padding: 5px;
+}
+#mapRemoveFiltersBtn {
+  color: #333;
+}
 .leaflet-popup-content {
   text-align: center;
 }
