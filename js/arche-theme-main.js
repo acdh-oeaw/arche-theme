@@ -53,18 +53,14 @@ jQuery(function ($) {
 
     function switchTranslations() {
         var fullUrl = window.location.href;
-        console.log('Full URL:', fullUrl);
-
         // Define the specific path to start extraction
         var path = '/browser/';
 
         // Find the starting index of the specific path
         var startIndex = fullUrl.indexOf(path);
-        console.log(startIndex);
         // Check if the path exists in the URL
         if (startIndex !== -1) {
             var baseUrl = fullUrl.substring(0, startIndex);
-            console.log('Base URL:', baseUrl);
             // Extract the part of the URL starting from the specific path
             var extractedUrlPart = fullUrl.substring(startIndex);
 
@@ -73,15 +69,9 @@ jQuery(function ($) {
                 if (staticPageUrls.hasOwnProperty(key)) {
                     // Check if the key equals the example string
                     if (key === extractedUrlPart) {
-                        console.log("itt");
-                        console.log(baseUrl + staticPageUrls[key]);
-                        //window.location.href = baseUrl + staticPageUrls[key];
-                        // Perform any additional actions if the key matches
+                       window.location.href = baseUrl + staticPageUrls[key];
                     } else if (staticPageUrls[key] === extractedUrlPart) {
-                        console.log("itt 2");
-                        console.log(baseUrl + key);
-                        //window.location.href = baseUrl + key;
-                        // Perform any additional actions if the value matches
+                        window.location.href = baseUrl + key;
                     }
                 }
             }
