@@ -73,13 +73,15 @@ jQuery(function ($) {
                 if (staticPageUrls.hasOwnProperty(key)) {
                     // Check if the key equals the example string
                     if (key === extractedUrlPart) {
-                        window.location.href = baseUrl + staticPageUrls[key];
+                        console.log("itt");
+                        console.log(baseUrl + staticPageUrls[key]);
+                        //window.location.href = baseUrl + staticPageUrls[key];
                         // Perform any additional actions if the key matches
                     } else if (staticPageUrls[key] === extractedUrlPart) {
-                        window.location.href = baseUrl + key;
+                        console.log("itt 2");
+                        console.log(baseUrl + key);
+                        //window.location.href = baseUrl + key;
                         // Perform any additional actions if the value matches
-                    } else {
-                        location.reload();
                     }
                 }
             }
