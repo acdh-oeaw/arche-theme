@@ -62,6 +62,10 @@ input {
     border-radius: 5px;
     padding: 5px;
 }
+
+.placeholder {
+    background-color: transparent;
+}
 /* WebKit browsers (Chrome, Safari, Opera) */
 input::placeholder {
     opacity: 0.3; /* Ensures full opacity */
