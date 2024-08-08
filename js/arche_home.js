@@ -5,6 +5,8 @@ jQuery(function ($) {
     fetchTopcollections();
     var smartSearchInputField = $('#sm-hero-str');
     var preferredLang = drupalSettings.arche_core_gui.gui_lang;
+    var autocompleteTimeout = null;
+    var autocompleteCounter = 1;
 
     $(document).ready(function () {
 
@@ -13,6 +15,7 @@ jQuery(function ($) {
     smartSearchInputField.autocomplete({
         minLength: 2, // Minimum number of characters to trigger autocomplete
         autoFocus: false,
+        delay: 300,
         open: function () {
             $("ul.ui-menu").width($(this).innerWidth());
         }
@@ -31,32 +34,42 @@ jQuery(function ($) {
 
             // Check if the input value is at least 2 characters long
             if (inputValue.length >= 2) {
-                // Make an AJAX request to your API
-                $.ajax({
-                    url: '/browser/api/smsearch/autocomplete/' + inputValue,
-                    method: 'GET',
-                    success: function (data) {
-                        var responseObject = $.parseJSON(data);
-                        // Initialize autocomplete with the retrieved results
-                        smartSearchInputField.autocomplete({source: []});
-                        smartSearchInputField.autocomplete({
-                            source: responseObject
-                        });
-                        // Open the autocomplete dropdown
-                        smartSearchInputField.autocomplete('search');
-                    },
-                    error: function (xhr, status, error) {
-                        console.error('Error fetching autocomplete data:', error);
-                    }
-                });
+                if (autocompleteTimeout) {
+                    // invalidate the previous autocomplete search
+                    clearTimeout(autocompleteTimeout);
+                }
+                // make the AJAX query only if no further keyup events in next 0.3s
+                autocompleteTimeout = setTimeout(() => {
+                    autocompleteCounter++;
+                    var localCounter = autocompleteCounter;
+                    // Make an AJAX request to your API
+                    $.ajax({
+                        url: '/browser/api/smsearch/autocomplete/' + inputValue,
+                        method: 'GET',
+                        success: function (data) {
+                            var responseObject = $.parseJSON(data);
+                            // Initialize autocomplete with the retrieved results
+                            smartSearchInputField.autocomplete({source: []});
+                            smartSearchInputField.autocomplete({
+                                source: responseObject
+                            });
+                            // Open the autocomplete dropdown
+                            smartSearchInputField.autocomplete('search');
+                        },
+                        error: function (xhr, status, error) {
+                            console.error('Error fetching autocomplete data:', error);
+                        }
+                    });
+                }, 300);
             }
         }
     });
 
 
+
     function fetchTopcollections() {
         $.ajax({
-            url: '/browser/api/topcollections/12/'+drupalSettings.arche_core_gui.gui_lang,
+            url: '/browser/api/topcollections/12/' + drupalSettings.arche_core_gui.gui_lang,
             type: "GET",
             success: function (data, status) {
                 if (data) {
@@ -102,20 +115,9 @@ jQuery(function ($) {
                         }
                         carouselItems += '</div></div>';
                     }
-
-
                     $('#multi-item-carousel .carousel-inner').html(carouselItems);
-
-                    // Initialize the Bootstrap carousel
-                    //$('#multi-item-carousel').carousel({
-                    //  interval: false,
-                    //  wrap: false
-                    //});
-
                     // Set the number of visible elements (in this case, 4)
                     $('.carousel-inner .carousel-item').slice(0, 1).addClass('active');
-
-
                 }
 
                 $('#home-slider-loader').fadeOut('slow');
@@ -129,9 +131,5 @@ jQuery(function ($) {
             }
         });
     }
-
-
-
-
 
 });

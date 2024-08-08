@@ -2,24 +2,45 @@ jQuery(function ($) {
     "use strict";
 
     var staticPageUrls = {
-        '/browser/deposition-process': '/browser/de/einreichungsprozess',
-        '/browser/deposition-agreement': '/browser/de/datenuebergabevertrag',
-        '/browser/filenames-formats-metadata': '/browser/de/dateinamen-formate-metadaten',
-        '/browser/faq': '/browser/de/faq',
-        '/browser/further-guidance': '/browser/de/weiterfuehrende-informationen',
-        '/browser/technical-setup': '/browser/de/technischer-aufbau',
-        '/browser/api-access': '/browser/de/api-zugriff',
-        '/browser/collection-policy': '/browser/de/sammlungsstrategie',
-        '/browser/preservation-policy': '/browser/de/konservierungsrichtlinien',
-        '/browser/privacy-policy': '/browser/de/datenschutzbestimmungen',
-        '/browser/terms-of-use': '/browser/de/nutzungsbedingungen',        
-        '/browser/about-arche': '/browser/de/ueber-arche'        
+        'en': {
+            '/browser/de/einreichungsprozess': '/browser/deposition-process',
+            '/browser/de/datenuebergabevertrag': '/browser/deposition-agreement',
+            '/browser/de/dateinamen-formate-metadaten': '/browser/filenames-formats-metadata',
+            '/browser/de/faq': '/browser/faq',
+            '/browser/de/weiterfuehrende-informationen': '/browser/further-guidance',
+            '/browser/de/technischer-aufbau': '/browser/technical-setup',
+            '/browser/de/api-zugriff': '/browser/api-access',
+            '/browser/de/sammlungsstrategie': '/browser/collection-policy',
+            '/browser/de/konservierungsrichtlinien': '/browser/preservation-policy',
+            '/browser/de/datenschutzbestimmungen': '/browser/privacy-policy',
+            '/browser/de/nutzungsbedingungen': '/browser/terms-of-use',
+            '/browser/de/ueber-arche': '/browser/about-arche'
+        },
+
+        'de': {
+            '/browser/deposition-process': '/browser/de/einreichungsprozess',
+            '/browser/deposition-agreement': '/browser/de/datenuebergabevertrag',
+            '/browser/filenames-formats-metadata': '/browser/de/dateinamen-formate-metadaten',
+            '/browser/faq': '/browser/de/faq',
+            '/browser/further-guidance': '/browser/de/weiterfuehrende-informationen',
+            '/browser/technical-setup': '/browser/de/technischer-aufbau',
+            '/browser/api-access': '/browser/de/api-zugriff',
+            '/browser/collection-policy': '/browser/de/sammlungsstrategie',
+            '/browser/preservation-policy': '/browser/de/konservierungsrichtlinien',
+            '/browser/privacy-policy': '/browser/de/datenschutzbestimmungen',
+            '/browser/terms-of-use': '/browser/de/nutzungsbedingungen',
+            '/browser/about-arche': '/browser/de/ueber-arche'
+        }
     };
+
+    var siteLang = "";
+    var fullUrl = window.location.href;
 
     /*** MAIN JS FOR THE THEME ***/
 
     $(document).ready(function () {
-
+        siteLang = drupalSettings.arche_core_gui.gui_lang;
+        checkStaticPageLanguage();
 
         /**
          * Remove the user menu menupoint and just leave the logout button
@@ -40,7 +61,6 @@ jQuery(function ($) {
             event.preventDefault();
             // Get the value of the input field.
             var inputValue = $('#sm-hero-str').val();
-            console.log("HERO INPUT: " + inputValue);
             // Redirect to the target page with the input value as a parameter.
             window.location.href = '/browser/discover/?q=' + inputValue;
         });
@@ -51,11 +71,25 @@ jQuery(function ($) {
         $('.mobile-menu').removeClass('show');
     });
 
-    function switchTranslations() {
-        var fullUrl = window.location.href;
+    function checkStaticPageLanguage() {
+        var path = '/browser/de/';
+        // Find the starting index of the specific path
+        var startIndex = fullUrl.indexOf(path);
+        if (startIndex !== -1 && siteLang === 'en') {
+            changeSiteLanguage('de', true);
+        }
+    }
+
+    /**
+     * DRUPAL layouts doesnt support translations, so we have to change the
+     * static pages manually if we change the site language
+     * @param {type} lng
+     * @returns {undefined}
+     */
+    function switchTranslations(lng) {
+
         // Define the specific path to start extraction
         var path = '/browser/';
-
         // Find the starting index of the specific path
         var startIndex = fullUrl.indexOf(path);
         // Check if the path exists in the URL
@@ -63,21 +97,41 @@ jQuery(function ($) {
             var baseUrl = fullUrl.substring(0, startIndex);
             // Extract the part of the URL starting from the specific path
             var extractedUrlPart = fullUrl.substring(startIndex);
-
             // Iterate over the object
-            for (var key in staticPageUrls) {
-                if (staticPageUrls.hasOwnProperty(key)) {
+            for (var key in staticPageUrls[lng]) {
+                if (staticPageUrls[lng].hasOwnProperty(key)) {                    
                     // Check if the key equals the example string
                     if (key === extractedUrlPart) {
-                       window.location.href = baseUrl + staticPageUrls[key];
-                    } else if (staticPageUrls[key] === extractedUrlPart) {
-                        window.location.href = baseUrl + key;
+                       window.location.href = baseUrl + staticPageUrls[lng][key];
+                    } else if (staticPageUrls[lng][key] === extractedUrlPart) {
+                        //window.location.href = baseUrl + key;
+                        //location.reload();
                     }
                 }
             }
         }
     }
 
+    /**
+     * Call the site gui language change API
+     * @param {type} lang
+     * @returns {undefined}
+     */
+    function changeSiteLanguage(lng, reload = false) {
+        $.ajax({
+            url: '/browser/api/change_lng/' + lng,
+            type: "POST",
+            success: function (data, status) {
+                if(reload){
+                    location.reload();    
+                }
+                switchTranslations(lng);
+            },
+            error: function (message) {
+                return message;
+            }
+        });
+    }
 
     /**
      * Check that the user changed the language on the gui, if yes then we do 
@@ -85,39 +139,19 @@ jQuery(function ($) {
      */
     $('.language-switcher-language-session-arche').on('click', function (event) {
         let lng = $(this).data('lang');
-        $.ajax({
-            url: '/browser/api/change_lng/' + lng,
-            type: "POST",
-            success: function (data, status) {
-                //location.reload();
-                switchTranslations();
-            },
-            error: function (message) {
-                return message;
-            }
-        });
+        changeSiteLanguage(lng);
         event.preventDefault();
-
     });
 
-
-
     $(document).delegate("a#footer-versions-btn", "click", function (e) {
-        console.log('itt');
         e.preventDefault();
         if ($('.arche-footer-bottom-versions').hasClass('hidden')) {
-            console.log('hidden');
             $('.arche-footer-bottom-versions').removeClass('hidden');
             $('.arche-footer-bottom-versions').addClass('d-flex');
         } else {
-            console.log('nem hidden');
             $('.arche-footer-bottom-versions').removeClass('d-flex');
             $('.arche-footer-bottom-versions').addClass('hidden');
         }
-
     });
-
-
-
 
 });
