@@ -122,7 +122,6 @@ jQuery(function ($) {
             url: '/browser/api/change_lng/' + lng,
             type: "POST",
             success: function (data, status) {
-                console.log
                 if(reload){
                     location.reload();    
                 }
@@ -140,7 +139,6 @@ jQuery(function ($) {
      */
     $('.language-switcher-language-session-arche').on('click', function (event) {
         let lng = $(this).data('lang');
-        console.log("CLICKED::" + lng);
         changeSiteLanguage(lng, true);
         event.preventDefault();
     });
