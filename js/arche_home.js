@@ -65,8 +65,6 @@ jQuery(function ($) {
         }
     });
 
-
-
     function fetchTopcollections() {
         $.ajax({
             url: '/browser/api/topcollections/12/' + drupalSettings.arche_core_gui.gui_lang,
