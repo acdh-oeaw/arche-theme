@@ -51,6 +51,9 @@
 {% set pdfHeaders = ['/browser/deposition-agreement', '/browser/de/datenuebergabevertrag', '/browser/de/sammlungsstrategie',
 '/browser/collection-policy', '/browser/de/konservierungsrichtlinien', '/browser/preservation-policy'] %}
 
+{% set noLogoHeaders = ['/browser/de/datenschutzbestimmungen', '/browser/privacy-policy', '/browser/terms-of-use', 
+'/browser/de/nutzungsbedingungen', '/browser/de/ueber-arche', '/browser/about-arche'] %}
+
 <main class="container-fluid cover pages-hero-section">
 
     <div class="row h-60">
@@ -73,7 +76,9 @@
             <div class="pb-1 pt-2"></div>
             <div class="hero-home-logos">
                 {% if currentUrl in pdfHeaders %}
-                    <a href="#" target="_blank" class="btn btn-arche-blue">{{ "Download PDF"|trans }}</a>                    
+                    <a href="#" target="_blank" class="btn btn-arche-blue">{{ "Download PDF"|trans }}</a>                 
+                {% elseif currentUrl in noLogoHeaders %}       
+                    <br>
                 {% else %}   
                     <a href="https://www.coretrustseal.org/wp-content/uploads/2021/07/20210709-ARCHE-CTS_Certification_2020-2022.pdf" target="_blank"><img src="{{ base_path ~ directory }}/images/partner-logos/CoreTrustSeal_32.png" /></a>
                     <a href="http://hdl.handle.net/11372/DOC-105" target="_blank"><img src="{{ base_path ~ directory }}/images/partner-logos/clarin-b-centre-transparent_32.png" /></a>
