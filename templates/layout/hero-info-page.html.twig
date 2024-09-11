@@ -44,9 +44,12 @@
 } %}
 
 
+
+
 {% set currentUrl = path('<current>') %}
 {% set display_text = url_texts[currentUrl] | default('') %}
-
+{% set pdfHeaders = ['/browser/deposition-agreement', '/browser/de/datenuebergabevertrag', '/browser/de/sammlungsstrategie',
+'/browser/collection-policy', '/browser/de/konservierungsrichtlinien', '/browser/preservation-policy'] %}
 
 <main class="container-fluid cover pages-hero-section">
 
@@ -59,6 +62,8 @@
             <div class="text-center">
                 {% if currentUrl == '/browser/deposition-process' %}
                     <p class="section-header-title">{{ "Deposit Resources"|trans }}</p>
+                {% elseif currentUrl == '/browser/de/einreichungsprozess' %}   
+                    <p class="section-header-title">{{ "Ressourcen einreichen"|trans }}</p>
                 {% else %}
                     <p class="section-header-title">{{ node.title.value }}</p>
                 {% endif %}
@@ -67,7 +72,7 @@
             </div>
             <div class="pb-1 pt-2"></div>
             <div class="hero-home-logos">
-                {% if currentUrl == '/browser/deposition-agreement' %}
+                {% if currentUrl in pdfHeaders %}
                     <a href="#" target="_blank" class="btn btn-arche-blue">{{ "Download PDF"|trans }}</a>                    
                 {% else %}   
                     <a href="https://www.coretrustseal.org/wp-content/uploads/2021/07/20210709-ARCHE-CTS_Certification_2020-2022.pdf" target="_blank"><img src="{{ base_path ~ directory }}/images/partner-logos/CoreTrustSeal_32.png" /></a>

@@ -1426,6 +1426,10 @@ table.child-table.dataTable thead tr, table.child-table.dataTable thead th {
 .jstree-default .jstree-node {
   background-image: none;
 }
+#child-tree {
+  width: 100%;
+  overflow: scroll;
+}
 #child-tree ul li {
   border: 1px solid #E1E1E1;
   padding: 10px 12px 10px 0px;
