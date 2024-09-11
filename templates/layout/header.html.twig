@@ -71,8 +71,9 @@
                                     '/browser/de/api-zugriff',
 ] 
             %}
+            {% set discoverPagesArr = ['/browser/discover', '/browser/discover?', '/browser/discover/', '/browser/discover/de/' ] %}
 
-            {% if currentUrl is not empty and '/browser/discover' in currentUrl %}
+            {% if currentUrl is not empty and currentUrl in discoverPagesArr %}
                 {{ include( arche_theme_path ~ '/templates/layout/hero-no-search.html.twig' ) }}
             {% elseif  currentUrl in staticPagesArr  %}
                 {{ include( arche_theme_path ~ '/templates/layout/hero-info-page.html.twig' ) }}

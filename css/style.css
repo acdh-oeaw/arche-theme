@@ -713,7 +713,7 @@ ul.nav.nav-pills > li > a {
   font-weight: 700;
   line-height: normal;
 }
-a.footer-helpdesk-link:hover {
+a.footer-helpdesk-link, a.footer-helpdesk-link:hover {
   text-decoration: underline !important;
 }
 .btn-toolbar-text {
