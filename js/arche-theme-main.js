@@ -41,7 +41,7 @@ jQuery(function ($) {
     $(document).ready(function () {
         siteLang = drupalSettings.arche_core_gui.gui_lang;
         checkStaticPageLanguage();
-
+        initOntologyTable();
         /**
          * Remove the user menu menupoint and just leave the logout button
          */
@@ -71,6 +71,32 @@ jQuery(function ($) {
         $('.mobile-menu').removeClass('show');
     });
 
+    function initOntologyTable() {
+        if (fullUrl.includes('/browser/filenames-formats-metadata')) {
+            $.ajax({
+                url: '/browser/api/ontologyjs/en', // The URL to send the request to
+                method: 'GET', // The HTTP method to use (GET, POST, etc.)
+                success: function (response) {
+                    $('#metadata-table').html(response);
+                },
+                error: function (xhr, status, error) {
+                    console.error('Error:', error);        // This function runs if there is an error
+                }
+            });
+        } else if (fullUrl.includes('/browser/de/dateinamen-formate-metadaten')) {
+             $.ajax({
+                url: '/browser/api/ontologyjs/de', // The URL to send the request to
+                method: 'GET', // The HTTP method to use (GET, POST, etc.)
+                success: function (response) {
+                    $('#metadata-table').html(response);
+                },
+                error: function (xhr, status, error) {
+                    console.error('Error:', error);        // This function runs if there is an error
+                }
+            });
+        }
+    }
+
     function checkStaticPageLanguage() {
         var path = '/browser/de/';
         // Find the starting index of the specific path
@@ -99,10 +125,10 @@ jQuery(function ($) {
             var extractedUrlPart = fullUrl.substring(startIndex);
             // Iterate over the object
             for (var key in staticPageUrls[lng]) {
-                if (staticPageUrls[lng].hasOwnProperty(key)) {                    
+                if (staticPageUrls[lng].hasOwnProperty(key)) {
                     // Check if the key equals the example string
                     if (key === extractedUrlPart) {
-                       window.location.href = baseUrl + staticPageUrls[lng][key];
+                        window.location.href = baseUrl + staticPageUrls[lng][key];
                     } else if (staticPageUrls[lng][key] === extractedUrlPart) {
                         //window.location.href = baseUrl + key;
                         //location.reload();
@@ -122,8 +148,8 @@ jQuery(function ($) {
             url: '/browser/api/change_lng/' + lng,
             type: "POST",
             success: function (data, status) {
-                if(reload){
-                    location.reload();    
+                if (reload) {
+                    location.reload();
                 }
                 switchTranslations(lng);
             },

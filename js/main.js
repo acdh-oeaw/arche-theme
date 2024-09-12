@@ -1,13 +1,8 @@
 jQuery(function ($) {
     "use strict";
 
-
-
-
-
-    var multipleCardCarousel = document.querySelector(
-            "#carouselExampleControls"
-            );
+    var multipleCardCarousel = document.querySelector("#carouselExampleControls");
+    
     if (window.matchMedia("(min-width: 768px)").matches) {
         var carousel = new bootstrap.Carousel(multipleCardCarousel, {
             interval: false,
