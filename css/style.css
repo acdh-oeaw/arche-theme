@@ -1744,12 +1744,14 @@ table.dataTable.no-footer {
   background-repeat: no-repeat;
 }
 .privacy-checkmark {
-  color: green;
+  background-color: green;
   font-size: 24px;
+  margin: 3px;
 }
 .privacy-checkmark-out {
-  color: red;
+  background-color: red;
   font-size: 24px;
+  margin: 3px;
 }
 @media (min-width: 768px) {
   .cards-wrapper .card img {
