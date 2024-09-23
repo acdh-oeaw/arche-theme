@@ -71,6 +71,10 @@ jQuery(function ($) {
         $('.mobile-menu').removeClass('show');
     });
 
+    /**
+     * Fetch the filenames static page ontology table
+     * @returns {undefined}
+     */
     function initOntologyTable() {
         if (fullUrl.includes('/browser/filenames-formats-metadata')) {
             $.ajax({

@@ -2044,6 +2044,17 @@ table.dataTable.no-footer {
     background-repeat: no-repeat;
 }
 
+.privacy-checkmark {
+    background-color: green;
+    font-size: 24px;
+    margin: 3px;
+}
+
+.privacy-checkmark-out {
+    background-color: red;
+    font-size: 24px;
+    margin: 3px;
+}
 
 @media (min-width: 768px) {
     .cards-wrapper .card img {

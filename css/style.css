@@ -1743,6 +1743,14 @@ table.dataTable.no-footer {
 .leaflet-draw-toolbar a {
   background-repeat: no-repeat;
 }
+.privacy-checkmark {
+  color: green;
+  font-size: 24px;
+}
+.privacy-checkmark-out {
+  color: red;
+  font-size: 24px;
+}
 @media (min-width: 768px) {
   .cards-wrapper .card img {
     height: 11em;
