@@ -4,17 +4,19 @@
 <div class="container-fluid px-0">
     <main role="main">
         <a id="main-content" tabindex="-1"></a>
-
         <div class="layout-content">
-            <div class="conatiner">
-            <div class="row justify-content-center m-0 p-0">
-                <div class="col-lg-4 text-center">
-                    <div class="alert alert-danger" role="alert">
-                        {{ "This is the curation instance! The paratexts on the homepage as well as in Deposit, Policies, and About ARCHE are not up-to-date! Please consult the <a href='https://arche.acdh.oeaw.ac.at/browser/'>live site</a> to keep yourself informed."|trans }}
+            {% set currentUrl = url('<front>') %}
+            {% if 'https://arche.acdh.oeaw.ac.at/' not in currentUrl %}
+                <div class="conatiner">
+                    <div class="row justify-content-center m-0 p-0">
+                        <div class="col-lg-8 text-center pt-4">
+                            <div class="alert alert-danger" role="alert">
+                                {{ "This is the curation instance! The paratexts on the homepage as well as in Deposit, Policies, and About ARCHE are not up-to-date! Please consult the <a href='https://arche.acdh.oeaw.ac.at/browser/'>live site</a> to keep yourself informed."|trans }}
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>         
+                </div>    
+            {% endif %}
             <div class="article-list">
                 {{ page.start_page_content }}   
             </div>
