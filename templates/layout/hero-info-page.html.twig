@@ -44,8 +44,17 @@
     '/browser/de/api-zugriff': 'Schnittstellen für die programmgesteuerte Suche und Abfrage der ARCHE-Daten',
 } %}
 
-
-
+{% set pdf_urls = {
+    '/browser/deposition-agreement': 'https://raw.githubusercontent.com/acdh-oeaw/arche-static-text/main/DepositionAgreement/ARCHE_DepositionAgreement.pdf',
+    '/browser/collection-policy': 'https://raw.githubusercontent.com/acdh-oeaw/arche-static-text/main/CollectionPolicy/ARCHE_CollectionPolicy.pdf',
+    '/browser/preservation-policy': 'https://raw.githubusercontent.com/acdh-oeaw/arche-static-text/main/PreservationPolicy/ARCHE_PreservationPolicy.pdf',
+    '/browser/de/deposition-agreement': 'https://raw.githubusercontent.com/acdh-oeaw/arche-static-text/main/DepositionAgreement/ARCHE_Datenuebergabevertrag.pdf',
+    '/browser/de/datenuebergabevertrag': 'https://raw.githubusercontent.com/acdh-oeaw/arche-static-text/main/DepositionAgreement/ARCHE_Datenuebergabevertrag.pdf',
+    '/browser/de/collection-policy': 'https://raw.githubusercontent.com/acdh-oeaw/arche-static-text/main/CollectionPolicy/ARCHE_Sammlungsstrategie.pdf',
+    '/browser/de/sammlungsstrategie': 'https://raw.githubusercontent.com/acdh-oeaw/arche-static-text/main/CollectionPolicy/ARCHE_Sammlungsstrategie.pdf',
+    '/browser/de/preservation-policy': 'https://raw.githubusercontent.com/acdh-oeaw/arche-static-text/main/PreservationPolicy/ARCHE_Konservierungsrichtlinen.pdf',
+    '/browser/de/konservierungsrichtlinien': 'https://raw.githubusercontent.com/acdh-oeaw/arche-static-text/main/PreservationPolicy/ARCHE_Konservierungsrichtlinen.pdf'
+} %}
 
 {% set currentUrl = path('<current>') %}
 {% set display_text = url_texts[currentUrl] | default('') %}
@@ -77,7 +86,8 @@
             <div class="pb-1 pt-2"></div>
             <div class="hero-home-logos">
                 {% if currentUrl in pdfHeaders %}
-                    <a href="#" target="_blank" class="btn btn-arche-blue">{{ "Download PDF"|trans }}</a>                 
+                    {% set pdf_url = pdf_urls[currentUrl] | default('') %}
+                    <a href="{{ pdf_url }}" target="_blank" class="btn btn-arche-blue">{{ "Download PDF"|trans }}</a>                 
                 {% elseif currentUrl in noLogoHeaders %}       
                     <br>
                 {% else %}   
