@@ -105,7 +105,7 @@ jQuery(function ($) {
                             var imgSrc = 'https://arche-thumbnails.acdh.oeaw.ac.at?id=' + currentUrl  + '/'+id;
                             carouselItems += '<div class="col">' +
                                     '<div class="card">' +
-                                    '<a href="/browser/metadata/' + id + '"><img src="'+ imgSrc + '?width=350" class="card-img-top" alt="' + item.title + '"></a>' +
+                                    '<a href="/browser/metadata/' + id + '"><img src="'+ imgSrc + '&width=350" class="card-img-top" alt="' + item.title + '"></a>' +
                                     '<div class="card-body">' +
                                     '<h5 class="card-title">' + item.title + '</h5>' +
                                     '<p class=card-text>' + item.description.slice(0, 200) + '...</p>' +
