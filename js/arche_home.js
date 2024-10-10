@@ -100,9 +100,12 @@ jQuery(function ($) {
                         for (var j = 0; j < displayItem && (i + j) < keys.length; j++) {
                             var id = keys[i + j];
                             var item = data[id];
+                            var currentUrl = $(location).attr('href');
+                            currentUrl = currentUrl.replace('/browser', '/api');
+                            var imgSrc = 'https://arche-thumbnails.acdh.oeaw.ac.at?id=' + currentUrl  + '/'+id;
                             carouselItems += '<div class="col">' +
                                     '<div class="card">' +
-                                    '<img src="https://arche-thumbnails.acdh.oeaw.ac.at/' + item.identifier.replace('https://', '') + '?width=350" class="card-img-top" alt="' + item.title + '">' +
+                                    '<a href="/browser/metadata/' + id + '"><img src="'+ imgSrc + '?width=350" class="card-img-top" alt="' + item.title + '"></a>' +
                                     '<div class="card-body">' +
                                     '<h5 class="card-title">' + item.title + '</h5>' +
                                     '<p class=card-text>' + item.description.slice(0, 200) + '...</p>' +
