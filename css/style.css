@@ -1164,7 +1164,7 @@ a.footer-helpdesk-link, a.footer-helpdesk-link:hover {
 .bubble-line-container .image-wrapper img {
   position: absolute;
   bottom: -3px;
-  width: auto;
+  width: 100%;
 }
 .card.metadata {
   width: 100%;
