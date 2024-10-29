@@ -1316,6 +1316,17 @@ table.dataTable thead tr, table.dataTable thead th {
   border-top: 1px solid #E1E1E1;
   border-left: 1px solid #E1E1E1;
 }
+.dataTables_wrapper .dataTables_filter label {
+  font-size: 14px;
+}
+.dataTables_wrapper .dataTables_filter input {
+  border-radius: 50px;
+  padding-left: 10px;
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin: 10px;
+}
 #childDT_wrapper {
   width: 100%;
   display: flex;
