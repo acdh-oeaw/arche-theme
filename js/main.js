@@ -31,5 +31,9 @@ jQuery(function ($) {
     } else {
         $(multipleCardCarousel).addClass("slide");
     }
+    
+    $(document).delegate(".anchor-link", "click", function (e) {
+        e.preventDefault();        
+    });
 
 });

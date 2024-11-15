@@ -19,6 +19,9 @@ body {
     font-family: Lato, Roboto, Helvetica Neue, Arial !important;
     color: $basic-gray;
 }
+html {
+    scroll-behavior: smooth;
+}
 
 h4 {
     color: #333;
