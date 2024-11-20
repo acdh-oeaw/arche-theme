@@ -8,6 +8,7 @@ $arche-smokey-white: #F8F9FA;
 $arche-green: #58BCC1;
 $arche-light-blue: #e1edf3;
 $arche-medium-blue: #4796b5;
+$arche-medium-blue-hover: #3B89AD;
 $arche-dark-blue: #069;
 $light-gray: #e1e1e1;
 $light-blue: #EEF5F8;
@@ -602,8 +603,9 @@ ul.nav.nav-pills > li > a {
     border-bottom-right-radius: 50px;
 }
 
-.hero-search-button:hover {
-    background-color: $arche-medium-blue;
+.hero-search-button:hover,
+.hero-search-button:focus {
+    background-color: $arche-medium-blue-hover;
 }
 
 

@@ -526,8 +526,8 @@ ul.nav.nav-pills > li > a {
   /* Adjust the radius as needed */
   border-bottom-right-radius: 50px;
 }
-.hero-search-button:hover {
-  background-color: #4796b5;
+.hero-search-button:hover, .hero-search-button:focus {
+  background-color: #3B89AD;
 }
 /*
 .mobile-tool-bar{
