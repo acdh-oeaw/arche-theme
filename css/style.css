@@ -145,6 +145,12 @@ p, span {
   line-height: 25px;
   word-wrap: break-word;
 }
+.messages__wrapper .messages--error {
+  color: #58151c;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #f1aeb5;
+}
 #cookie-overlay {
   background-color: rgba(51, 51, 51, 0.9);
   position: fixed;
@@ -352,6 +358,16 @@ ul.links {
 .arche-header-navbar div {
   display: flex;
   gap: 24px;
+}
+#mapRemoveFiltersBtn {
+  cursor: default;
+  /* Prevents the hand cursor */
+  text-decoration: none;
+  /* Optional: remove underline if desired */
+}
+.smartsearch_trash_icon {
+  width: 24px;
+  height: 24px;
 }
 .mobile-menu-container {
   position: fixed;
