@@ -422,6 +422,7 @@ ul.links {
 .smartsearch_trash_icon {
     width: 24px;
     height: 24px;
+    vertical-align: initial !important;
 }
 
 .mobile-menu-container {
@@ -1862,6 +1863,7 @@ table.dataTable.no-footer {
 ///// SMART SEARCH MAP ////
 
 .mapLabelDiv {
+    display: flex;
     background: #e4e4e4;
     border: 1px solid #aaa;
     border-radius: 4px;
