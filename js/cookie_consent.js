@@ -144,12 +144,6 @@ jQuery(function ($) {
     })();
     
     
-    // Function to track dynamic pageviews
-    window.trackPageView = function (newUrl) {
-        _paq.push(['setCustomUrl', newUrl]);
-        _paq.push(['setDocumentTitle', document.title]);
-        _paq.push(['trackPageView']);
-    }
-
+   
 
 });
