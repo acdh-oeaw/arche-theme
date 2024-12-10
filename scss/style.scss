@@ -850,7 +850,7 @@ a.footer-helpdesk-link:hover {
     border-radius: 12px;
     background: $gray;
     color: #fff;
-    height: auto;
+    height: fit-content;
 }
 .btn-detail-type-gray {
     border-radius: 12px;
@@ -2140,6 +2140,9 @@ table.dataTable.no-footer {
 
 }
 @media (max-width: 768px) {
+    .discover-table-image-div {
+        max-height: 100%;
+    }
     .contact-us-container {
         flex-direction: column;
     }

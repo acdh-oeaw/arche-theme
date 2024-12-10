@@ -6,10 +6,12 @@ jQuery(function ($) {
     let optedOutTxt = '<span class="privacy-checkmark-out">X</span> You are currently opted out. <a href="#" id="opt-in-out-matomo">Click here</a> to opt in.';
     var cookiesAccepted = getCookie("cookiesAccepted");
     var cookiesAcceptedNecessary = getCookie("cookiesAcceptedNecessary");
-    
+
     $(document).ready(function () {
         initPrivacyPolicyTracking();
     });
+
+
 
     /**
      * Check the actually selected tracking on the privacy page
@@ -27,7 +29,8 @@ jQuery(function ($) {
             }
         }
     }
-    
+
+
     /**
      * handle the click event on the privacy page, when the 
      * user changes the tracking settings
@@ -40,7 +43,7 @@ jQuery(function ($) {
             removeCookie("cookiesAcceptedNecessary");
             setCookie("cookiesAccepted", true, 180);
             setCookie("cookiesAcceptedNecessary", false);
-            _paq.push(['trackPageView']);
+            _paq.push(['trackPageView', 'enableLinkTracking']);
             $('#matomo-opt-text').html(optedInTxt);
         } else if (cookiesAccepted === "true") {
             removeCookie("cookiesAccepted");
@@ -75,7 +78,7 @@ jQuery(function ($) {
     function removeCookie(cname) {
         document.cookie = cname + '=; Max-Age=-99999999;';
     }
-    
+
     /**
      * Get the cookie
      * @param {type} cname
@@ -103,7 +106,10 @@ jQuery(function ($) {
         _paq.push(['requireConsent']);
     } else if (cookiesAccepted) {
         _paq.push(['trackPageView']);
+        _paq.push(['trackPageView', 'enableLinkTracking']);
     }
+
+
 
     /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
     /**
@@ -126,7 +132,7 @@ jQuery(function ($) {
 
         $("#cookie-overlay").fadeOut(100);
     });
-    
+
     (function () {
         var u = "https://matomo.acdh.oeaw.ac.at/";
         _paq.push(['setTrackerUrl', u + 'piwik.php']);
@@ -137,4 +143,13 @@ jQuery(function ($) {
         s.parentNode.insertBefore(g, s);
     })();
     
+    
+    // Function to track dynamic pageviews
+    window.trackPageView = function (newUrl) {
+        _paq.push(['setCustomUrl', newUrl]);
+        _paq.push(['setDocumentTitle', document.title]);
+        _paq.push(['trackPageView']);
+    }
+
+
 });
