@@ -11,6 +11,6 @@
         }
     ],
     "require": {
-        "scssphp/scssphp": "*"
+        "scssphp/scssphp": "^1"
     }
 }

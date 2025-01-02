@@ -26,7 +26,6 @@ function arche_theme_preprocess_page(&$variables) {
 function rebuildScss() {
     $vendorUrl = str_replace('/web', '/vendor', DRUPAL_ROOT);
     require_once $vendorUrl."/autoload.php";
-    require_once $vendorUrl."/scssphp/scssphp/scss.inc.php";
    
     $websiteUrl = \Drupal::request()->getSchemeAndHttpHost();
     if (strpos($websiteUrl, '//localhost') !== false || strpos($websiteUrl, '//127.0.0.1') !== false || 
