@@ -1,8 +1,6 @@
 <?php
 
-
-
-require_once "vendor/scssphp/scssphp/scss.inc.php";
+//require_once "vendor/scssphp/scssphp/scss.inc.php";
 
 use ScssPhp\ScssPhp\Compiler;
 
