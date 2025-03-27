@@ -22,6 +22,19 @@ function arche_theme_preprocess_page(&$variables) {
     rebuildScss();
 }
 
+/**
+ * Add the rel nofollow for the login link #24859
+ */
+function arche_theme_preprocess_menu(array &$variables) {
+    if($variables['menu_name'] === 'account') {
+        foreach ($variables['items'] as &$item) {
+            if (isset($item['url']) && in_array($item['url']->toString(), ['/browser/user/login', '/browser/user/register'])) {
+                $item['url']->setOption('attributes', ['rel' => 'nofollow']);
+            }
+        }
+    }
+}
+
 
 function rebuildScss() {
     $vendorUrl = str_replace('/web', '/vendor', DRUPAL_ROOT);
