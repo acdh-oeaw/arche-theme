@@ -1745,6 +1745,12 @@ li[aria-level].jstree-node.jstree-leaf {
   width: 100%;
 }
 
+.cite-content {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+
 .root-table tbody th,
 .root-table tbody td {
   border: none !important;
