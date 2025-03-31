@@ -125,7 +125,7 @@ input::-ms-input-placeholder {
 .background-image-front-div::before {
   top: 0;
   left: 0;
-  background-image: url("../images/common/top-left-cloud.png");
+  background-image: url("../images/common/top-left-cloud.svg");
   /* Replace with your top logo */
   background-size: cover;
   z-index: 0;
@@ -240,7 +240,7 @@ p, span {
 }
 
 #page {
-  background-image: url("../images/common/mission_bottom_bubble.png");
+  background-image: url("../images/common/mission_bottom_bubble.svg");
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: 100% 400px;
@@ -813,7 +813,7 @@ ul.nav.nav-pills > li > a {
 .arche-footer::before {
   top: 0;
   right: 0;
-  background-image: url("../images/common/footer_top_rigt_bubble.png");
+  background-image: url("../images/common/footer_top_right_bubble.svg");
   /* Replace with your top logo */
   background-size: cover;
   z-index: 0;
@@ -824,7 +824,7 @@ ul.nav.nav-pills > li > a {
 .arche-footer::after {
   bottom: 0;
   left: 0;
-  background-image: url("../images/common/footer_left_bottom_bubble.png");
+  background-image: url("../images/common/footer_left_bottom_bubble.svg");
   /* Replace with your bottom logo */
   background-size: cover;
   z-index: 0;
@@ -1122,7 +1122,7 @@ a.footer-helpdesk-link:hover {
 }
 
 .resources-container-home {
-  background-image: url("../images/common/resource_bottom_bubble.png");
+  background-image: url("../images/common/resource_bottom_bubble.svg");
   background-repeat: no-repeat;
   background-size: cover;
   margin-left: 0px !important;
@@ -1132,7 +1132,7 @@ a.footer-helpdesk-link:hover {
 }
 
 .mission-container-home {
-  background-image: url("../images/common/mission_bottom_bubble.png");
+  background-image: url("../images/common/mission_bottom_bubble.svg");
   background-repeat: no-repeat;
   background-size: cover;
   margin-left: 0px !important;
@@ -2110,6 +2110,10 @@ table.dataTable.no-footer {
   background-color: red;
   font-size: 24px;
   margin: 3px;
+}
+
+.pages-hero-section {
+  height: 80%;
 }
 
 @media (min-width: 768px) {
