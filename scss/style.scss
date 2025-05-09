@@ -248,10 +248,11 @@ p, span {
     background-image: url("../images/common/mission_bottom_bubble.svg");
     background-position: bottom;
     background-repeat: no-repeat;
-    background-size: 100% 400px;
+    background-size: 100% auto;
     padding-bottom: 100px;
     min-height: 500px;
 }
+
 
 .btn-arche-green {
     color: white;
@@ -260,7 +261,8 @@ p, span {
     border-radius: 6px;
     background: $arche-green;
     display: flex;
-    align-items: flex-start;
+    width: fit-content;
+    //align-items: flex-start;
 }
 .btn-arche-green:hover {
     background-color: rgba(88, 188, 193, 0.2);
@@ -275,7 +277,8 @@ p, span {
 }
 .btn-arche-blue:hover,
 .btn-sm-add:hover {
-    background-color: rgba(59, 137, 173, 0.8);
+    background-color: rgba(59, 137, 173, 0.5);
+    color: white;
 }
 
 .btn-arche-blue-sidebar {
@@ -308,6 +311,20 @@ p, span {
 }
 .btn-arche-gray:hover {
     background-color: rgba(91, 89, 91, 0.2);
+}
+
+.btn-arche-red {
+    color: white;
+    padding: 10px 16px;
+    gap: 8px;
+    border-radius: 6px;
+    display: flex;;
+    background: #DC3545;
+    color: white;
+    width: fit-content;
+}
+.btn-arche-red:hover {
+    background-color: rgba(220, 53, 69, 0.5);
 }
 
 .btn-sm-add {
@@ -405,6 +422,37 @@ ul.links {
     list-style: none;
 }
 
+.cart-content-div {
+    background: #fff;
+    width: 100%;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    border-radius: 12px;
+}
+.cart-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* optional: ensures vertical alignment */
+}
+
+.cart-items-content {
+    margin: 0;
+    padding: 0;
+}
+.cart-link {
+    display: flex;
+    align-items: center;      /* vertical alignment */
+    justify-content: center;  /* horizontal alignment */
+    gap: 8px;                 /* spacing between icon and text */
+    text-decoration: none;
+}
+#cartTable_wrapper {
+    width: 100%;
+}
+
 .arche-header-navbar {
     justify-content: flex-end !important;
     flex-grow: unset !important;
@@ -413,6 +461,7 @@ ul.links {
 .arche-header-navbar div {
     display: flex;
     gap: 24px;
+    align-items: center;
 }
 #mapRemoveFiltersBtn {
     cursor: default; /* Prevents the hand cursor */
