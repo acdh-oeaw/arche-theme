@@ -318,7 +318,8 @@ p, span {
     padding: 10px 16px;
     gap: 8px;
     border-radius: 6px;
-    display: flex;;
+    display: flex;
+    ;
     background: #DC3545;
     color: white;
     width: fit-content;
@@ -1967,7 +1968,6 @@ table.dataTable.no-footer {
     height: 50px;
 }
 #closeSMSMapButton {
-
 }
 
 .map-loader {
@@ -2020,12 +2020,14 @@ table.dataTable.no-footer {
 #searchIn {
     display: none;
 }
+
 .smartsearch-pager {
     width: 100%;
     border-bottom: 1px solid #E1EDF3;
     padding-bottom: 20px;
 
 }
+
 .arche-smartsearch-page-div .row {
     display: flex;
     align-items: center;
@@ -2040,7 +2042,6 @@ table.dataTable.no-footer {
 }
 
 .extendedSearchCard {
-
 }
 
 .res-property.sm-description {
@@ -2063,13 +2064,10 @@ table.dataTable.no-footer {
     padding-bottom: 24px;
 }
 
-
-
 .select2-container--default .select2-selection--multiple {
     border: 1px solid $light-gray;
     border-radius: 5px;
 }
-
 
 /* Customize the appearance of the autocomplete dropdown */
 .ui-autocomplete {
@@ -2111,7 +2109,6 @@ table.dataTable.no-footer {
     background-color: $arche-btn-blue-hover !important;
 }
 
-
 ///*** DETAIL VIEW ***///
 #cite-dropdown {
     background: #fff;
@@ -2122,7 +2119,6 @@ table.dataTable.no-footer {
     font-weight: 400;
     line-height: 20px; /* 142.857% */
 }
-
 
 #block-arche-theme-useraccountmenu {
     display: none;
@@ -2144,9 +2140,15 @@ table.dataTable.no-footer {
     margin: 3px;
 }
 
-
 .pages-hero-section {
     height: 80%;
+}
+
+.flying-cart-icon {
+    position: absolute;
+    z-index: 9999;
+    transition: all 0.8s ease-in-out;
+    pointer-events: none;
 }
 
 @media (min-width: 768px) {
