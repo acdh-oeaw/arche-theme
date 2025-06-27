@@ -31,7 +31,7 @@ var pageContent =
     {  
       "tag":"a",
       "class":"button",
-      "content":"Visit ACDH-CH Website",
+      "content":"Visit ACDH Website",
       "href":"https://www.oeaw.ac.at/acdh/"
     },
     {  
