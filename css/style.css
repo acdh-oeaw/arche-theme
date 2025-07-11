@@ -258,7 +258,19 @@ p, span {
   width: fit-content;
 }
 
-.btn-arche-green:hover {
+.btn-arche-green-small {
+  color: white;
+  font-size: 0.9em;
+  padding: 5px 8px;
+  gap: 8px;
+  border-radius: 6px;
+  background: #58BCC1;
+  display: flex;
+  width: fit-content;
+}
+
+.btn-arche-green:hover,
+.btn-arche-green-small:hover {
   background-color: rgba(88, 188, 193, 0.2);
 }
 
@@ -323,7 +335,20 @@ p, span {
   width: fit-content;
 }
 
-.btn-arche-red:hover {
+.btn-arche-red-small {
+  color: white;
+  padding: 5px 8px;
+  font-size: 0.9em;
+  gap: 8px;
+  border-radius: 6px;
+  display: flex;
+  background: #DC3545;
+  color: white;
+  width: fit-content;
+}
+
+.btn-arche-red:hover,
+.btn-arche-red-small:hover {
   background-color: rgba(220, 53, 69, 0.5);
 }
 
@@ -2165,6 +2190,17 @@ table.dataTable.no-footer {
 
 .pages-hero-section {
   height: 80%;
+}
+
+.flying-cart-icon {
+  position: absolute;
+  z-index: 9999;
+  transition: all 0.8s ease-in-out;
+  pointer-events: none;
+}
+
+.child-cart-table {
+  width: 90%;
 }
 
 @media (min-width: 768px) {
