@@ -87,12 +87,35 @@ jQuery(function ($) {
                     console.error('Error:', error);        // This function runs if there is an error
                 }
             });
+            
+            $.ajax({
+                url: '/browser/api/accepted-formats-table/en', // The URL to send the request to
+                method: 'GET', // The HTTP method to use (GET, POST, etc.)
+                success: function (response) {
+                    $('.filenames-formats-dynamic-table-en').html(response);
+                },
+                error: function (xhr, status, error) {
+                    console.error('Error:', error);        // This function runs if there is an error
+                }
+            });
+            
         } else if (fullUrl.includes('/browser/de/dateinamen-formate-metadaten')) {
              $.ajax({
                 url: '/browser/api/ontologyjs/de', // The URL to send the request to
                 method: 'GET', // The HTTP method to use (GET, POST, etc.)
                 success: function (response) {
                     $('#metadata-table').html(response);
+                },
+                error: function (xhr, status, error) {
+                    console.error('Error:', error);        // This function runs if there is an error
+                }
+            });
+            
+            $.ajax({
+                url: '/browser/api/accepted-formats-table/de', // The URL to send the request to
+                method: 'GET', // The HTTP method to use (GET, POST, etc.)
+                success: function (response) {
+                    $('.filenames-formats-dynamic-table-de').html(response);
                 },
                 error: function (xhr, status, error) {
                     console.error('Error:', error);        // This function runs if there is an error
