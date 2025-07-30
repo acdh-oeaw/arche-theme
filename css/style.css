@@ -1858,6 +1858,8 @@ table.dataTable.no-footer {
   background-color: red;
   font-size: 24px;
   margin: 3px;
+  padding: 5px;
+  color: white;
 }
 .pages-hero-section {
   height: 80%;
