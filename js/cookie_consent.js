@@ -4,10 +4,10 @@ jQuery(function ($) {
     var fullUrl = window.location.href;
     let optedInTxt = '<span class="privacy-checkmark">✓</span> You are currently opted in. <a href="#" id="opt-in-out-matomo">Click here</a> to opt out.';
     let optedOutTxt = '<span class="privacy-checkmark-out">X</span> You are currently opted out. <a href="#" id="opt-in-out-matomo">Click here</a> to opt in.';
-    
+
     let optedInTxtDE = '<span class="privacy-checkmark">✓</span>Sie sind derzeit angemeldet. <a href="#" id="opt-in-out-matomo">Klicken Sie hier</a>, um sich abzumelden.';
     let optedOutTxtDE = '<span class="privacy-checkmark-out">X</span> Sie sind derzeit abgemeldet. <a href="#" id="opt-in-out-matomo">Klicken Sie hier</a>, um sich anzumelden.';
-    
+
     var cookiesAccepted = getCookie("cookiesAccepted");
     var cookiesAcceptedNecessary = getCookie("cookiesAcceptedNecessary");
 
@@ -25,19 +25,23 @@ jQuery(function ($) {
         //update the text and checkbot with the actual value
         if (fullUrl.includes('/browser/privacy-policy') || fullUrl.includes('/browser/de/datenschutzbestimmungen')) {
             if (cookiesAcceptedNecessary === "true") {
-                 //show not checked checkbox and not in text
-                if(drupalSettings.arche_core_gui.gui_lang === 'de') {
+                //show not checked checkbox and not in text
+                if (drupalSettings.arche_core_gui.gui_lang === 'de') {
                     $('#matomo-opt-text').html(Drupal.t(optedOutTxtDE));
+                    $('#matomo-opt-text-de').html(Drupal.t(optedOutTxtDE));
                 } else {
                     $('#matomo-opt-text').html(Drupal.t(optedOutTxt));
+                    $('#matomo-opt-text-de').html(Drupal.t(optedOutTxt));
                 }
             }
             if (cookiesAccepted === "true") {
-                if(drupalSettings.arche_core_gui.gui_lang === 'de') {
-                   $('#matomo-opt-text').html(Drupal.t(optedInTxtDE));
+                if (drupalSettings.arche_core_gui.gui_lang === 'de') {
+                    $('#matomo-opt-text').html(Drupal.t(optedInTxtDE));
+                    $('#matomo-opt-text-de').html(Drupal.t(optedInTxtDE));
                 } else {
                     $('#matomo-opt-text').html(Drupal.t(optedInTxt));
-                }                
+                    $('#matomo-opt-text-de').html(Drupal.t(optedInTxt));
+                }
             }
         }
     }
@@ -56,14 +60,26 @@ jQuery(function ($) {
             setCookie("cookiesAccepted", true, 180);
             setCookie("cookiesAcceptedNecessary", false);
             _paq.push(['trackPageView', 'enableLinkTracking']);
-            $('#matomo-opt-text').html(optedInTxt);
+            if (drupalSettings.arche_core_gui.gui_lang === 'de') {
+                $('#matomo-opt-text').html(Drupal.t(optedInTxtDE));
+                $('#matomo-opt-text-de').html(Drupal.t(optedInTxtDE));
+            } else {
+                $('#matomo-opt-text').html(Drupal.t(optedInTxt));
+                $('#matomo-opt-text-de').html(Drupal.t(optedInTxt));
+            }
         } else if (cookiesAccepted === "true") {
             removeCookie("cookiesAccepted");
             setCookie("cookiesAcceptedNecessary", true, 180);
             setCookie("cookiesAccepted", false, 180);
             //Once the function requireConsent is executed then no tracking request will be sent to Matomo and no cookies will be set.
             _paq.push(['requireConsent']);
-            $('#matomo-opt-text').html(optedOutTxt);
+            if (drupalSettings.arche_core_gui.gui_lang === 'de') {
+                $('#matomo-opt-text').html(Drupal.t(optedOutTxtDE));
+                $('#matomo-opt-text-de').html(Drupal.t(optedOutTxtDE));
+            } else {
+                $('#matomo-opt-text').html(Drupal.t(optedOutTxt));
+                $('#matomo-opt-text-de').html(Drupal.t(optedOutTxt));
+            }
         }
     });
 
@@ -154,8 +170,8 @@ jQuery(function ($) {
         g.src = u + 'piwik.js';
         s.parentNode.insertBefore(g, s);
     })();
-    
-    
-   
+
+
+
 
 });
