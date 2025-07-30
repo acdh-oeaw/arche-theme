@@ -4,6 +4,10 @@ jQuery(function ($) {
     var fullUrl = window.location.href;
     let optedInTxt = '<span class="privacy-checkmark">✓</span> You are currently opted in. <a href="#" id="opt-in-out-matomo">Click here</a> to opt out.';
     let optedOutTxt = '<span class="privacy-checkmark-out">X</span> You are currently opted out. <a href="#" id="opt-in-out-matomo">Click here</a> to opt in.';
+
+    let optedInTxtDE = '<span class="privacy-checkmark">✓</span> Sie sind derzeit angemeldet. <a href="#" id="opt-in-out-matomo">Click here</a> to opt out.';
+    let optedOutTxtDE = '<span class="privacy-checkmark-out">X</span> Sie sind derzeit abgemeldet. <a href="#" id="opt-in-out-matomo">Klicken Sie hier</a>, um sich anzumelden.';
+    
     var cookiesAccepted = getCookie("cookiesAccepted");
     var cookiesAcceptedNecessary = getCookie("cookiesAcceptedNecessary");
 
@@ -21,11 +25,19 @@ jQuery(function ($) {
         //update the text and checkbot with the actual value
         if (fullUrl.includes('/browser/privacy-policy') || fullUrl.includes('/browser/de/datenschutzbestimmungen')) {
             if (cookiesAcceptedNecessary === "true") {
-                //show not checked checkbox and not in text
-                $('#matomo-opt-text').html(Drupal.t(optedOutTxt));
+                 //show not checked checkbox and not in text
+                if(drupalSettings.arche_core_gui.gui_lang === 'de') {
+                    $('#matomo-opt-text').html(Drupal.t(optedOutTxtDE));
+                } else {
+                    $('#matomo-opt-text').html(Drupal.t(optedOutTxt));
+                }
             }
             if (cookiesAccepted === "true") {
-                $('#matomo-opt-text').html(Drupal.t(optedInTxt));
+                if(drupalSettings.arche_core_gui.gui_lang === 'de') {
+                   $('#matomo-opt-text').html(Drupal.t(optedInTxtDE));
+                } else {
+                    $('#matomo-opt-text').html(Drupal.t(optedInTxt));
+                }                
             }
         }
     }
