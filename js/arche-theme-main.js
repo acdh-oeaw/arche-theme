@@ -87,7 +87,7 @@ jQuery(function ($) {
                     console.error('Error:', error);        // This function runs if there is an error
                 }
             });
-            
+
             $.ajax({
                 url: '/browser/api/accepted-formats-table/en', // The URL to send the request to
                 method: 'GET', // The HTTP method to use (GET, POST, etc.)
@@ -98,9 +98,9 @@ jQuery(function ($) {
                     console.error('Error:', error);        // This function runs if there is an error
                 }
             });
-            
+
         } else if (fullUrl.includes('/browser/de/dateinamen-formate-metadaten')) {
-             $.ajax({
+            $.ajax({
                 url: '/browser/api/ontologyjs/de', // The URL to send the request to
                 method: 'GET', // The HTTP method to use (GET, POST, etc.)
                 success: function (response) {
@@ -110,7 +110,7 @@ jQuery(function ($) {
                     console.error('Error:', error);        // This function runs if there is an error
                 }
             });
-            
+
             $.ajax({
                 url: '/browser/api/accepted-formats-table/de', // The URL to send the request to
                 method: 'GET', // The HTTP method to use (GET, POST, etc.)
@@ -165,6 +165,7 @@ jQuery(function ($) {
         }
     }
 
+    
     /**
      * Call the site gui language change API
      * @param {type} lang
@@ -176,6 +177,10 @@ jQuery(function ($) {
             type: "POST",
             success: function (data, status) {
                 if (reload) {
+                    const url = new URL(window.location.href);
+                    const params = new URLSearchParams(url.search);
+                    params.set('preferredLang', lng);
+                    window.history.replaceState({}, '', `${url.pathname}?${params.toString()}`);
                     location.reload();
                 }
                 switchTranslations(lng);
