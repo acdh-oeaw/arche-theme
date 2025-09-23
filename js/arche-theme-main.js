@@ -41,6 +41,7 @@ jQuery(function ($) {
     $(document).ready(function () {
         siteLang = drupalSettings.arche_core_gui.gui_lang;
         checkStaticPageLanguage();
+        checkPreferredLang();
         initOntologyTable();
         /**
          * Remove the user menu menupoint and just leave the logout button
@@ -70,6 +71,40 @@ jQuery(function ($) {
         event.preventDefault();
         $('.mobile-menu').removeClass('show');
     });
+
+     function checkPreferredLang() {
+        const params = new URLSearchParams(window.location.search);
+        const preferredLang = params.get('preferredLang'); // null if missing
+        const siteLang = drupalSettings.arche_core_gui.gui_lang;
+
+        if (preferredLang !== null) {
+            if (preferredLang !== siteLang) {
+                $.ajax({
+                    url: '/browser/api/change_lng/' + preferredLang,
+                    type: "POST",
+                    success: function (data, status) {
+                        const href = $(location).attr('href');
+
+                        const isBrowserPage = /^https?:\/\/[^/]+\/browser\/?(?:\?.*)?$/.test(href);
+                        const isDiscoverPage = /^https?:\/\/[^/]+\/browser\/discover\/?(?:\?.*)?$/.test(href);
+                        if (isDiscoverPage === false && isBrowserPage === false) {
+                            switchTranslations(preferredLang);
+                        } else {
+                            const url = new URL(window.location.href);
+                            const params = new URLSearchParams(url.search);
+                            params.set('preferredLang', preferredLang);
+                            window.history.replaceState({}, '', `${url.pathname}?${params.toString()}`);
+                            location.reload();
+                        }
+                    },
+                    error: function (message) {
+                        return message;
+                    }
+                });
+            }
+        }
+
+    }
 
     /**
      * Fetch the filenames static page ontology table
