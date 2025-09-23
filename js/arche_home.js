@@ -102,7 +102,7 @@ jQuery(function ($) {
                             var item = data[id];
                             var currentUrl = $(location).attr('href');
                             currentUrl = currentUrl.replace('/browser', '/api');
-                            var imgSrc = 'https://arche-thumbnails.acdh.oeaw.ac.at?id=' + currentUrl  +id;
+                            var imgSrc = 'https://arche-thumbnails.acdh.oeaw.ac.at?id=' + drupalSettings.arche_core_gui.apiUrl  +id;
                             carouselItems += '<div class="col">' +
                                     '<div class="card">' +
                                     '<a href="/browser/metadata/' + id + '"><img src="'+ imgSrc + '&width=350" class="card-img-top" alt="' + item.title + '"></a>' +
