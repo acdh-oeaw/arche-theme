@@ -440,6 +440,40 @@ ul.links {
   text-decoration: none;
   /* Optional: remove underline if desired */
 }
+/* language switcher upper line start */
+.nav-lang {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 16px;
+}
+.nav-lang .lng-switcher a {
+  text-decoration: none;
+  display: inline-block;
+}
+.nav-lang .navbar-icons-text {
+  position: relative;
+  display: inline-block;
+  padding-top: 10px;
+}
+.nav-lang .navbar-icons-text::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 8px;
+  width: 0;
+  background: #005480;
+  transition: width 0.3s ease;
+}
+.nav-lang .lng-switcher a:hover .navbar-icons-text:not(.active-lng-btn)::before {
+  width: 100%;
+}
+.nav-lang .navbar-icons-text.active-lng-btn::before {
+  width: 100%;
+}
+/* language switcher upper line end */
 .smartsearch_trash_icon {
   width: 24px;
   height: 24px;
@@ -855,7 +889,7 @@ a.footer-helpdesk-link, a.footer-helpdesk-link:hover {
   color: #fff;
 }
 .btn-toolbar-restricted {
-  background-color: #ee5253;
+  background-color: #A71111;
   color: #fff;
 }
 .btn-toolbar-public-academic {
@@ -1449,7 +1483,8 @@ table.child-table.dataTable thead tr, table.child-table.dataTable thead th {
   padding: 10px 12px;
 }
 .table-row-acdhBlue td {
-  background-color: #88dbdf;
+  background-color: #88DBDF;
+  color: #4D4D4D;
 }
 .child-table-content-div {
   display: flex;
