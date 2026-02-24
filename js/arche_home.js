@@ -107,7 +107,7 @@ jQuery(function ($) {
                                     '<div class="card">' +
                                     '<a href="/browser/metadata/' + id + '"><img src="'+ imgSrc + '&width=350" class="card-img-top" alt="' + item.title + '"></a>' +
                                     '<div class="card-body">' +
-                                    '<h5 class="card-title">' + item.title + '</h5>' +
+                                    '<h3 class="card-title">' + item.title + '</h3>' +
                                     '<p class=card-text>' + item.description.slice(0, 200) + '...</p>' +
                                     '<a class="btn basic-arche-btn home-collections-btn" href="/browser/metadata/' + id + '">' + Drupal.t("More") + '</a>' +
                                     '</div>' +
