@@ -21,6 +21,16 @@ h5 {
   font-weight: 700;
   line-height: normal;
 }
+.h3-blue-title, .h3-blue-title a {
+  color: #0A6A9B !important;
+  font-size: 20px !important;
+  font-weight: 700;
+}
+.h3-blue-title a:hover {
+  color: #0A6A9B !important;
+  font-size: 20px !important;
+  font-weight: 700;
+}
 .h5-blue-title, .h5-blue-title a {
   color: #0A6A9B !important;
 }
