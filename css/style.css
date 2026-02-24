@@ -1101,8 +1101,10 @@ a.footer-helpdesk-link, a.footer-helpdesk-link:hover {
   max-width: 165px;
   padding-top: 12px;
 }
-.home-resources-title h5 {
+.home-resources-title {
   text-align: center !important;
+  color: #4D4D4D;
+  font-weight: 700;
 }
 .home-resources-text {
   text-align: center;
