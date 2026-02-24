@@ -12,20 +12,33 @@ $arche-medium-blue-hover: #3B89AD;
 $arche-dark-blue: #069;
 $light-gray: #e1e1e1;
 $light-blue: #EEF5F8;
-$gray: #5B595B;
+$gray: #585658;
 $gray900: 212529;
-
+$arche-acc-light-blue: #EDF2F7;
+$arche-acc-font-color: #4D4D4D;
+$arche-acc-font-color-second: #1A1A1A;
+$arche-acc-headings-sub: #005480;
+$arche-acc-headings: #4D4D4D;
+$arche-acc-headings-desc: #4F4F4F;
+$arche-acc-dark-blue: #005480;
+$arche-acc-static-url-text: #005480;
+$arche-acc-heading-url: #0C5A53;
+$arche-acc-public-green: #0B654E;
+$arche-acc-restricted-red: #A71111;
+$arche-acc-academic: #8A4200;
+$arche-acc-dark-blue-hover: #0A6A9B;
+$arche-acc-light-cyan: #88DBDF;
 
 body {
     font-family: Lato, Roboto, Helvetica Neue, Arial !important;
-    color: $basic-gray;
+    color: $arche-acc-font-color;
 }
 html {
     scroll-behavior: smooth;
 }
 
 h4 {
-    color: #333;
+    color: $arche-acc-headings;
     font-family: Lato;
     font-size: 24px;
     font-style: normal;
@@ -33,7 +46,7 @@ h4 {
     line-height: normal;
 }
 h5 {
-    color: #333;
+    color: $arche-acc-headings;
     font-family: Lato;
     font-size: 20px;
     font-style: normal;
@@ -41,19 +54,33 @@ h5 {
     line-height: normal;
 }
 
+.h3-blue-title,
+.h3-blue-title a
+{
+    color: $arche-acc-dark-blue-hover !important;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.h3-blue-title a:hover
+{
+    color: $arche-acc-dark-blue-hover !important;
+    font-size: 20px !important;
+}
+
 .h5-blue-title,
 .h5-blue-title a
 {
-    color: $arche-btn-blue-hover !important;
+    color: $arche-acc-dark-blue-hover !important;
 }
 
 .h5-blue-title a:hover
 {
-    color: $arche-btn-blue !important;
+    color: $arche-acc-dark-blue-hover !important;
     font-size: 20px !important;
 }
 h6 {
-    color: $gray900;
+    color: $arche-acc-headings;
     font-family: Lato;
     font-size: 16px;
     font-style: normal;
@@ -107,7 +134,8 @@ input::-ms-input-placeholder {
     color: $acdh-blue-color;
 }
 .light-blue {
-    background-color: $arche-light-blue;
+    //background-color: $arche-light-blue;
+    background-color: $arche-acc-light-blue;
 }
 .light-cloud-blue {
     background-color: #246b95;
@@ -162,15 +190,20 @@ a {
     -webkit-transition: 0.3s all ease;
     -o-transition: 0.3s all ease;
     transition: 0.3s all ease;
-    color: $arche-btn-blue;
+    color: $arche-acc-dark-blue;
 }
 a, a:hover {
     text-decoration: none !important;
-    color: $arche-btn-blue-hover;
+    color: $arche-acc-dark-blue-hover;
 }
+
+:focus-visible {
+  outline: 2px solid $arche-acc-dark-blue;
+  outline-offset: 2px;
+}
+
 p, span {
-    color: #666;
-    /* Paragraph */
+    color: $arche-acc-font-color;
     font-family: Lato;
     font-size: 16px;
     font-style: normal;
@@ -213,13 +246,13 @@ p, span {
 }
 
 .cookie-message a:hover {
-    color: #88DBDF;
+    color: $arche-acc-dark-blue-hover;
 }
 
 .cookie-accept-btn, .cookie-accept-necessary-btn {
     display: inline-block;
     background-color: #ffd534;
-    color: #333;
+    color: $arche-acc-font-color;
     padding: 5px 30px;
     border-radius: 10px;
     font-weight: 600;
@@ -230,7 +263,7 @@ p, span {
 .cookie-accept-btn, .cookie-accept-necessary-btn {
     display: inline-block;
     background-color: #ffd534;
-    color: #333;
+    color: $arche-acc-font-color;
     padding: 5px 30px;
     border-radius: 10px;
     font-weight: 600;
@@ -241,7 +274,7 @@ p, span {
 
 .cookie-accept-btn:hover,
 .cookie-accept-necessary-btn:hover{
-    background-color: #d2b33d;
+    background-color: $arche-acc-dark-blue-hover;
 }
 
 #page {
@@ -285,12 +318,12 @@ p, span {
     padding: 10px 16px;
     gap: 8px;
     border-radius: 6px;
-    background: $arche-btn-blue;
+    background: $arche-acc-dark-blue;
     width: fit-content;
 }
 .btn-arche-blue:hover,
 .btn-sm-add:hover {
-    background-color: rgba(59, 137, 173, 0.5);
+    background-color: $arche-acc-dark-blue-hover;
     color: white;
 }
 
@@ -299,11 +332,11 @@ p, span {
     padding: 8px 12px;
     gap: 8px;
     border-radius: 6px;
-    background: $arche-btn-blue;
+    background: $arche-acc-dark-blue;
     width: fit-content;
 }
 .btn-arche-blue-sidebar:hover {
-    background-color: rgba(59, 137, 173, 0.8);
+    background-color: $arche-acc-dark-blue-hover;
 }
 
 .btn-arche-blue.cite {
@@ -358,7 +391,7 @@ p, span {
     color: white;
     padding: 5px;
     border-radius: 6px;
-    background: $arche-btn-blue;
+    background: $arche-acc-dark-blue;
     width: 26px;
     height: 26px;
     margin-right: 10px;
@@ -368,9 +401,14 @@ p, span {
     font-weight: 700;
     line-height: 16px;
 }
+#search-block-form .input-group {
+    border: 2px solid #ffffff;
+    border-radius: 20px; /* optional */
+    overflow: hidden;
+}
 
 .section-header-title-small {
-    color: #069;
+    color: $arche-acc-headings-sub;
     text-align: center;
     /* Paragraph Bold */
     font-family: Lato;
@@ -381,7 +419,7 @@ p, span {
     /* 175% */
 }
 .section-header-title {
-    color: #333;
+    color: $arche-acc-headings;
     text-align: center;
     /* h2 Bold */
     font-family: Lato;
@@ -416,7 +454,7 @@ table.dataTable {
     gap: 8px;
 }
 .arche-sub-mobile-menu li a {
-    color: #666;
+    color: $arche-acc-font-color;
 
 }
 
@@ -441,7 +479,7 @@ table.dataTable {
     align-items: flex-start;
 }
 #block-arche-theme-account-menu li a:hover {
-    background-color: rgba(88, 188, 193, 0.2) !important;
+    background-color: $arche-acc-dark-blue-hover !important;
 }
 ul.links {
     display: flex;
@@ -494,6 +532,47 @@ ul.links {
     cursor: default; /* Prevents the hand cursor */
     text-decoration: none; /* Optional: remove underline if desired */
 }
+
+/* language switcher upper line start */
+.nav-lang {
+  list-style: none;
+  margin: 0;
+  margin-top: -10px;
+  padding: 0;
+  display: flex;
+  gap: 16px;
+}
+
+.nav-lang .lng-switcher a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+.nav-lang .navbar-icons-text {
+  position: relative;
+  display: inline-block;
+  padding-top: 10px;
+}
+
+.nav-lang .navbar-icons-text::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 8px;
+  width: 0;
+  background: $arche-acc-dark-blue;
+  transition: width 0.3s ease;
+}
+
+.nav-lang .lng-switcher a:hover .navbar-icons-text:not(.active-lng-btn)::before {
+  width: 100%;
+}
+
+.nav-lang .navbar-icons-text.active-lng-btn::before {
+  width: 100%;
+}
+/* language switcher upper line end */
 
 .smartsearch_trash_icon {
     width: 24px;
@@ -567,7 +646,7 @@ ul.links {
     padding-left: 4rem;
 }
 .active-lng-btn {
-    color: $arche-btn-blue;
+    color: $arche-acc-dark-blue;
 }
 .navbar-toggler {
     border: none !important;
@@ -600,12 +679,12 @@ ul.links {
 /*** HEader menu ***/
 
 ul.header-menu li.nav-item a.nav-link {
-    color: $gray;
+    color: $arche-acc-font-color;
     font-weight: 700;
 }
 
 ul.header-menu li.nav-item a.nav-link:hover {
-    color: rgba(91, 89, 91, 0.2);
+    color: $arche-acc-dark-blue;
 }
 
 ul.nav.nav-pills {
@@ -644,16 +723,13 @@ ul.nav.nav-pills > li > a {
 }
 
 .hero-small-text {
-    color: #666;
+    color: $arche-acc-headings-desc;
     text-align: center;
-
-    /* Paragraph Small */
     font-family: Lato;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
     line-height: 20px;
-    /* 142.857% */
 }
 
 .header-characters {
@@ -674,7 +750,7 @@ ul.nav.nav-pills > li > a {
     border-bottom-left-radius: 50px;
 }
 .hero-search-button {
-    background-color: $arche-medium-blue;
+    background-color: $arche-acc-dark-blue;
     border-top-right-radius: 50px;
     /* Adjust the radius as needed */
     border-bottom-right-radius: 50px;
@@ -682,30 +758,8 @@ ul.nav.nav-pills > li > a {
 
 .hero-search-button:hover,
 .hero-search-button:focus {
-    background-color: $arche-medium-blue-hover;
+    background-color: $arche-acc-dark-blue-hover;
 }
-
-
-/*
-.mobile-tool-bar{
-    display: none;
-    font-size: 36px;
-    height:100px;
-}
-
-.hero{
-    margin-top: -80px;
-    height:500px;
-    background: linear-gradient(90deg, rgba(0,0,0,.2) 0%, rgba(0,0,0,.1) 46%, rgba(0,0,0,.1) 100%), url('http://localhost:8888/arche-d10//themes/arche_theme/images/arche-home-hero.png');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.bg-theme{
-
-}
-*/
 
 .arche-footer-content {
     margin-top: -130px;
@@ -743,7 +797,7 @@ ul.nav.nav-pills > li > a {
     position: relative;
     color: #fff;
     padding: 2rem 0;
-    background-color: #069;
+    background-color: $arche-acc-dark-blue;
     padding-top: 150px;
 }
 .arche-footer .container {
@@ -830,11 +884,11 @@ ul.nav.nav-pills > li > a {
     position: relative;
     justify-content: center;
     align-items: center;
-    color: #666;
+    color: $arche-acc-font-color;
     max-width: 980px;
 }
 .arche-footer .cta p {
-    color: #666;
+    color: $arche-acc-font-color;
     font-family: Lato;
     font-size: 14px;
     font-style: normal;
@@ -859,7 +913,7 @@ ul.nav.nav-pills > li > a {
 .arche-footer::before {
     top: 0;
     right: 0;
-    background-image: url("../images/common/footer_top_right_bubble.svg");
+    background-image: url("../images/common/footer_top_right_bubble_acc.svg");
     /* Replace with your top logo */
     background-size: cover;
     z-index: 0;
@@ -870,7 +924,7 @@ ul.nav.nav-pills > li > a {
 .arche-footer::after {
     bottom: 0;
     left: 0;
-    background-image: url("../images/common/footer_left_bottom_bubble.svg");
+    background-image: url("../images/common/footer_left_bottom_bubble_acc.svg");
     /* Replace with your bottom logo */
     background-size: cover;
     z-index: 0;
@@ -896,7 +950,8 @@ ul.nav.nav-pills > li > a {
 }
 
 .arche-footer-two-div h2,
-.arche-footer-three-div h2{
+.arche-footer-three-div h2,
+.arche-footer-four-div h2,{
     color: #fff;
     font-family: Lato;
     font-size: 20px;
@@ -951,7 +1006,7 @@ a.footer-helpdesk-link:hover {
     padding: 4px 8px;
     gap: 8px;
     border-radius: 12px;
-    background: $arche-btn-blue;
+    background: $arche-acc-dark-blue;
     color: #fff;
 }
 
@@ -968,38 +1023,38 @@ a.footer-helpdesk-link:hover {
     line-height: 16px;
 }
 .btn-toolbar-public {
-    background-color: #1dd1a1;
+    background-color: $arche-acc-public-green;
     color: #fff;
 }
 
 .btn-toolbar-academic {
-    background-color: #ff9f43;
+    background-color: $arche-acc-academic;
     color: #fff;
 }
 
 .btn-toolbar-restricted {
-    background-color: #ee5253;
+    background-color: $arche-acc-restricted-red;
     color: #fff;
 }
 
 .btn-toolbar-public-academic {
-    background: rgb(29,209,161);
-    background: linear-gradient(90deg, rgba(29,209,161,1) 0%, rgba(255,159,67,1) 100%);
+    background: rgb(11, 101, 78);
+    background: linear-gradient(90deg, $arche-acc-public-green 20%, $arche-acc-academic 80%);
     color: #fff;
 }
 .btn-toolbar-academic-public {
     background: rgba(255,159,67);
-    background: linear-gradient(90deg, rgba(255,159,67,1) 0%, rgba(29,209,161,1) 100%);
+    background: linear-gradient(90deg, $arche-acc-academic 20%, $arche-acc-public-green 80%);
     color: #fff;
 }
 .btn-toolbar-public-restricted {
-    background: rgb(29,209,161);
-    background: linear-gradient(90deg, rgba(29,209,161,1) 0%, rgba(238,82,83,1) 100%);
+    background: rgb(11, 101, 78);
+    background: linear-gradient(90deg, $arche-acc-public-green 20%, $arche-acc-restricted-red 80%);
     color: #fff;
 }
 .btn-toolbar-restricted-public {
     background: rgba(238,82,83);
-    background: linear-gradient(90deg, rgba(238,82,83,1) 0%, rgba(29,209,161,1) 100%);
+    background: linear-gradient(90deg, $arche-acc-restricted-red 20%, $arche-acc-public-green 80%);
     color: #fff;
 }
 .btn-toolbar-academic-restricted {
@@ -1009,7 +1064,7 @@ a.footer-helpdesk-link:hover {
 }
 .btn-toolbar-restricted-academic {
     background: rgba(238,82,83);
-    background: linear-gradient(90deg, rgba(238,82,83,1) 0%, rgba(255,159,67,1) 100%);
+    background: linear-gradient(90deg, $arche-acc-restricted-red 20%, $arche-acc-academic 80%);
     color: #fff;
 }
 .btn-toolbar-green,
@@ -1024,6 +1079,16 @@ a.footer-helpdesk-link:hover {
 .absolute-bottom-btn {
     margin: 10px;
     bottom: 0px;
+}
+
+#meta-content-container h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+#meta-content-container h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
 }
 
 .maxw-980 {
@@ -1071,7 +1136,7 @@ a.footer-helpdesk-link:hover {
 }
 
 .mission-container .lead {
-    color: #666;
+    color: $arche-acc-font-color;
     font-family: Lato;
     font-size: 14px;
     font-style: normal;
@@ -1156,7 +1221,7 @@ a.footer-helpdesk-link:hover {
 }
 
 .resources-container-home {
-    background-image: url("../images/common/resource_bottom_bubble.svg");
+    background-image: url("../images/common/resource_bottom_bubble_acc.svg");
     background-repeat: no-repeat;
     background-size: cover;
     margin-left: 0px !important;
@@ -1166,7 +1231,7 @@ a.footer-helpdesk-link:hover {
 }
 
 .mission-container-home {
-    background-image: url("../images/common/mission_bottom_bubble.svg");
+    background-image: url("../images/common/mission_bottom_bubble_acc.svg");
     background-repeat: no-repeat;
     background-size: cover;
     margin-left: 0px !important;
@@ -1220,8 +1285,10 @@ a.footer-helpdesk-link:hover {
 }
 
 
-.home-resources-title h5 {
+.home-resources-title  {
     text-align: center !important;
+    color: $arche-acc-font-color;
+    font-weight: 700;
 }
 .home-resources-text {
     text-align: center;
@@ -1233,7 +1300,7 @@ a.footer-helpdesk-link:hover {
     justify-content: center;
     align-items: flex-end;
     gap: 8px;
-    background: $arche-btn-blue;
+    background: $arche-acc-dark-blue;
     margin-top: auto;
     color: #FFF;
     font-family: Lato;
@@ -1243,7 +1310,8 @@ a.footer-helpdesk-link:hover {
     line-height: 18px;
 }
 .basic-arche-btn:hover {
-    background-color: rgba(59, 137, 173, 0.8);
+    background-color: $arche-acc-dark-blue-hover;
+    color:  #ffffff;
 }
 
 //// home slider
@@ -1284,15 +1352,24 @@ a.footer-helpdesk-link:hover {
     object-fit: contain;
 }
 
-.card .card-body h5.card-title,
-.card .card-body h5.card-title a {
-    color: #000;
-    /* Paragraph Bold */
+.card.metadata.facets .card-header h3 {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.card.metadata .card-header h4 {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.card .card-body h3.card-title,
+.card .card-body h3.card-title a {
+    color: $arche-acc-font-color;
     font-family: Lato;
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
-    line-height: 28px; /* 175% */
+    line-height: 28px; 
     -webkit-line-clamp: 2;
     display: -webkit-box;
     overflow: hidden;
@@ -1300,7 +1377,7 @@ a.footer-helpdesk-link:hover {
     -webkit-box-orient: vertical;
 }
 .card .card-body .card-text {
-    color: #666;
+    color: $arche-acc-font-color;
     /* Paragraph Small */
     font-family: Lato;
     font-size: 14px;
@@ -1357,7 +1434,7 @@ a.footer-helpdesk-link:hover {
     gap: 24px;
     align-self: stretch;
     border-radius: 12px;
-    background: $light-blue;
+    background: $arche-acc-light-blue;
 }
 
 .light-blue-box {
@@ -1368,7 +1445,7 @@ a.footer-helpdesk-link:hover {
     gap: 24px;
     align-self: stretch;
     border-radius: 12px;
-    background: $light-blue;
+    background: $arche-acc-light-blue;
 }
 
 
@@ -1394,7 +1471,7 @@ a.footer-helpdesk-link:hover {
 }
 
 .accordion-header .accordion-button {
-    background-color: $arche-medium-blue !important;
+    background-color: $arche-acc-dark-blue !important;
     color: white !important;
     font-weight: 700;
 }
@@ -1661,7 +1738,8 @@ table.child-table.dataTable thead tr, table.child-table.dataTable thead th {
 }
 
 .table-row-acdhBlue td {
-    background-color: #88dbdf;
+    background-color: $arche-acc-dark-blue;
+    color: #ffffff;
 }
 
 .child-table-content-div {
@@ -1857,8 +1935,8 @@ li[aria-level].jstree-node.jstree-leaf  {
 #rootDT_paginate .paginate_button.current,
 .dataTables_paginate.paging_simple_numbers .paginate_button.current
 {
-    border: 1px solid $arche-btn-blue;
-    background: $arche-btn-blue;
+    border: 1px solid $arche-acc-dark-blue;
+    background: $arche-acc-dark-blue;
     color: #fff !important;
 }
 #rootDT_paginate .paginate_button.next,
@@ -1869,13 +1947,13 @@ li[aria-level].jstree-node.jstree-leaf  {
 .dropdown-menu.discover-dropdown,
 .discover-dropdown-btn {
     background-color: #fff;
-    color: #666666;
+    color: $arche-acc-font-color;
     border: 1px solid #CED4DA !important;
 }
 
 .discover-dropdown-btn::hover {
     color: #fff;
-    background-color: #666666;
+    background-color: $arche-acc-font-color;
 }
 .discover-sort {
     display: flex;
@@ -1976,7 +2054,7 @@ table.dataTable.no-footer {
 
 #smMapSearchResults p:hover {
     background-color: white;
-    color: #666;
+    color: $arche-acc-font-color;
 }
 
 .smMapSearchResultsContainer {
@@ -2132,13 +2210,13 @@ table.dataTable.no-footer {
 
 .ui-menu-item:hover,
 .ui-menu-item-wrapper:hover {
-    background-color: $arche-btn-blue-hover !important;
+    background-color: $arche-acc-dark-blue-hover !important;
 }
 
 ///*** DETAIL VIEW ***///
 #cite-dropdown {
     background: #fff;
-    color: #666;
+    color: $arche-acc-font-color;
     font-family: Lato;
     font-size: 14px;
     font-style: normal;
@@ -2231,7 +2309,7 @@ table.dataTable.no-footer {
     .mobile-lng-switcher-title {
         display: block;
         padding-left: 2rem;
-        color: $arche-btn-blue;
+        color: $arche-acc-dark-blue;
     }
 
 }

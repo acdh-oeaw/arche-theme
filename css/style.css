@@ -23,13 +23,12 @@ h5 {
 }
 .h3-blue-title, .h3-blue-title a {
   color: #0A6A9B !important;
-  font-size: 20px !important;
+  font-size: 1.25rem;
   font-weight: 700;
 }
 .h3-blue-title a:hover {
   color: #0A6A9B !important;
   font-size: 20px !important;
-  font-weight: 700;
 }
 .h5-blue-title, .h5-blue-title a {
   color: #0A6A9B !important;
@@ -150,8 +149,7 @@ a, a:hover {
   outline-offset: 2px;
 }
 p, span {
-  color: #666;
-  /* Paragraph */
+  color: #4D4D4D;
   font-family: Lato;
   font-size: 16px;
   font-style: normal;
@@ -194,7 +192,7 @@ p, span {
 .cookie-accept-btn, .cookie-accept-necessary-btn {
   display: inline-block;
   background-color: #ffd534;
-  color: #333;
+  color: #4D4D4D;
   padding: 5px 30px;
   border-radius: 10px;
   font-weight: 600;
@@ -204,7 +202,7 @@ p, span {
 .cookie-accept-btn, .cookie-accept-necessary-btn {
   display: inline-block;
   background-color: #ffd534;
-  color: #333;
+  color: #4D4D4D;
   padding: 5px 30px;
   border-radius: 10px;
   font-weight: 600;
@@ -621,13 +619,11 @@ ul.nav.nav-pills > li > a {
 .hero-small-text {
   color: #4F4F4F;
   text-align: center;
-  /* Paragraph Small */
   font-family: Lato;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: 20px;
-  /* 142.857% */
 }
 .header-characters {
   z-index: 10;
@@ -948,6 +944,14 @@ a.footer-helpdesk-link, a.footer-helpdesk-link:hover {
   margin: 10px;
   bottom: 0px;
 }
+#meta-content-container h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+#meta-content-container h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
 .maxw-980 {
   max-width: 980px;
   padding-left: 0px;
@@ -1174,15 +1178,21 @@ a.footer-helpdesk-link, a.footer-helpdesk-link:hover {
   height: 140px;
   object-fit: contain;
 }
+.card.metadata.facets .card-header h3 {
+  font-size: 1rem;
+  font-weight: 700;
+}
+.card.metadata .card-header h4 {
+  font-size: 1rem;
+  font-weight: 700;
+}
 .card .card-body h3.card-title, .card .card-body h3.card-title a {
   color: #4D4D4D;
-  /* Paragraph Bold */
   font-family: Lato;
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
   line-height: 28px;
-  /* 175% */
   -webkit-line-clamp: 2;
   display: -webkit-box;
   overflow: hidden;
