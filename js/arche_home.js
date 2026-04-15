@@ -141,9 +141,6 @@ jQuery(function ($) {
             }
         }
         
-
-        //$media.append($mediaMark);
-
         var $content = $('<div class="home-latest-addition__content"></div>');
         var $kicker = $('<p class="home-latest-addition__kicker"></p>').text(Drupal.t('Modified') + ' · ' + labelDate);
         var $title = $('<h3 class=""></h3>').text(title);
