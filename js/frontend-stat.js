@@ -50,7 +50,7 @@ jQuery(function ($) {
         const statsConfig = [
             {key: "topCollection", valueId: "s2-topCollection", label: "Top Collections", decimals: 0, suffix: "", duration: 1500, icon: ICON_TOP_COLLECTION},
             {key: "resources", valueId: "s2-resources", label: "Resources", decimals: 0, suffix: "", duration: 2000, icon: ICON_RESOURCE},
-            {key: "size", valueId: "s2-size", label: "Total Size (GB)", decimals: 2, suffix: " GB", duration: 2000, icon: ICON_SIZE}
+            {key: "size", valueId: "s2-size", label: "Total Size (TB)", decimals: 2, suffix: " TB", duration: 2000, icon: ICON_SIZE}
         ];
 
         function easeOutQuart(t) {
