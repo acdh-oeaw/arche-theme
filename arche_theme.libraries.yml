@@ -15,6 +15,7 @@ global-styling:
         js/arche-theme-main.js: {}
         js/lightbox.js: {}
         js/cookie_consent.js: {header: true}
+        js/frontend-stat.js: {}
     dependencies:
         - core/drupal
         - core/drupal.form
