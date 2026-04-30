@@ -200,8 +200,8 @@ jQuery(function ($) {
 
         var words = text.trim().split(/\s+/);
 
-        if (words.length > 100) {
-            text = words.slice(0, 100).join(' ') + '...';
+        if (words.length > 75) {
+            text = words.slice(0, 75).join(' ') + '...';
         }
 
         var escaped = escapeHtml(text);
