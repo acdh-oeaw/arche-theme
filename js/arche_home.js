@@ -118,16 +118,16 @@ jQuery(function ($) {
         var $mediaImage = $('<img class="home-latest-addition__image" alt="' + title + '" loading="lazy" />');
 
         $mediaImage
-            .on('load', function () {
-                $media.removeClass('is-loading is-error').addClass('is-loaded');
-                $mediaLoader.fadeOut(120, function () {
-                    $(this).remove();
+                .on('load', function () {
+                    $media.removeClass('is-loading is-error').addClass('is-loaded');
+                    $mediaLoader.fadeOut(120, function () {
+                        $(this).remove();
+                    });
+                })
+                .on('error', function () {
+                    $media.removeClass('is-loading').addClass('is-error');
+                    $mediaLoader.remove();
                 });
-            })
-            .on('error', function () {
-                $media.removeClass('is-loading').addClass('is-error');
-                $mediaLoader.remove();
-            });
 
         $media.append($mediaImage, $mediaLoader);
         $mediaImage.attr('src', imageUrl);
@@ -140,7 +140,7 @@ jQuery(function ($) {
                 $mediaImage.trigger('error');
             }
         }
-        
+
         var $content = $('<div class="home-latest-addition__content"></div>');
         var $kicker = $('<p class="home-latest-addition__kicker"></p>').text(Drupal.t('Modified') + ' · ' + labelDate);
         var $title = $('<h3 class=""></h3>').text(title);
@@ -149,14 +149,14 @@ jQuery(function ($) {
         var $meta = $('<div class="home-latest-addition__meta" aria-label="Collection metadata"></div>');
         var $metaYear = $('<span class="btn-toolbar-gray btn-toolbar-text no-btn"></span>').text(year);
         var $metaType = $('<span class="btn-toolbar-gray btn-toolbar-text no-btn"></span>').text(Drupal.t('TopCollection'));
-        
+
         $meta.append($metaYear, $metaType);
 
         var buttonLabel = Drupal.t('More');
         var $button = $('<a class="home-latest-addition__button"></a>')
-            .attr('href', detailsUrl)
-            .attr('aria-label', Drupal.t('More: ') + title)
-            .text(buttonLabel);
+                .attr('href', detailsUrl)
+                .attr('aria-label', Drupal.t('More: ') + title)
+                .text(buttonLabel);
 
         if (identifierText) {
             $button.attr('title', identifierText);
@@ -193,20 +193,29 @@ jQuery(function ($) {
     }
 
     function formatDescriptionHtml(value) {
-        var escaped = escapeHtml(String(value || ''));
-        // Support both actual newlines and literal "\n" sequences.
-        return escaped
-            .replace(/\\n/g, '\n')
-            .replace(/\r\n|\r|\n/g, '<br>');
+        var text = String(value || '');
+
+        // Support literal "\n" sequences as real newlines before counting words
+        text = text.replace(/\\n/g, '\n');
+
+        var words = text.trim().split(/\s+/);
+
+        if (words.length > 150) {
+            text = words.slice(0, 150).join(' ') + '...';
+        }
+
+        var escaped = escapeHtml(text);
+
+        return escaped.replace(/\r\n|\r|\n/g, '<br>');
     }
 
     function escapeHtml(value) {
         return value
-            .replace(/&/g, '&amp;')
-            .replace(/</g, '&lt;')
-            .replace(/>/g, '&gt;')
-            .replace(/"/g, '&quot;')
-            .replace(/'/g, '&#39;');
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
     }
 
     function fetchTopcollections() {
@@ -246,10 +255,10 @@ jQuery(function ($) {
                             var item = data[id];
                             var currentUrl = $(location).attr('href');
                             currentUrl = currentUrl.replace('/browser', '/api');
-                            var imgSrc = 'https://arche-thumbnails.acdh.oeaw.ac.at?id=' + drupalSettings.arche_core_gui.apiUrl  +id;
+                            var imgSrc = 'https://arche-thumbnails.acdh.oeaw.ac.at?id=' + drupalSettings.arche_core_gui.apiUrl + id;
                             carouselItems += '<div class="col">' +
                                     '<div class="card">' +
-                                    '<a href="/browser/metadata/' + id + '"><img src="'+ imgSrc + '&width=350" class="card-img-top" alt="' + item.title + '"></a>' +
+                                    '<a href="/browser/metadata/' + id + '"><img src="' + imgSrc + '&width=350" class="card-img-top" alt="' + item.title + '"></a>' +
                                     '<div class="card-body">' +
                                     '<h3 class="card-title">' + item.title + '</h3>' +
                                     '<p class=card-text>' + item.description.slice(0, 200) + '...</p>' +
