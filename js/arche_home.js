@@ -256,13 +256,13 @@ jQuery(function ($) {
                             var currentUrl = $(location).attr('href');
                             currentUrl = currentUrl.replace('/browser', '/api');
                             var imgSrc = 'https://arche-thumbnails.acdh.oeaw.ac.at?id=' + drupalSettings.arche_core_gui.apiUrl + id;
-                            carouselItems += '<div class="col">' +
-                                    '<div class="card">' +
+                            carouselItems += '<div class="col d-flex">' +
+                                    '<div class="card h-100 w-100">' +
                                     '<a href="/browser/metadata/' + id + '"><img src="' + imgSrc + '&width=350" class="card-img-top" alt="' + item.title + '"></a>' +
-                                    '<div class="card-body">' +
+                                    '<div class="card-body d-flex flex-column">' +
                                     '<h3 class="card-title">' + item.title + '</h3>' +
                                     '<p class=card-text>' + item.description.slice(0, 200) + '...</p>' +
-                                    '<a class="btn basic-arche-btn home-collections-btn" href="/browser/metadata/' + id + '">' + Drupal.t("More") + '</a>' +
+                                    '<a class="btn basic-arche-btn home-collections-btn mt-auto" href="/browser/metadata/' + id + '">' + Drupal.t("More") + '</a>' +
                                     '</div>' +
                                     '</div>' +
                                     '</div>';
