@@ -135,7 +135,7 @@ jQuery(function ($) {
 
         if ($("#stats-container").length) {
             loadStats();
-            $("#stats-container").addCss("padding-bottom", "20px");
+            $("#stats-container").css("padding-bottom", "20px");
         }
     });
 });
