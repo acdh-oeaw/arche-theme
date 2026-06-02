@@ -69,7 +69,14 @@ jQuery(function ($) {
 
     $('.mobile-menu-close').on('click', function (event) {
         event.preventDefault();
-        $('.mobile-menu').removeClass('show');
+        const mobileMenu = document.getElementById('mobileNavbarNav');
+        if (mobileMenu) {
+            bootstrap.Collapse.getOrCreateInstance(mobileMenu).hide();
+        }
+    });
+
+    $('#arche-language-switcher').on('change', function () {
+        window.location.href = $(this).val();
     });
 
      function checkPreferredLang() {
@@ -236,7 +243,7 @@ jQuery(function ($) {
         event.preventDefault();
     });
 
-    $(document).delegate("a#footer-versions-btn", "click", function (e) {
+    $(document).delegate("a.footer-versions-btn", "click", function (e) {
         e.preventDefault();
         if ($('.arche-footer-bottom-versions').hasClass('hidden')) {
             $('.arche-footer-bottom-versions').removeClass('hidden');

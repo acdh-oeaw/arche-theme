@@ -20,12 +20,13 @@
 
 {% set currentLanguage = getActualLanguage() %}
 
+<label class="visually-hidden" for="arche-language-switcher">{{ "Select language"|trans }}</label>
 <select id="arche-language-switcher" class="language-switcher-language-session-oeaw">
     {% for key, item in links %}
         {% if currentLanguage == key %}
-            <option value="{{ key }}" selected><a href="{{ item.url }}" class="language-switcher-{{ key }}">{{ key }}</a></option>
+            <option value="{{ item.url }}" selected>{{ key }}</option>
         {% else %}
-            <option value="{{ key }}"><a href="{{ item.url }}" class="language-switcher-{{ key }}">{{ key }}</a></option>
+            <option value="{{ item.url }}">{{ key }}</option>
         {% endif %}
 
     {% endfor %}
