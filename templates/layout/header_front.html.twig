@@ -7,15 +7,15 @@
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <a class="navbar-brand" href="/"><img class="img-fluid header-arche-logo" src="{{ base_path ~ directory }}/images/logos/arche_transparent_header.svg" alt="Arche Logo"  /></a>
 
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mobileNavbarNav" aria-controls="mobileNavbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
-                    <div class="collapse navbar-collapse arche-header-navbar website-menu" id="navbarNav">
+                    <div class="collapse navbar-collapse arche-header-navbar website-menu" id="websiteNavbarNav">
                         {{ page.main_navigation }}
                     </div>
 
-                    <div class="collapse navbar-collapse mobile-menu" id="navbarNav">
+                    <div class="collapse navbar-collapse mobile-menu" id="mobileNavbarNav">
                         <div class="container mobile-menu-container">
                             <div class="row">
                                 <div class="col-lg-12">
@@ -34,4 +34,3 @@
         </div>
     </div>
 </header>
-

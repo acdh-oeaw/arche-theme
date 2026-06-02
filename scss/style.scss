@@ -843,7 +843,7 @@ ul.links {
 .mobile-menu-container {
     position: fixed;
     top: 50px;
-    display: flex;
+    display: none;
 }
 /* Custom styles for the full screen menu */
 .mobile-menu {
@@ -880,7 +880,7 @@ ul.links {
 
 .mobile-menu {
     height: 100%;
-    display: flex !important;
+    display: none !important;
     //flex-direction: column !important;
     //justify-content: center;
     //align-items: center;
@@ -909,6 +909,7 @@ ul.links {
     color: $arche-acc-dark-blue;
 }
 .navbar-toggler {
+    display: none;
     border: none !important;
 }
 /* Change the background color and border of the hamburger button */
@@ -2528,7 +2529,7 @@ table.dataTable.no-footer {
         height: 11em;
     }
     .mobile-menu {
-        display: none;
+        display: none !important;
     }
 }
 @media (min-width: 1200px) {
@@ -2564,7 +2565,7 @@ table.dataTable.no-footer {
 // MD
 @media (max-width: 767.98px) {
     .website-menu {
-        display: none;
+        display: flex !important;
     }
     .mobile-lng-switcher-title {
         display: block;
@@ -2572,6 +2573,22 @@ table.dataTable.no-footer {
         color: $arche-acc-dark-blue;
     }
 
+}
+// Zoom reduces the CSS viewport width on desktop. Enable the mobile menu only
+// when a narrow viewport is paired with a touch-style primary pointer.
+@media (max-width: 767.98px) and (hover: none) and (pointer: coarse) {
+    .website-menu {
+        display: none !important;
+    }
+    .navbar-toggler {
+        display: block;
+    }
+    .mobile-menu {
+        display: flex !important;
+    }
+    .mobile-menu-container {
+        display: flex;
+    }
 }
 @media (max-width: 768px) {
     .discover-table-image-div {
@@ -2659,4 +2676,3 @@ table.dataTable.no-footer {
 @media (max-width: 340) {
 
 }
-
