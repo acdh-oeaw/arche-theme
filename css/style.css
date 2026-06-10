@@ -881,15 +881,15 @@ ul.nav.nav-pills > li > a {
   text-align: left;
 }
 .hero-search-field {
-  border-top-left-radius: 50px;
+  border-top-left-radius: 50px !important;
   /* Adjust the radius as needed */
-  border-bottom-left-radius: 50px;
+  border-bottom-left-radius: 50px !important;
 }
 .hero-search-button {
   background-color: #005480;
-  border-top-right-radius: 50px;
+  border-top-right-radius: 50px !important;
   /* Adjust the radius as needed */
-  border-bottom-right-radius: 50px;
+  border-bottom-right-radius: 50px !important;
 }
 .hero-search-button:hover, .hero-search-button:focus {
   background-color: #0A6A9B;

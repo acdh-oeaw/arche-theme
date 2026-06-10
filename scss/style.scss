@@ -1006,15 +1006,15 @@ ul.nav.nav-pills > li > a {
 }
 
 .hero-search-field {
-    border-top-left-radius: 50px;
+    border-top-left-radius: 50px !important;
     /* Adjust the radius as needed */
-    border-bottom-left-radius: 50px;
+    border-bottom-left-radius: 50px !important;
 }
 .hero-search-button {
     background-color: $arche-acc-dark-blue;
-    border-top-right-radius: 50px;
+    border-top-right-radius: 50px !important;
     /* Adjust the radius as needed */
-    border-bottom-right-radius: 50px;
+    border-bottom-right-radius: 50px !important;
 }
 
 .hero-search-button:hover,
