@@ -48,7 +48,16 @@ jQuery(function ($) {
         `;
 
         const statsConfig = [
-            {key: "topCollection", valueId: "s2-topCollection", label: "Top Collections", decimals: 0, suffix: "", duration: 1500, icon: ICON_TOP_COLLECTION},
+            {
+                key: "topCollection",
+                valueId: "s2-topCollection",
+                label: "Top Collections",
+                decimals: 0,
+                suffix: "",
+                duration: 1500,
+                icon: ICON_TOP_COLLECTION,
+                href: "/browser/discover?q=&preferredLang=en&includeBinaries=0&linkNamedEntities=1&page=1&pageSize=10&facets[http%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23type][]=https%3A%2F%2Fvocabs.acdh.oeaw.ac.at%2Fschema%23TopCollection&noCache=0"
+            },
             {key: "resources", valueId: "s2-resources", label: "Resources", decimals: 0, suffix: "", duration: 2000, icon: ICON_RESOURCE},
             {key: "size", valueId: "s2-size", label: "Total Size (TB)", decimals: 2, suffix: " TB", duration: 2000, icon: ICON_SIZE}
         ];
@@ -90,7 +99,9 @@ jQuery(function ($) {
         }
 
         function createCard(cfg) {
-            const $card = $('<div class="card"></div>');
+            const $card = cfg.href
+                    ? $('<a class="card text-decoration-none"></a>').attr("href", cfg.href)
+                    : $('<div class="card"></div>');
             const $iconWrap = $('<div class="icon-wrap"></div>').append(cfg.icon);
             const $text = $('<div class="text"></div>');
             const initial = cfg.decimals > 0 ? (0).toFixed(cfg.decimals) + cfg.suffix : "0";
