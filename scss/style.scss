@@ -1892,6 +1892,10 @@ a.footer-helpdesk-link:hover {
     padding: 12px;
 }
 
+#expertDT tbody td .res-prop-value {
+    word-break: break-word;
+}
+
 div.dataTables_processing > div:last-child {
     display: none;
 }
