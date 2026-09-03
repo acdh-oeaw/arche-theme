@@ -86,6 +86,7 @@ jQuery(function ($) {
 
                 var id = keys[0];
                 var item = data[id] || {};
+                item.id= id;
                 renderLatestAddition(id, item);
             },
             error: function (xhr, status, error) {
@@ -101,6 +102,7 @@ jQuery(function ($) {
         }
 
         var id = item.identifier || '';
+        var resourceId = item.id || '';
         var title = item.title || '';
         var description = item.description || '';
         var avDate = item.avDate || '';
@@ -108,9 +110,9 @@ jQuery(function ($) {
         var metadataDate = item.modifyDate || item.avDate || '';
         var year = extractYear(item.avDate);
         var labelDate = formatHeaderDate(modifyDate);
-        var detailsUrl = '/browser/metadata/' + id;
+        var detailsUrl = '/browser/metadata/' + resourceId;
         var identifierText = (item.identifier || '').replace(/^https?:\/\//, '');
-
+        
         var $card = $('<article class="home-latest-addition" aria-label="Latest addition"></article>');
         var imageUrl = 'https://arche-thumbnails.acdh.oeaw.ac.at?id=' + encodeURIComponent(id) + '&width=600';
         var $media = $('<div class="home-latest-addition__media is-loading"></div>');
