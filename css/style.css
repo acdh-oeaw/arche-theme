@@ -2080,6 +2080,12 @@ table.dataTable.no-footer {
   overflow: hidden;
   -webkit-line-clamp: 2;
 }
+
+.res-property.sm-description h1,h2,h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
 .sm-img-list {
   min-height: 100px;
   object-fit: contain;
