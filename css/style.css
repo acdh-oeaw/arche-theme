@@ -472,7 +472,7 @@ ul.links {
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
   display: block;
   opacity: 0;
@@ -1919,7 +1919,7 @@ li[aria-level].jstree-node.jstree-leaf {
 .discover-line-bottom {
   border-bottom: 1px solid #E1EDF3;
   padding-bottom: 10px;
-  maring-bottom: 10px;
+  margin-bottom: 10px;
 }
 .discover-line-top {
   border-top: 1px solid #E1EDF3;

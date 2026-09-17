@@ -146,7 +146,7 @@ jQuery(function ($) {
         var $content = $('<div class="home-latest-addition__content"></div>');
         var $kicker = $('<p class="home-latest-addition__kicker"></p>').text(Drupal.t('Modified') + ' · ' + labelDate);
         var $title = $('<h3 class=""></h3>').text(title);
-        var $desc = $('<p class="card-text"></p>').html(formatDescriptionHtml(description));
+        var $desc = $('<div class="card-text"></div>').html(formatDescriptionHtml(description));
 
         var $meta = $('<div class="home-latest-addition__meta" aria-label="Collection metadata"></div>');
         var $metaYear = $('<span class="btn-toolbar-gray btn-toolbar-text no-btn"></span>').text(year);
@@ -195,20 +195,41 @@ jQuery(function ($) {
     }
 
     function formatDescriptionHtml(value) {
-        var text = String(value || '');
+        var text = truncateWords(String(value || '').replace(/\\r\\n|\\n|\\r/g, '\n'), 75);
 
-        // Support literal "\n" sequences as real newlines before counting words
-        text = text.replace(/\\n/g, '\n');
-
-        var words = text.trim().split(/\s+/);
-
-        if (words.length > 75) {
-            text = words.slice(0, 75).join(' ') + '...';
+        if (typeof window.renderMarkdownDescription === 'function') {
+            return window.renderMarkdownDescription(text);
         }
 
         var escaped = escapeHtml(text);
 
         return escaped.replace(/\r\n|\r|\n/g, '<br>');
+    }
+
+    function truncateWords(text, limit) {
+        var tokens = text.match(/\S+|\s+/g) || [];
+        var words = 0;
+        var truncated = false;
+        var output = '';
+
+        if (!$.trim(text)) {
+            return '';
+        }
+
+        tokens.some(function (token) {
+            if (/\S/.test(token)) {
+                if (words >= limit) {
+                    truncated = true;
+                    return true;
+                }
+                words++;
+            }
+
+            output += token;
+            return false;
+        });
+
+        return $.trim(output) + (truncated ? '...' : '');
     }
 
     function escapeHtml(value) {

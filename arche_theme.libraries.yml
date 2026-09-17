@@ -38,3 +38,4 @@ home-page:
         - core/drupal.form
         - core/drupalSettings
         - core/jquery
+        - arche_core_gui/display-markdown
