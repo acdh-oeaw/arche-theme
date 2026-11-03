@@ -860,6 +860,9 @@ ul.nav.nav-pills > li > a {
   gap: 24px;
   padding-top: 12px;
 }
+.hero-home-logos img {
+  display: block;
+}
 .hero-small-text {
   color: #4F4F4F;
   text-align: center;
