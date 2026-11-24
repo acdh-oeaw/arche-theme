@@ -1627,6 +1627,12 @@ a.footer-helpdesk-link:hover {
     font-weight: 700;
 }
 
+.card .card-body {
+    white-space: normal;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+}
+
 .card .card-body h3.card-title,
 .card .card-body h3.card-title a {
     color: $arche-acc-font-color;

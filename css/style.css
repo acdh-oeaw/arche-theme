@@ -1433,6 +1433,13 @@ a.footer-helpdesk-link, a.footer-helpdesk-link:hover {
   font-size: 1rem;
   font-weight: 700;
 }
+
+.card .card-body {
+    white-space: normal;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+}
+
 .card .card-body h3.card-title, .card .card-body h3.card-title a {
   color: #4D4D4D;
   font-family: Lato;
