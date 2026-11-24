@@ -157,7 +157,7 @@ jQuery(function ($) {
         var buttonLabel = Drupal.t('More');
         var $button = $('<a class="home-latest-addition__button"></a>')
                 .attr('href', detailsUrl)
-                .attr('aria-label', Drupal.t('More: ') + title)
+                .attr('aria-label', Drupal.t('More ') + title)
                 .text(buttonLabel);
 
         if (identifierText) {
